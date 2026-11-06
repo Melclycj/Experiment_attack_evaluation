@@ -1,0 +1,20 @@
+--- production/connector/upstream.py
++++ self-check/connector/upstream.py
+@@ -566,7 +566,7 @@
+     def run(self, req: Request, answer: Answer, memfd: int, body_len: int, sink: Sink) -> tuple[int, int]:
+         """Send the approved request once and relay the response. Returns the REPORT (result, status)."""
+         account = answer.account if answer.kind == ALLOW else b''
+-        key = (req.host, req.port, req.scheme, account)
++        key = (req.host, req.port, req.scheme, b'')  # CB-14 SELF-CHECK: reuse ignores the account
+         link = self.links.pop(key, None)
+         # cut while idle (REVOKE, OM1), or its peer fails this request's gates (C-37: judged again against this ALLOW's
+         # named list): dropped with nothing written on it, and the request takes the fresh path (resolve, judge, connect)
+@@ -720,7 +720,7 @@
+             if resp.will_close:
+                 self._drop(link)
+             else:
+-                self.links[link.key] = link                    # reusable: its response was read to the end (条款 8)
++                self.links[(link.host, link.port, link.scheme, b'')] = link                    # reusable: its response was read to the end (条款 8)
+         else:
+             sink.client_gone = True                            # no RESP_END: the frontend sees the cut (SPEC §3.1)
+             self._drop(link)

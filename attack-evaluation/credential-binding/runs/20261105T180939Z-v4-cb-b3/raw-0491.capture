@@ -1,0 +1,3 @@
+engine refused GET https://nb-decoy-cb-x.test/nb-decoy-cb/fail/ec053d7c1081ebce278d152dd834b981afaefd6bfa4a60b6
+reason: result_unknown
+The request was sent upstream, but its result is not known. It may have taken effect; do not retry blindly.

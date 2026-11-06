@@ -1,0 +1,3 @@
+{"event":"connector_started","uid":70010,"execution_id":"97ac702939bb61334e616c36f6822a8d:11"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"connection_closed","reason":"reader refused a fragment"}

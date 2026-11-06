@@ -1,0 +1,1 @@
+{"catalog_digest":"sha256:6ddec10ce2f83856fc588088d5a30a7e141e49629c3eb1a05ea5a7d845ec3a6f","policies":[{"policy_id":"workload","source_digest":"sha256:30eadf2e985bc9a228a954d3d7ec357dfe694e12904af174a04df40ea663a449","bpf_digest":"sha256:62eee83e6a131f8e24d6d707d9b23db08cfe2327e014f3ae470bd77b1286cb47","instructions":172}]}

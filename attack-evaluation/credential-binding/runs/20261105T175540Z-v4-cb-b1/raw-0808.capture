@@ -1,0 +1,3 @@
+engine refused a request that does not read
+reason: clause
+The request breaks one of the engine's fixed rules. Rewrite the request; widening an entry does not help.

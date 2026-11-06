@@ -1,0 +1,68 @@
+{
+  "attack": "NB-29",
+  "level": "试跑（档 2 探针）",
+  "started_at_utc": "2026-11-05T17:18:39.808898+00:00",
+  "nonce": "d53009232cc04272",
+  "preconditions": {
+    "wslinterop": "enabled\ninterpreter /init\nflags: P\noffset 0\nmagic 4d5a\n",
+    "flags": "P",
+    "no_F_flag": true,
+    "host_init_exists": true,
+    "run_wsl_exists": true,
+    "run_wsl_entries": [
+      "1_interop",
+      "2_interop",
+      "406_interop"
+    ]
+  },
+  "arms": {
+    "undefended": {
+      "argv": [
+        "/root/nb29/nb29.mz",
+        "C:/Users/Public/nb-decoy-nb29-marker"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "marker_present": true
+    },
+    "cell": {
+      "argv": [
+        "unshare",
+        "--mount",
+        "--fork",
+        "chroot",
+        "/root/nb29/runs/20261105T171839Z-nb29-probe/nb-decoy-cell/cellroot",
+        "/nb29.mz",
+        "C:/Users/Public/nb-decoy-nb29-marker"
+      ],
+      "exit": 127,
+      "stdout": "",
+      "stderr": "chroot: failed to run command ‘/nb29.mz’: No such file or directory\n",
+      "marker_present": false,
+      "looks_enoent": true
+    },
+    "pc_exec": {
+      "argv": [
+        "unshare",
+        "--mount",
+        "--fork",
+        "chroot",
+        "/root/nb29/runs/20261105T171839Z-nb29-probe/nb-decoy-cell/cellroot",
+        "/pcexec"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "verdict": {
+    "undefended_reachable": true,
+    "pc_exec_ok": true,
+    "cell": "blocked",
+    "note": "blocked at layer 1 (ENOENT: /init not in cell-like root)",
+    "valid": true
+  },
+  "layer3_note": "seccomp 拒 AF_VSOCK（层③）不在本探针，结构论证读 a9eff999:native/sandbox/policy.c",
+  "consumer": "第 3 章 WSL 专项：3.2 特权表 WSL 行、3.5 Components、3.7 Mediation、A.15 第 10 件"
+}

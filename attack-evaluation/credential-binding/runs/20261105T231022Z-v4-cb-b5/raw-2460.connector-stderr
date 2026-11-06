@@ -1,0 +1,8 @@
+{"event":"connector_started","uid":70029,"execution_id":"0cbeb0db8a0d3cd126f05f8d1990b202:30"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"upstream_failure","phase":"sending","category":4,"error":"SSLEOFError"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"judgment_port_fatal","reason":"judgment port closed"}

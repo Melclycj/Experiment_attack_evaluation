@@ -1,0 +1,165 @@
+{
+  "version": "v4",
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "config_sha256": "bf98e8db30bd02405822e0b45e91266747c6fb30875c27fa98006b2ba3f85e59",
+  "approved_by_user": "2026-11-06",
+  "sources": [
+    "Thesis/Work/Submission/prove/no-bypass/work/spine/01-model-inventory.md §5 (host sysctl list and values)",
+    "Thesis/Work/Submission/prove/no-bypass/work/evidence/host-2026-10-24/README.md (NB-EV-018: config.txt sha256 and sysctl.txt)",
+    "re-read 2026-11-05T13:0xZ in WSL as uid 1000: all 30 values equal 01 §5; /proc/config.gz decompressed sha256 equals NB-EV-018 config.txt"
+  ],
+  "required": [
+    "debug.exception-trace",
+    "fs.dir-notify-enable",
+    "fs.lease-break-time",
+    "fs.leases-enable",
+    "fs.protected_fifos",
+    "fs.protected_hardlinks",
+    "fs.protected_regular",
+    "fs.protected_symlinks",
+    "fs.suid_dumpable",
+    "kernel.core_pattern",
+    "kernel.core_pipe_limit",
+    "kernel.dmesg_restrict",
+    "kernel.io_uring_disabled",
+    "kernel.kptr_restrict",
+    "kernel.overflowuid",
+    "kernel.perf_event_paranoid",
+    "kernel.pid_max",
+    "kernel.print-fatal-signals",
+    "kernel.randomize_va_space",
+    "kernel.seccomp.actions_logged",
+    "kernel.split_lock_mitigate",
+    "kernel.sysrq",
+    "kernel.threads-max",
+    "kernel.unprivileged_bpf_disabled",
+    "kernel.yama.ptrace_scope",
+    "user.max_user_namespaces",
+    "vm.mmap_min_addr",
+    "vm.nr_hugepages",
+    "vm.overcommit_memory",
+    "vm.unprivileged_userfaultfd"
+  ],
+  "readings": {
+    "kernel.core_pattern": {
+      "path": "/proc/sys/kernel/core_pattern",
+      "value": "|/wsl-capture-crash %t %E %p %s"
+    },
+    "fs.suid_dumpable": {
+      "path": "/proc/sys/fs/suid_dumpable",
+      "value": "0"
+    },
+    "kernel.core_pipe_limit": {
+      "path": "/proc/sys/kernel/core_pipe_limit",
+      "value": "0"
+    },
+    "kernel.yama.ptrace_scope": {
+      "path": "/proc/sys/kernel/yama/ptrace_scope",
+      "value": "1"
+    },
+    "kernel.perf_event_paranoid": {
+      "path": "/proc/sys/kernel/perf_event_paranoid",
+      "value": "2"
+    },
+    "kernel.kptr_restrict": {
+      "path": "/proc/sys/kernel/kptr_restrict",
+      "value": "1"
+    },
+    "kernel.dmesg_restrict": {
+      "path": "/proc/sys/kernel/dmesg_restrict",
+      "value": "0"
+    },
+    "kernel.unprivileged_bpf_disabled": {
+      "path": "/proc/sys/kernel/unprivileged_bpf_disabled",
+      "value": "2"
+    },
+    "vm.unprivileged_userfaultfd": {
+      "path": "/proc/sys/vm/unprivileged_userfaultfd",
+      "value": "0"
+    },
+    "kernel.io_uring_disabled": {
+      "path": "/proc/sys/kernel/io_uring_disabled",
+      "value": "0"
+    },
+    "fs.protected_symlinks": {
+      "path": "/proc/sys/fs/protected_symlinks",
+      "value": "1"
+    },
+    "fs.protected_hardlinks": {
+      "path": "/proc/sys/fs/protected_hardlinks",
+      "value": "1"
+    },
+    "fs.protected_fifos": {
+      "path": "/proc/sys/fs/protected_fifos",
+      "value": "1"
+    },
+    "fs.protected_regular": {
+      "path": "/proc/sys/fs/protected_regular",
+      "value": "2"
+    },
+    "user.max_user_namespaces": {
+      "path": "/proc/sys/user/max_user_namespaces",
+      "value": "63497"
+    },
+    "kernel.overflowuid": {
+      "path": "/proc/sys/kernel/overflowuid",
+      "value": "65534"
+    },
+    "kernel.pid_max": {
+      "path": "/proc/sys/kernel/pid_max",
+      "value": "4194304"
+    },
+    "kernel.threads-max": {
+      "path": "/proc/sys/kernel/threads-max",
+      "value": "126994"
+    },
+    "kernel.print-fatal-signals": {
+      "path": "/proc/sys/kernel/print-fatal-signals",
+      "value": "1"
+    },
+    "debug.exception-trace": {
+      "path": "/proc/sys/debug/exception-trace",
+      "value": "1"
+    },
+    "kernel.split_lock_mitigate": {
+      "path": "/proc/sys/kernel/split_lock_mitigate",
+      "value": "1"
+    },
+    "fs.leases-enable": {
+      "path": "/proc/sys/fs/leases-enable",
+      "value": "1"
+    },
+    "fs.lease-break-time": {
+      "path": "/proc/sys/fs/lease-break-time",
+      "value": "45"
+    },
+    "fs.dir-notify-enable": {
+      "path": "/proc/sys/fs/dir-notify-enable",
+      "value": "1"
+    },
+    "vm.overcommit_memory": {
+      "path": "/proc/sys/vm/overcommit_memory",
+      "value": "0"
+    },
+    "kernel.randomize_va_space": {
+      "path": "/proc/sys/kernel/randomize_va_space",
+      "value": "2"
+    },
+    "vm.mmap_min_addr": {
+      "path": "/proc/sys/vm/mmap_min_addr",
+      "value": "65536"
+    },
+    "vm.nr_hugepages": {
+      "path": "/proc/sys/vm/nr_hugepages",
+      "value": "0"
+    },
+    "kernel.seccomp.actions_logged": {
+      "path": "/proc/sys/kernel/seccomp/actions_logged",
+      "value": "kill_process kill_thread trap errno user_notif trace log"
+    },
+    "kernel.sysrq": {
+      "path": "/proc/sys/kernel/sysrq",
+      "value": "176"
+    }
+  }
+}

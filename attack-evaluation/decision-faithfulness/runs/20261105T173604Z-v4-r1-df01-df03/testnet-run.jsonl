@@ -1,0 +1,7 @@
+{"kind":"listening","listener":"decoy-loopback","addr":"127.0.0.1","port":18080,"t":1793900348.8707736}
+{"kind":"listening","listener":"decoy-interface","addr":"93.184.216.1","port":18081,"t":1793900348.8710756}
+{"kind":"ready","pid":3979,"t":1793900348.8712094}
+{"kind":"connect","listener":"decoy-loopback","conn":"decoy-loopback:1","peer":"127.0.0.1","port":18080,"t":1793900355.5850728}
+{"kind":"decoy","listener":"decoy-loopback","conn":"decoy-loopback:1","bytes":62,"head":"GET /?n=c56516c0d9c52b32-a HTTP/1.1\r\nhost: 127.0.0.1:18080\r\n\r\n","nonce":"c56516c0d9c52b32","tag":"a","t":1793900355.5853925}
+{"kind":"connect","listener":"decoy-interface","conn":"decoy-interface:2","peer":"93.184.216.1","port":18081,"t":1793900357.8848987}
+{"kind":"decoy","listener":"decoy-interface","conn":"decoy-interface:2","bytes":65,"head":"GET /?n=87b77c40fd4bec75-a HTTP/1.1\r\nhost: 93.184.216.1:18081\r\n\r\n","nonce":"87b77c40fd4bec75","tag":"a","t":1793900357.885137}

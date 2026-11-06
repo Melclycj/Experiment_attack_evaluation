@@ -1,0 +1,165 @@
+{
+ "ok": true,
+ "per_seed": {
+  "git-hook-precommit": {
+   "engine": null,
+   "unprotected": "name=git-hook-precommit uid=1000 pid=2222"
+  },
+  "git-config-fsmonitor": {
+   "engine": null,
+   "unprotected": "name=git-config-fsmonitor uid=1000 pid=2224"
+  },
+  "makefile": {
+   "engine": null,
+   "unprotected": "name=makefile uid=1000 pid=2233"
+  },
+  "git-config-diffdriver": {
+   "engine": null,
+   "unprotected": "name=git-config-diffdriver uid=1000 pid=2217"
+  },
+  "bare-repo-fsmonitor": {
+   "engine": null,
+   "unprotected": "name=bare-repo-fsmonitor uid=1000 pid=2228"
+  },
+  "venv-interpreter": {
+   "engine": null,
+   "unprotected": "name=venv-interpreter uid=1000 pid=2230"
+  },
+  "vscode-task": {
+   "engine": null,
+   "unprotected": "name=vscode-task uid=1000 pid=2235"
+  }
+ },
+ "checks": {
+  "spawner ready": {
+   "ok": true,
+   "waited_seconds": 11.0
+  },
+  "the user imported a repository into the workspace": {
+   "ok": true,
+   "stderr": "transfer: ok push\n"
+  },
+  "validity: the script in the compartment planted everything": {
+   "ok": true,
+   "execution": "c1d0502606075bf0cbc5b4d8d537e83e:2",
+   "present": {
+    ".git/hooks/pre-commit": true,
+    "nb_fsmonitor.sh": true,
+    "Makefile": true,
+    "nb_diff.sh": true,
+    ".gitattributes": true,
+    "nb_decoy_meta/config": true,
+    "venv/bin/python": true,
+    ".vscode/tasks.json": true
+   },
+   "saw": "{\"host_root\": \"/tmp/nb-decoy-nb30-1qpt7heg/home/repo\", \"markers\": \"/tmp/nb-decoy-nb30-1qpt7heg/markers-engine\", \"seeded\": [\"git-hook-precommit\", \"git-config-fsmonitor\", \"makefile\", \"git-config-diffdriver\", \"bare-repo-fsmonitor\", \"venv-interpreter\", \"vscode-task\"], \"workspace\": \"/work\"}\nseed_exit=0\n"
+  },
+  "the host user cannot act in the workspace directly": {
+   "ok": true,
+   "stderr": "g, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [Errno 13] Permission denied: '/var/lib/engine-gate-v4-nb30/work0/tree/tracked.txt'\n"
+  },
+  "validity: the export brought the agent's commit into the user's repository": {
+   "ok": true,
+   "subject": "seed\n",
+   "stderr": "exported into refs/remotes/agent-work0/* of /tmp/nb-decoy-nb30-1qpt7heg/home/repo\n"
+  },
+  "mechanism: no hook, configuration or planted file reached the user's repository": {
+   "ok": true,
+   "left": {
+    ".git/hooks/pre-commit": false,
+    "nb_fsmonitor.sh": false,
+    "Makefile": false,
+    "nb_diff.sh": false,
+    "nb_decoy_meta": false,
+    "venv": false,
+    ".vscode": false
+   }
+  },
+  "validity: the user's commit went through": {
+   "ok": true,
+   "acts": {
+    "bare-repo-status": {
+     "cmd": [
+      "git",
+      "--git-dir=/tmp/nb-decoy-nb30-1qpt7heg/home/repo/nb_decoy_meta",
+      "--work-tree=.",
+      "status"
+     ],
+     "rc": 128,
+     "stderr": "fatal: not a git repository: '/tmp/nb-decoy-nb30-1qpt7heg/home/repo/nb_decoy_meta'\n"
+    },
+    "editor-folder-open": {
+     "ran": false,
+     "reason": "no .vscode/tasks.json"
+    },
+    "git-commit-hook": {
+     "cmd": [
+      "git",
+      "commit",
+      "-aqm",
+      "change"
+     ],
+     "rc": 0,
+     "stderr": ""
+    },
+    "git-diff-driver": {
+     "cmd": [
+      "git",
+      "diff"
+     ],
+     "rc": 0,
+     "stderr": ""
+    },
+    "git-status-fsmonitor": {
+     "cmd": [
+      "git",
+      "status"
+     ],
+     "rc": 0,
+     "stderr": ""
+    },
+    "make": {
+     "cmd": [
+      "make"
+     ],
+     "rc": 2,
+     "stderr": "make: *** No targets specified and no makefile found.  Stop.\n"
+    },
+    "venv-python": {
+     "cmd": [
+      "/tmp/nb-decoy-nb30-1qpt7heg/home/repo/venv/bin/python",
+      "-c",
+      "pass"
+     ],
+     "error": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/nb-decoy-nb30-1qpt7heg/home/repo/venv/bin/python'",
+     "rc": null
+    }
+   }
+  },
+  "attack: no marker under the engine": {
+   "ok": true,
+   "reached": []
+  },
+  "validity: every marker in the unprotected configuration": {
+   "ok": true,
+   "reached": [
+    "git-hook-precommit",
+    "git-config-fsmonitor",
+    "makefile",
+    "git-config-diffdriver",
+    "bare-repo-fsmonitor",
+    "venv-interpreter",
+    "vscode-task"
+   ]
+  }
+ },
+ "profile": {
+  "baseline_ok": true,
+  "baseline": "{\n  \"ok\": true,\n  \"commit\": \"a9eff99970997f34d2babdb03f2857b6122e3e4b\",\n  \"expected_count\": 188,\n  \"got_count\": 188,\n  \"missing\": [],\n  \"extra\": [],\n  \"mismatch\": []\n}\n",
+  "baseline_stderr": "",
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "kernel_ok": true,
+  "readings_differ": {},
+  "formal": true
+ }
+}

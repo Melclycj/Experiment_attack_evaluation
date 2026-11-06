@@ -1,0 +1,3 @@
+{"kind":"listening","listener":"decoy-loopback","addr":"127.0.0.1","port":18080,"t":1793900673.7182896}
+{"kind":"listening","listener":"decoy-interface","addr":"93.184.216.1","port":18081,"t":1793900673.7185402}
+{"kind":"ready","pid":7089,"t":1793900673.718667}

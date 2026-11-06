@@ -1,0 +1,93 @@
+{"kind":"listening","listener":"upstream","addr":"93.184.216.2","port":443,"t":1793900500.1580303}
+{"kind":"listening","listener":"upstream-alt","addr":"93.184.216.2","port":8443,"t":1793900500.1584315}
+{"kind":"listening","listener":"decoy-private","addr":"10.66.0.10","port":80,"t":1793900500.158558}
+{"kind":"listening","listener":"decoy-private-tls","addr":"10.66.0.10","port":443,"t":1793900500.1586676}
+{"kind":"listening","listener":"decoy-linklocal","addr":"169.254.169.254","port":80,"t":1793900500.1587641}
+{"kind":"listening","listener":"dns","addr":"93.184.216.2","port":53,"t":1793900500.1588814}
+{"kind":"ready","pid":5563,"t":1793900500.1590123}
+{"kind":"connect","listener":"upstream","conn":"upstream:1","peer":"93.184.216.1","port":443,"t":1793900502.2918174}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:1","nonce":"7964689eaaad963b","tag":"c","method":"GET","path":"/ok","query":"n=7964689eaaad963b-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900502.2931182}
+{"kind":"connect","listener":"upstream","conn":"upstream:2","peer":"93.184.216.1","port":443,"t":1793900502.3471448}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:2","nonce":"7964689eaaad963b","tag":"a","method":"GET","path":"/redirect/302","query":"n=7964689eaaad963b-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":302,"location":"http://10.66.0.10/landing?n=7964689eaaad963b-f","t":1793900502.3487396}
+{"kind":"connect","listener":"upstream","conn":"upstream:3","peer":"93.184.216.1","port":443,"t":1793900502.9095304}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:3","nonce":"9221057dd5bbf905","tag":"c","method":"GET","path":"/ok","query":"n=9221057dd5bbf905-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900502.9115074}
+{"kind":"connect","listener":"upstream","conn":"upstream:4","peer":"93.184.216.1","port":443,"t":1793900502.9529674}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:4","nonce":"9221057dd5bbf905","tag":"a","method":"GET","path":"/redirect/302","query":"n=9221057dd5bbf905-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":302,"location":"http://10.66.0.10/landing?n=9221057dd5bbf905-f","t":1793900502.954194}
+{"kind":"connect","listener":"decoy-private","conn":"decoy-private:5","peer":"93.184.216.1","port":80,"t":1793900502.9970758}
+{"kind":"decoy","listener":"decoy-private","conn":"decoy-private:5","bytes":64,"head":"GET /landing?n=9221057dd5bbf905-f HTTP/1.1\r\nhost: 10.66.0.10\r\n\r\n","nonce":"9221057dd5bbf905","tag":"f","t":1793900502.9972725}
+{"kind":"connect","listener":"upstream","conn":"upstream:6","peer":"93.184.216.1","port":443,"t":1793900503.175856}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:6","nonce":"8b87ecda1775ba77","tag":"c","method":"GET","path":"/ok","query":"n=8b87ecda1775ba77-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900503.1769598}
+{"kind":"connect","listener":"upstream","conn":"upstream:7","peer":"93.184.216.1","port":443,"t":1793900503.229588}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:7","nonce":"8b87ecda1775ba77","tag":"a","method":"GET","path":"/redirect/307","query":"n=8b87ecda1775ba77-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":307,"location":"http://10.66.0.10/landing?n=8b87ecda1775ba77-f","t":1793900503.230591}
+{"kind":"connect","listener":"upstream","conn":"upstream:8","peer":"93.184.216.1","port":443,"t":1793900503.7167032}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:8","nonce":"8d8f50b713819ec2","tag":"c","method":"GET","path":"/ok","query":"n=8d8f50b713819ec2-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900503.7185445}
+{"kind":"connect","listener":"upstream","conn":"upstream:9","peer":"93.184.216.1","port":443,"t":1793900503.760941}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:9","nonce":"8d8f50b713819ec2","tag":"a","method":"GET","path":"/redirect/307","query":"n=8d8f50b713819ec2-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":307,"location":"http://10.66.0.10/landing?n=8d8f50b713819ec2-f","t":1793900503.7620997}
+{"kind":"connect","listener":"decoy-private","conn":"decoy-private:10","peer":"93.184.216.1","port":80,"t":1793900503.804913}
+{"kind":"decoy","listener":"decoy-private","conn":"decoy-private:10","bytes":64,"head":"GET /landing?n=8d8f50b713819ec2-f HTTP/1.1\r\nhost: 10.66.0.10\r\n\r\n","nonce":"8d8f50b713819ec2","tag":"f","t":1793900503.80509}
+{"kind":"connect","listener":"upstream","conn":"upstream:11","peer":"93.184.216.1","port":443,"t":1793900503.9842317}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:11","nonce":"40fffd401f2baec3","tag":"c","method":"GET","path":"/ok","query":"n=40fffd401f2baec3-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900503.9852977}
+{"kind":"connect","listener":"upstream","conn":"upstream:12","peer":"93.184.216.1","port":443,"t":1793900504.0361278}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:12","nonce":"40fffd401f2baec3","tag":"a","method":"GET","path":"/redirect/308","query":"n=40fffd401f2baec3-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":308,"location":"http://10.66.0.10/landing?n=40fffd401f2baec3-f","t":1793900504.0371711}
+{"kind":"connect","listener":"upstream","conn":"upstream:13","peer":"93.184.216.1","port":443,"t":1793900504.5291185}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:13","nonce":"84669c8f6da2cd82","tag":"c","method":"GET","path":"/ok","query":"n=84669c8f6da2cd82-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900504.530943}
+{"kind":"connect","listener":"upstream","conn":"upstream:14","peer":"93.184.216.1","port":443,"t":1793900504.5729516}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:14","nonce":"84669c8f6da2cd82","tag":"a","method":"GET","path":"/redirect/308","query":"n=84669c8f6da2cd82-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":308,"location":"http://10.66.0.10/landing?n=84669c8f6da2cd82-f","t":1793900504.5742097}
+{"kind":"connect","listener":"decoy-private","conn":"decoy-private:15","peer":"93.184.216.1","port":80,"t":1793900504.6173038}
+{"kind":"decoy","listener":"decoy-private","conn":"decoy-private:15","bytes":64,"head":"GET /landing?n=84669c8f6da2cd82-f HTTP/1.1\r\nhost: 10.66.0.10\r\n\r\n","nonce":"84669c8f6da2cd82","tag":"f","t":1793900504.6175241}
+{"kind":"connect","listener":"upstream","conn":"upstream:16","peer":"93.184.216.1","port":443,"t":1793900504.807804}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:16","nonce":"26f9f10e3c904127","tag":"c","method":"POST","path":"/ok","query":"n=26f9f10e3c904127-c","headers":[["host","nb-decoy-up"],["content-length","15"],["accept-encoding","identity"]],"body_len":15,"status":200,"t":1793900504.8089511}
+{"kind":"connect","listener":"upstream","conn":"upstream:17","peer":"93.184.216.1","port":443,"t":1793900505.2671766}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:17","nonce":"ddf5f6af1a1bbef5","tag":"c","method":"POST","path":"/ok","query":"n=ddf5f6af1a1bbef5-c","headers":[["host","nb-decoy-up"],["content-length","15"]],"body_len":15,"status":200,"t":1793900505.2698104}
+{"kind":"connect","listener":"upstream","conn":"upstream:18","peer":"93.184.216.1","port":443,"t":1793900505.3130589}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:18","nonce":"ddf5f6af1a1bbef5","tag":"a","method":"POST","path":"/ok","query":"n=ddf5f6af1a1bbef5-a","headers":[["host","nb-decoy-up"],["content-length","15"]],"body_len":15,"status":200,"t":1793900505.3142776}
+{"kind":"connect","listener":"upstream","conn":"upstream:19","peer":"93.184.216.1","port":443,"t":1793900505.5581179}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:19","nonce":"fe97b1f857434f82","tag":"a","method":"POST","path":"/ok","query":"n=fe97b1f857434f82-a","headers":[["host","nb-decoy-up"],["content-length","13"],["accept-encoding","identity"]],"body_len":13,"status":200,"t":1793900505.55926}
+{"kind":"connect","listener":"upstream","conn":"upstream:20","peer":"93.184.216.1","port":443,"t":1793900512.1088293}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:20","nonce":"421f2e588b0b4ff4","tag":"a","method":"POST","path":"/ok","query":"n=421f2e588b0b4ff4-a","headers":[["host","nb-decoy-up"],["content-length","13"]],"body_len":13,"status":200,"t":1793900512.1108358}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:20","nonce":"421f2e588b0b4ff4","tag":"a","method":"POST","path":"/ok","query":"n=421f2e588b0b4ff4-a","headers":[["host","nb-decoy-up"],["content-length","13"]],"body_len":13,"status":200,"t":1793900512.1528053}
+{"kind":"connect","listener":"upstream","conn":"upstream:21","peer":"93.184.216.1","port":443,"t":1793900512.3498642}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:21","nonce":"9d5a0c5964f01135","tag":"c","method":"POST","path":"/ok","query":"n=9d5a0c5964f01135-c","headers":[["host","nb-decoy-up"],["content-length","10"],["accept-encoding","identity"]],"body_len":10,"status":200,"t":1793900512.3508742}
+{"kind":"connect","listener":"upstream","conn":"upstream:22","peer":"93.184.216.1","port":443,"t":1793900520.8969755}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:22","nonce":"22281de2fe8962f3","tag":"c","method":"POST","path":"/ok","query":"n=22281de2fe8962f3-c","headers":[["host","nb-decoy-up"],["content-length","10"]],"body_len":10,"status":200,"t":1793900520.898889}
+{"kind":"connect","listener":"upstream","conn":"upstream:23","peer":"93.184.216.1","port":443,"t":1793900520.9408784}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:23","nonce":"22281de2fe8962f3","tag":"a","method":"POST","path":"/ok","query":"n=22281de2fe8962f3-a","headers":[["host","nb-decoy-up"],["content-length","10"]],"body_len":10,"status":200,"t":1793900520.9419372}
+{"kind":"connect","listener":"upstream","conn":"upstream:24","peer":"93.184.216.1","port":443,"t":1793900520.9959104}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:24","nonce":"22281de2fe8962f3","tag":"b","method":"POST","path":"/ok","query":"n=22281de2fe8962f3-b","headers":[["host","nb-decoy-up"],["content-length","10"]],"body_len":10,"status":200,"t":1793900520.9979992}
+{"kind":"connect","listener":"upstream","conn":"upstream:25","peer":"93.184.216.1","port":443,"t":1793900521.2364702}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:25","nonce":"852b530f2ddc7231","tag":"c","method":"GET","path":"/ok","query":"n=852b530f2ddc7231-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900521.2375126}
+{"kind":"dns","peer":"93.184.216.1","name":"nb-decoy-rebind","qtype":1,"epoch":"852b530f2ddc7231","answer":"93.184.216.2","count":1,"t":1793900521.300944}
+{"kind":"dns","peer":"93.184.216.1","name":"nb-decoy-rebind","qtype":28,"epoch":"852b530f2ddc7231","answer":null,"t":1793900521.3010428}
+{"kind":"connect","listener":"upstream","conn":"upstream:26","peer":"93.184.216.1","port":443,"t":1793900521.3012264}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:26","nonce":"852b530f2ddc7231","tag":"a","method":"GET","path":"/ok","query":"n=852b530f2ddc7231-a","headers":[["host","nb-decoy-rebind"]],"body_len":0,"status":200,"t":1793900521.302184}
+{"kind":"connect","listener":"upstream","conn":"upstream:27","peer":"93.184.216.1","port":443,"t":1793900521.8010523}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:27","nonce":"f99b881d92ea2438","tag":"c","method":"GET","path":"/ok","query":"n=f99b881d92ea2438-c","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900521.8030286}
+{"kind":"dns","peer":"93.184.216.1","name":"nb-decoy-rebind","qtype":1,"epoch":"f99b881d92ea2438","answer":"93.184.216.2","count":1,"t":1793900521.8488646}
+{"kind":"dns","peer":"93.184.216.1","name":"nb-decoy-rebind","qtype":28,"epoch":"f99b881d92ea2438","answer":null,"t":1793900521.8489518}
+{"kind":"connect","listener":"upstream","conn":"upstream:28","peer":"93.184.216.1","port":443,"t":1793900521.8490977}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:28","nonce":"f99b881d92ea2438","tag":"a","method":"GET","path":"/ok","query":"n=f99b881d92ea2438-a","headers":[["host","nb-decoy-rebind"]],"body_len":0,"status":200,"t":1793900521.85021}
+{"kind":"dns","peer":"93.184.216.1","name":"nb-decoy-rebind","qtype":1,"epoch":"f99b881d92ea2438","answer":"10.66.0.10","count":2,"t":1793900521.8931162}
+{"kind":"dns","peer":"93.184.216.1","name":"nb-decoy-rebind","qtype":28,"epoch":"f99b881d92ea2438","answer":null,"t":1793900521.8932712}
+{"kind":"connect","listener":"decoy-private-tls","conn":"decoy-private-tls:29","peer":"93.184.216.1","port":443,"t":1793900521.8934808}
+{"kind":"decoy","listener":"decoy-private-tls","conn":"decoy-private-tls:29","bytes":64,"head":"GET /ok?n=f99b881d92ea2438-a HTTP/1.1\r\nhost: nb-decoy-rebind\r\n\r\n","nonce":"f99b881d92ea2438","tag":"a","t":1793900521.8949723}
+{"kind":"connect","listener":"upstream","conn":"upstream:30","peer":"93.184.216.1","port":443,"t":1793900522.12491}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:30","nonce":"31c01b2eace6a690","tag":"a1","method":"GET","path":"/ok","query":"n=31c01b2eace6a690-a1","headers":[["host","nb-decoy-up"],["authorization","Bearer nb-decoy-truth-2045bab9a54b5080542b41c376d46c71"]],"body_len":0,"status":200,"t":1793900522.1259377}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:30","nonce":"31c01b2eace6a690","tag":"c2","method":"GET","path":"/ok","query":"n=31c01b2eace6a690-c2","headers":[["host","nb-decoy-up"],["authorization","Bearer nb-decoy-truth-2045bab9a54b5080542b41c376d46c71"]],"body_len":0,"status":200,"t":1793900522.1763515}
+{"kind":"connect","listener":"upstream","conn":"upstream:31","peer":"93.184.216.1","port":443,"t":1793900522.1835327}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:31","nonce":"31c01b2eace6a690","tag":"a2","method":"GET","path":"/ok","query":"n=31c01b2eace6a690-a2","headers":[["host","nb-decoy-up"]],"body_len":0,"status":200,"t":1793900522.1846242}
+{"kind":"connect","listener":"upstream","conn":"upstream:32","peer":"93.184.216.1","port":443,"t":1793900522.6767535}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:32","nonce":"3b57d9f8e87476b2","tag":"a1","method":"GET","path":"/ok","query":"n=3b57d9f8e87476b2-a1","headers":[["host","nb-decoy-up"],["authorization","Bearer nb-decoy-truth-816497d3c0e65fc021707da3f673d2d7"]],"body_len":0,"status":200,"t":1793900522.6786933}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:32","nonce":"3b57d9f8e87476b2","tag":"c2","method":"GET","path":"/ok","query":"n=3b57d9f8e87476b2-c2","headers":[["host","nb-decoy-up"],["authorization","Bearer nb-decoy-truth-816497d3c0e65fc021707da3f673d2d7"]],"body_len":0,"status":200,"t":1793900522.7208054}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:32","nonce":"3b57d9f8e87476b2","tag":"a2","method":"GET","path":"/ok","query":"n=3b57d9f8e87476b2-a2","headers":[["host","nb-decoy-up"]],"body_len":0,"status":200,"t":1793900522.72097}
+{"kind":"connect","listener":"upstream","conn":"upstream:33","peer":"93.184.216.1","port":443,"t":1793900522.9245634}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:33","nonce":"a777c07485cb75fa","tag":"a","method":"POST","path":"/ok","query":"n=a777c07485cb75fa-a","headers":[["host","nb-decoy-up"],["content-length","13"],["accept-encoding","identity"]],"body_len":13,"status":200,"t":1793900522.9255512}
+{"kind":"connect","listener":"upstream","conn":"upstream:34","peer":"93.184.216.1","port":443,"t":1793900523.4667258}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:34","nonce":"7bb087ddc349f776","tag":"a","method":"GET","path":"/ok","query":"n=7bb087ddc349f776-a","headers":[["host","nb-decoy-open"]],"body_len":0,"status":200,"t":1793900523.4678965}
+{"kind":"connect","listener":"upstream","conn":"upstream:35","peer":"93.184.216.1","port":443,"t":1793900524.1365244}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:35","nonce":"9f1bc92f2a19ac07","tag":"a","method":"POST","path":"/ok","query":"n=9f1bc92f2a19ac07-a","headers":[["host","nb-decoy-up"],["content-length","13"],["accept-encoding","identity"]],"body_len":13,"status":200,"t":1793900524.1375728}
+{"kind":"connect","listener":"upstream","conn":"upstream:36","peer":"93.184.216.1","port":443,"t":1793900524.7120166}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:36","nonce":"f4d5ee94c3b1e2e0","tag":"a1","method":"POST","path":"/ok","query":"n=f4d5ee94c3b1e2e0-a1","headers":[["host","nb-decoy-up"],["content-length","13"],["accept-encoding","identity"]],"body_len":13,"status":200,"t":1793900524.713108}
+{"kind":"connect","listener":"upstream","conn":"upstream:37","peer":"93.184.216.1","port":443,"t":1793900524.720518}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:37","nonce":"f4d5ee94c3b1e2e0","tag":"a2","method":"POST","path":"/ok","query":"n=f4d5ee94c3b1e2e0-a2","headers":[["host","nb-decoy-up"],["content-length","13"],["accept-encoding","identity"]],"body_len":13,"status":200,"t":1793900524.7216563}
+{"kind":"connect","listener":"upstream","conn":"upstream:38","peer":"93.184.216.1","port":443,"t":1793900532.9239538}
+{"kind":"request","listener":"upstream","port":443,"conn":"upstream:38","nonce":"d174a59319ddf90f","tag":"a","method":"GET","path":"/ok","query":"n=d174a59319ddf90f-a","headers":[["host","nb-decoy-up"],["authorization","Bearer nb-decoy-truth-3452fd608197256c6f0fd9caa5d3fff9"]],"body_len":0,"status":200,"t":1793900532.9250128}

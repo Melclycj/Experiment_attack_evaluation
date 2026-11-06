@@ -1,0 +1,29 @@
+watching for questions; end of input (Ctrl-D) quits, open questions then time out at the core
+── question 1 ── row d89acdc8f06f38caa083189923eafc46:5 ── workspace work0 ──
+  matched      exact entry nb-decoy-question.test:443
+  cell         allow; methods POST; paths /; accounts none; ask every time
+  method       POST
+  scheme       https
+  host         nb-decoy-question.test
+  port         443
+  path         /nb-decoy-6d5330f8512d49e8434cb9ac448f6ee5e37ec86d42bd7297
+  query        (none)
+  headers      0
+  credential   none attached
+  body         (no content-type), 0 bytes
+answer question 1 [allow-once | deny-once | allow-always (allow, never ask on this cell again) | deny-always (deny on this cell from now on) | show]: question 1 withdrawn: the request was withdrawn by its client
+(no open question; waiting)
+── question 2 ── row d89acdc8f06f38caa083189923eafc46:8 ── workspace work2 ──
+  matched      exact entry nb-decoy-question.test:443
+  cell         allow; methods POST; paths /; accounts none; ask every time
+  method       POST
+  scheme       https
+  host         nb-decoy-question.test
+  port         443
+  path         /nb-decoy-9e1707f631f7a20c22b1ee31af98cb7054dfad32d7cf359e
+  query        (none)
+  headers      0
+  credential   none attached
+  body         (no content-type), 0 bytes
+answer question 2 [allow-once | deny-once | allow-always (allow, never ask on this cell again) | deny-always (deny on this cell from now on) | show]: the engine closed the management port
+answer question 2 [allow-once | deny-once | allow-always (allow, never ask on this cell again) | deny-always (deny on this cell from now on) | show]: 

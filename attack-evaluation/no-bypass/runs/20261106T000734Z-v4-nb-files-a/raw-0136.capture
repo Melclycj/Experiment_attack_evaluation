@@ -1,0 +1,9 @@
+diff --git a/tmp/nb-decoy-ho17mgkp/host-work/work0/nb-decoy-file-NB-05/control-file/nb-decoy-key b/tmp/nb-decoy-ho17mgkp/host-work/work0/nb-decoy-file-NB-05/control-file/nb-decoy-key
+deleted file mode 100644
+index 4fbf195..0000000
+--- a/tmp/nb-decoy-ho17mgkp/host-work/work0/nb-decoy-file-NB-05/control-file/nb-decoy-key
++++ /dev/null
+@@ -1,3 +0,0 @@
+------BEGIN NB DECOY KEY-----
+-nb-decoy-0d93ba66b8f0666e175cd02d6f66ae57e846cf4eb75469c3
+------END NB DECOY KEY-----

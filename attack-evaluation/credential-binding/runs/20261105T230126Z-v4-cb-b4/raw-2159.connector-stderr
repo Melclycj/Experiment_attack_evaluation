@@ -1,0 +1,4 @@
+{"event":"connector_started","uid":70002,"execution_id":"41ca3bfa9b9389884282cac3b2a674a1:3"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"connection_closed","reason":"reader refused a fragment"}
+{"event":"judgment_port_fatal","reason":"judgment port closed"}

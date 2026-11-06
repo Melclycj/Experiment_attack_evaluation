@@ -1,0 +1,333 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 42 and seed -8550133373080566306 with 4 workers on 24 cores with 7236MB heap and 64MB offheap memory [pid: 52336] (Windows 11 10.0 amd64, Oracle Corporation 21.0.6 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file D:\Thesis\Thesis\Work\Research\uid-binding\work\05-concurrency-tlc\Concurrency05.tla
+Parsing file C:\Users\j3236\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\j3236\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\j3236\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\j3236\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Concurrency05
+Starting... (2026-10-14 23:55:22)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-10-14 23:55:22.
+Error: Invariant Goal is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<FALSE, FALSE, FALSE>>
+/\ alive = <<{}, {}, {}>>
+/\ chanInstalled = <<FALSE, FALSE, FALSE>>
+/\ holder = (U1 :> 0 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "free" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<NoUid, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"none", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"NONE", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"none", "none", "none">>
+/\ uidOf = <<NoUid, NoUid, NoUid>>
+/\ sock = <<"none", "none", "none">>
+/\ epochOf = <<0, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 2: <Reserve line 146, col 3 to line 155, col 90 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<FALSE, FALSE, FALSE>>
+/\ alive = <<{}, {}, {}>>
+/\ chanInstalled = <<FALSE, FALSE, FALSE>>
+/\ holder = (U1 :> 1 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"local", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"RESERVED", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"none", "none", "none">>
+/\ uidOf = <<NoUid, NoUid, NoUid>>
+/\ sock = <<"none", "none", "none">>
+/\ epochOf = <<1, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 3: <Submit line 159, col 3 to line 170, col 107 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<FALSE, FALSE, FALSE>>
+/\ alive = <<{}, {}, {}>>
+/\ chanInstalled = <<FALSE, FALSE, FALSE>>
+/\ holder = (U1 :> 1 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"PREPARING", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"admitted", "none", "none">>
+/\ uidOf = <<NoUid, NoUid, NoUid>>
+/\ sock = <<"none", "none", "none">>
+/\ epochOf = <<1, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 4: <Launch line 183, col 3 to line 189, col 109 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<FALSE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {}>>
+/\ chanInstalled = <<FALSE, FALSE, FALSE>>
+/\ holder = (U1 :> 1 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"PREPARING", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "none">>
+/\ uidOf = <<U1, NoUid, NoUid>>
+/\ sock = <<"open", "none", "none">>
+/\ epochOf = <<1, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 5: <Handoff line 203, col 3 to line 214, col 104 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 1 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"STARTING", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "none">>
+/\ uidOf = <<U1, NoUid, NoUid>>
+/\ sock = <<"open", "none", "none">>
+/\ epochOf = <<1, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 6: <CloseRow line 299, col 3 to line 303, col 41 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 1 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "none">>
+/\ uidOf = <<U1, NoUid, NoUid>>
+/\ sock = <<"open", "none", "none">>
+/\ epochOf = <<1, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 7: <Release line 371, col 3 to line 378, col 35 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 0 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "free" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, NoUid>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "none">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE", "NONE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "none">>
+/\ uidOf = <<U1, NoUid, NoUid>>
+/\ sock = <<"open", "none", "none">>
+/\ epochOf = <<1, 0, 0>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 8: <Reserve line 146, col 3 to line 155, col 90 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 3 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, U1>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "local">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE", "RESERVED">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "none">>
+/\ uidOf = <<U1, NoUid, NoUid>>
+/\ sock = <<"open", "none", "none">>
+/\ epochOf = <<1, 0, 1>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 9: <Submit line 159, col 3 to line 170, col 107 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 3 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, U1>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "submitted">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE", "PREPARING">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "admitted">>
+/\ uidOf = <<U1, NoUid, NoUid>>
+/\ sock = <<"open", "none", "none">>
+/\ epochOf = <<1, 0, 1>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 10: <Launch line 183, col 3 to line 189, col 109 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{1}, {}, {1}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 3 @@ U2 :> 0)
+/\ pid1Dead = <<FALSE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, U1>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "submitted">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE", "PREPARING">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "launched">>
+/\ uidOf = <<U1, NoUid, U1>>
+/\ sock = <<"open", "none", "open">>
+/\ epochOf = <<1, 0, 1>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 11: <SendExit line 284, col 3 to line 292, col 28 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, FALSE>>
+/\ alive = <<{}, {}, {1}>>
+/\ chanInstalled = <<TRUE, FALSE, FALSE>>
+/\ holder = (U1 :> 3 @@ U2 :> 0)
+/\ pid1Dead = <<TRUE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, U1>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "submitted">>
+/\ queue = <<<<>>, <<>>, <<[orig |-> 1, stamp |-> U1, inJ |-> TRUE]>>>>
+/\ exState = <<"CLOSED", "NONE", "PREPARING">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "launched">>
+/\ uidOf = <<U1, NoUid, U1>>
+/\ sock = <<"open", "none", "open">>
+/\ epochOf = <<1, 0, 1>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 12: <Handoff line 203, col 3 to line 214, col 104 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, TRUE>>
+/\ alive = <<{}, {}, {1}>>
+/\ chanInstalled = <<TRUE, FALSE, TRUE>>
+/\ holder = (U1 :> 3 @@ U2 :> 0)
+/\ pid1Dead = <<TRUE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, U1>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = FALSE
+/\ submission = <<"submitted", "none", "submitted">>
+/\ queue = <<<<>>, <<>>, <<[orig |-> 1, stamp |-> U1, inJ |-> TRUE]>>>>
+/\ exState = <<"CLOSED", "NONE", "STARTING">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "launched">>
+/\ uidOf = <<U1, NoUid, U1>>
+/\ sock = <<"open", "none", "open">>
+/\ epochOf = <<1, 0, 1>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+State 13: <Accept line 240, col 3 to line 250, col 23 of module Concurrency05>
+/\ epoch = 1
+/\ emptyBasis = <<"none", "none", "none">>
+/\ execd = <<TRUE, FALSE, TRUE>>
+/\ alive = <<{}, {}, {1}>>
+/\ chanInstalled = <<TRUE, FALSE, TRUE>>
+/\ holder = (U1 :> 3 @@ U2 :> 0)
+/\ pid1Dead = <<TRUE, FALSE, FALSE>>
+/\ lease = (U1 :> "held" @@ U2 :> "free")
+/\ reaped = <<FALSE, FALSE, FALSE>>
+/\ expectedUid = <<U1, NoUid, U1>>
+/\ stopSent = <<FALSE, FALSE, FALSE>>
+/\ badAccept = TRUE
+/\ submission = <<"submitted", "none", "submitted">>
+/\ queue = <<<<>>, <<>>, <<>>>>
+/\ exState = <<"CLOSED", "NONE", "ACTIVE">>
+/\ controlLost = FALSE
+/\ spawnRec = <<"launched", "none", "launched">>
+/\ uidOf = <<U1, NoUid, U1>>
+/\ sock = <<"open", "none", "open">>
+/\ epochOf = <<1, 0, 1>>
+/\ acceptingNew = TRUE
+/\ memEmpty = <<FALSE, FALSE, FALSE>>
+
+516433 states generated, 158820 distinct states found, 91015 states left on queue.
+The depth of the complete state graph search is 13.
+The average outdegree of the complete state graph is 2 (minimum is 0, the maximum 12 and the 95th percentile is 6).
+Finished in 01s at (2026-10-14 23:55:23)

@@ -1,0 +1,4 @@
+{"status": 302, "headers": [["Connection", "close"], ["Content-Type", "application/json"], ["Location", "https://nb-decoy-cb-sink.test/nb-decoy-cb/collect/5cf7feb34c6acf144d7bd9e05abc0c8bcef1b2b19cfda6a1"], ["Content-Length", "45"]]}
+{"token":"6a928ac94ec73a946187f599d32139d7"}
+{"status": 200, "headers": [["Connection", "close"], ["Content-Type", "application/json"], ["Content-Length", "45"]]}
+{"token":"978434b2ef84dc388143bbb956e4bffb"}
