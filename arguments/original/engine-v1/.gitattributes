@@ -1,0 +1,3 @@
+* text eol=lf
+# Run evidence is stored byte for byte: binaries, archives and records are never eol-normalised.
+runs/** -text

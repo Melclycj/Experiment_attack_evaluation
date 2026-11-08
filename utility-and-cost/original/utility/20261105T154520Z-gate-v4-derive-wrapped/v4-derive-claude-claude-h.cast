@@ -1,0 +1,8 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893992}
+[0.00029, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000791, "o", "\r<cp-config '{\"mcpServers\":{\"deepwiki\":{\"type\":\"http\",\"url\":\"https://mcp.deepwiki.com/mcp\"}}}'; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000901, "o", "W2_BEGIN\r\n"]
+[5.465935, "o", "8\r\n"]
+[5.471508, "o", "\u001b[?25h"]
+[5.477092, "o", "W2_ITEM_EXIT=0\r\n"]
+[5.477138, "o", "w2$ "]

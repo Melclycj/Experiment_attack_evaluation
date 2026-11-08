@@ -1,0 +1,11 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893837}
+[0.000284, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000696, "o", "\r<ith the exact text of its h1 heading and nothing else.' -m anthropic/claude-haiku-5-5 --auto; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000822, "o", "W2_BEGIN\r\n"]
+[0.915497, "o", "\u001b[0m\r\n> build · claude-haiku-5-5\r\n\u001b[0m\r\n"]
+[2.250633, "o", "\u001b[0m% \u001b[0mWebFetch https://example.com/\r\n"]
+[3.427134, "o", "\u001b[0m\r\nThe page has no h1 heading. Its only body element is a paragraph, and the `<title>` is \"Example Domain\".\r\n\u001b[0m\r\n"]
+[3.477424, "o", "W2_ITEM_EXIT=0\r\n"]
+[3.477483, "o", "w2$ "]
+[3.477615, "o", "exit\r\n"]
+[3.477634, "o", "exit\r\n"]

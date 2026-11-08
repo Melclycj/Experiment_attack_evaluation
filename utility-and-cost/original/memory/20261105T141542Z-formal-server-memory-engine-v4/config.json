@@ -1,0 +1,13 @@
+{
+  "label": "server-memory-engine-v4",
+  "objects": ["engine-v4-shared", "engine-v4-copy", "bare-api-only", "docker-sandboxes"],
+  "tiers": [1, 2, 4, 8, 16],
+  "reps_pass1": 2,
+  "reps_pass2": 1,
+  "seed": 20261105,
+  "preflight_cpu_seconds": 60,
+  "default_time_cap_s": 5400,
+  "night_deadline_s": 36000,
+  "timing": {"baseline_window": 15, "min_settle": {"idle": 15, "resident": 150}, "max_settle": 180,
+             "window": 10, "recovery_wait": 20, "cleanup_wait": 180}
+}

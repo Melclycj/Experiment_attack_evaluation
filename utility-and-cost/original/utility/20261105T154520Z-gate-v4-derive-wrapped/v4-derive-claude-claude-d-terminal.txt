@@ -1,0 +1,9 @@
+attached to 6b32d748d73d0e00c476ff134c071875:4; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <summary line.' --model haiku --disallowedTools WebSearch --permission-mode bypassPermissions; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+The pytest summary line is: `4 passed in 0.00s`
+[?25hW2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

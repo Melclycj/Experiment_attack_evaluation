@@ -1,0 +1,11 @@
+#!/usr/bin/python3 -IB
+"""Workspace transfer entry (run as root on the host, never inside a cell; validation.md A-07–A-10, A-12):
+python3 -I -B bin/engine-workspace --root ROOT push|export WORKSPACE ...
+Of the client it loads only client/link.py and client/workspace.py, the part that is TCB (README TCB 模块清单, K-41)."""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from client.workspace import main  # noqa: E402
+
+raise SystemExit(main(sys.argv[1:]))

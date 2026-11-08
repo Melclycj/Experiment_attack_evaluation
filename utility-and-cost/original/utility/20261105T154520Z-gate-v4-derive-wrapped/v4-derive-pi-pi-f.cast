@@ -1,0 +1,12 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893685}
+[0.000307, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000939, "o", "\r<_%s\\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\\n' NPM_OK; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.001005, "o", "W2_BEGIN\r\n"]
+[8.95107, "o", "All three installs succeeded, and each package imported once.\r\n\r\n- **pip (`/tmp/pip-t`)**: installed `six` 1.17.0. Import needs `PYTHONPATH=/tmp/pip-t`. Output: `pip six: 1.17.0`\r\n- **uv (`/tmp/uvv`)**: created the venv on CPython 3.12.3 and installed `six` 1.17.0. Output: `uv six: 1.17.0`\r\n- **npm (`/tmp/npm-t`)**: installed `is-number`. Loaded from `/tmp/npm-t/node_modules/is-number`. Output: `npm is-number: true false` (`isNumber(5)` is `true`, `isNumber('abc')` is `false`)\r\n"]
+[8.957257, "o", "W2_PIP_OK\r\n"]
+[8.957963, "o", "W2_UV_OK\r\n"]
+[8.957997, "o", "W2_NPM_OK\r\n"]
+[8.958416, "o", "W2_ITEM_EXIT=0\r\n"]
+[8.958451, "o", "w2$ "]
+[8.958656, "o", "exit\r\n"]
+[8.958667, "o", "exit\r\n"]

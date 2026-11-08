@@ -1,0 +1,29 @@
+{"command": 0, "exit_code": 0, "argv": ["/mnt/d/Thesis/ExperimentLab/engine-v3/native", "sandbox", "BUILD_DIR=/tmp/engine-gate-build-ejradk2j"]}
+{"command": 1, "exit_code": 0, "argv": ["-o", "/tmp/engine-gate-build-ejradk2j/engine-frontend", "."]}
+{"command": 2, "exit_code": 0, "argv": ["-o", "/tmp/engine-gate-build-ejradk2j/engine-mcp", "."]}
+{"command": 3, "exit_code": 0, "argv": ["/usr/sbin/mkfs.btrfs", "-q", "/tmp/engine-gate-pwxxw9kd/runtime.btrfs"]}
+{"command": 4, "exit_code": 0, "argv": ["/usr/sbin/mkfs.btrfs", "-q", "/tmp/engine-gate-pwxxw9kd/workspace.btrfs"]}
+{"command": 5, "exit_code": 0, "argv": ["loop,nosuid,nodev", "/tmp/engine-gate-pwxxw9kd/runtime.btrfs", "/var/lib/engine-gate-gate-files-fix"]}
+{"command": 6, "exit_code": 0, "argv": ["loop,nosuid,nodev", "/tmp/engine-gate-pwxxw9kd/workspace.btrfs", "/tmp/engine-gate-pwxxw9kd/workspaces"]}
+{"command": 7, "exit_code": 0, "argv": ["/mnt/d/Thesis/ExperimentLab/engine-v3/frontend/make_ca_pool.py", "/var/lib/engine-gate-gate-files-fix/ca-pool", "16"]}
+{"command": 8, "exit_code": 0, "argv": ["show", "--raw", "/var/lib/engine-gate-gate-files-fix"]}
+{"command": 9, "exit_code": 0, "argv": ["subvolume", "create", "/tmp/engine-gate-pwxxw9kd/workspaces/work0"]}
+{"command": 10, "exit_code": 0, "argv": ["--bind", "/tmp/engine-gate-pwxxw9kd/workspaces/work0", "/var/lib/engine-gate-gate-files-fix/work0"]}
+{"command": 11, "exit_code": 0, "argv": ["/tmp/engine-gate-build-ejradk2j/w2-catalog", "/var/lib/engine-gate-gate-files-fix", "catalog.json"]}
+{"preflight": {"frontend_usage": {"exit_code": 2, "stdout": "", "stderr": "usage: engine-frontend [options] <proxy socket> <port> <ready file>\n", "elapsed_seconds": 0.0}, "agent_version": {"exit_code": 0, "stdout": "2.1.312 (Claude Code)\n", "stderr": "", "elapsed_seconds": 0.01}}}
+{"command": 12, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 13, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 14, "exit_code": 0, "argv": ["admin", "ws", "list"]}
+{"command": 15, "exit_code": 0, "argv": ["api-key", "--truth-env", "W2_GATE_TRUTH"]}
+{"command": 16, "exit_code": 0, "argv": ["gate", "--approval", "never"]}
+{"command": 17, "exit_code": 0, "argv": ["--list", "--mode", "allow"]}
+{"command": 18, "exit_code": 0, "argv": ["admin", "ws", "list"]}
+{"command": 19, "exit_code": 0, "argv": ["start", "work0", "claude-files-0"]}
+{"command": 20, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 21, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 22, "exit_code": 0, "argv": ["-c", "\nimport json, os, sys\nout = {}\nfor name, action in (('list', lambda: os.listdir(os.path.dirname(sys.argv[1]))),\n                     ('read', lambda: os.close(os.open(sys.argv[1], os.O_RDONLY))),\n                     ('append', lambda: os.close(os.open(sys.argv[1], os.O_WRONLY | os.O_APPEND)))):\n    try:\n        action()\n        out[name] = 0\n    except OSError as error:\n        out[name] = error.errno\nprint(json.dumps(out))\n", "/tmp/engine-gate-evidence-oag5gkzq/events.jsonl"]}
+{"command": 23, "exit_code": 0, "argv": ["-c", "\nimport json, os, sys\nout = {}\nfor name, action in (('list', lambda: os.listdir(os.path.dirname(sys.argv[1]))),\n                     ('read', lambda: os.close(os.open(sys.argv[1], os.O_RDONLY))),\n                     ('append', lambda: os.close(os.open(sys.argv[1], os.O_WRONLY | os.O_APPEND)))):\n    try:\n        action()\n        out[name] = 0\n    except OSError as error:\n        out[name] = error.errno\nprint(json.dumps(out))\n", "/tmp/engine-gate-evidence-oag5gkzq/events.jsonl"]}
+{"command": 24, "exit_code": 0, "argv": ["/usr/bin/umount", "/var/lib/engine-gate-gate-files-fix/work0"]}
+{"command": 25, "exit_code": 0, "argv": ["/usr/bin/umount", "/tmp/engine-gate-pwxxw9kd/workspaces"]}
+{"command": 26, "exit_code": 0, "argv": ["/usr/bin/umount", "/var/lib/engine-gate-gate-files-fix"]}
+{"record": "/mnt/d/Thesis/ExperimentLab/engine-v3/runs/20261103T234437Z-gate-files-fix/gate-files-fix.json", "result": "passed"}

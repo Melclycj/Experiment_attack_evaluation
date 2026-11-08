@@ -1,0 +1,10 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893954}
+[0.000256, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000623, "o", "\r<summary line.' --model haiku --disallowedTools WebSearch --permission-mode bypassPermissions; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000692, "o", "W2_BEGIN\r\n"]
+[2.847656, "o", "The pytest summary line is: `4 passed in 0.00s`\r\n"]
+[2.852442, "o", "\u001b[?25h"]
+[2.857487, "o", "W2_ITEM_EXIT=0\r\n"]
+[2.857526, "o", "w2$ "]
+[2.857691, "o", "exit\r\n"]
+[2.85772, "o", "exit\r\n"]

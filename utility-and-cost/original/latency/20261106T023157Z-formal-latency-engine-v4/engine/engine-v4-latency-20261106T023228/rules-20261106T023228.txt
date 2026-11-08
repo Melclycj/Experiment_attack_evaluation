@@ -1,0 +1,81 @@
+{
+ "credentials": [
+  [
+   "cred",
+   "put",
+   "cred.lat.test:443",
+   "measure",
+   "api-key",
+   "--truth-env",
+   "W2_TRUTH"
+  ],
+  [
+   "cred",
+   "put",
+   "cred.lat.test:8443",
+   "measure",
+   "api-key",
+   "--truth-env",
+   "W2_TRUTH"
+  ]
+ ],
+ "entries": [
+  [
+   "entry",
+   "put",
+   "work1",
+   "exact",
+   "allow",
+   "cred.lat.test:443",
+   "--account",
+   "measure",
+   "--address",
+   "10.77.0.2/32",
+   "--approval",
+   "never"
+  ],
+  [
+   "entry",
+   "put",
+   "work1",
+   "exact",
+   "allow",
+   "plain.lat.test:443",
+   "--address",
+   "10.77.0.2/32",
+   "--approval",
+   "never"
+  ],
+  [
+   "entry",
+   "put",
+   "work1",
+   "exact",
+   "allow",
+   "cred.lat.test:8443",
+   "--account",
+   "measure",
+   "--address",
+   "10.77.0.2/32",
+   "--approval",
+   "never"
+  ],
+  [
+   "entry",
+   "put",
+   "work1",
+   "exact",
+   "allow",
+   "plain.lat.test:8443",
+   "--address",
+   "10.77.0.2/32",
+   "--approval",
+   "never"
+  ]
+ ],
+ "fallback": "deleted",
+ "ws_list": "workspace=work1 root=/var/lib/sotamem/engine-v4-latency/deploy/work1 state=ok entries=4\n",
+ "model_check": {
+  "not_run": "no model API in this measurement"
+ }
+}

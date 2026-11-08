@@ -1,0 +1,17 @@
+attached to ecae69c69860363bdfed0f5665dc721c:4; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <ytest -q in the workspace and report the summary line.' -m anthropic/claude-haiku-5-5 --auto; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+[0m
+> build · claude-haiku-5-5
+[0m
+[0m$ [0mpython3 -m pytest -q
+....                                                                     [100%]
+4 passed in 0.00s
+[0m
+The summary line is: `4 passed in 0.00s`
+[0m
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

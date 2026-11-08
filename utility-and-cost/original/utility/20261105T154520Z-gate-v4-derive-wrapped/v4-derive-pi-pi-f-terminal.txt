@@ -1,0 +1,16 @@
+attached to 5bcc4d500addaa1ce979da8b4abe89f7:6; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <_%s\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\n' NPM_OK; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+All three installs succeeded, and each package imported once.
+
+- **pip (`/tmp/pip-t`)**: installed `six` 1.17.0. Import needs `PYTHONPATH=/tmp/pip-t`. Output: `pip six: 1.17.0`
+- **uv (`/tmp/uvv`)**: created the venv on CPython 3.12.3 and installed `six` 1.17.0. Output: `uv six: 1.17.0`
+- **npm (`/tmp/npm-t`)**: installed `is-number`. Loaded from `/tmp/npm-t/node_modules/is-number`. Output: `npm is-number: true false` (`isNumber(5)` is `true`, `isNumber('abc')` is `false`)
+W2_PIP_OK
+W2_UV_OK
+W2_NPM_OK
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

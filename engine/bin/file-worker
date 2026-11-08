@@ -1,0 +1,10 @@
+#!/usr/bin/python3 -IB
+"""File worker entry (started by the spawner as the file-worker uid with fd 3 = file-port listener, fd 4 = file judgment
+end): python3 -I -B bin/file-worker --library LIBW2SANDBOX UID EXECUTION"""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from fileworker.main import main  # noqa: E402
+
+raise SystemExit(main(sys.argv[1:]))

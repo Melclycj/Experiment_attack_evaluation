@@ -1,0 +1,1 @@
+{"label": "latency-engine-v4", "passes": 3, "warmup": 100, "measured": 1000, "settle_s": 6, "seed": 20261106}

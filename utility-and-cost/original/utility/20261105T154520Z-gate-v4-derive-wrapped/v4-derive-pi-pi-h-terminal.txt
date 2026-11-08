@@ -1,0 +1,9 @@
+attached to 5bcc4d500addaa1ce979da8b4abe89f7:7; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <th how many top-level topics it lists, as a number only.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+8
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

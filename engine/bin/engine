@@ -1,0 +1,9 @@
+#!/usr/bin/python3 -IB
+"""Production entry: python3 -I -B bin/engine LIBW2SANDBOX ROOT CATALOG EVIDENCE (exec'd by w2-cell)."""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from engine.main import main  # noqa: E402
+
+raise SystemExit(main(sys.argv[1:]))

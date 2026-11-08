@@ -1,0 +1,8 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893695}
+[0.000285, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000895, "o", "\r<th how many top-level topics it lists, as a number only.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000988, "o", "W2_BEGIN\r\n"]
+[12.084231, "o", "8\r\n"]
+[12.092255, "o", "W2_ITEM_EXIT=0\r\n"]
+[12.092294, "o", "w2$ "]
+[12.092432, "o", "exit\r\nexit\r\n"]

@@ -1,0 +1,441 @@
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=63.85µs min=41µs    med=61.44µs max=359.98µs p(90)=72.76µs p(95)=81.4µs  
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   180.368285/s
+
+    EXECUTION
+    iteration_duration...: avg=85.22µs min=53.82µs med=80.33µs max=1.76ms   p(90)=96.88µs p(95)=117.12µs
+    iterations...........: 1100   180.368285/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.4 MB 236 kB/s
+    data_sent............: 150 kB 25 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=117.76µs min=75.38µs  med=110.58µs max=388.29µs p(90)=131.39µs p(95)=144.93µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.402398/s
+
+    EXECUTION
+    iteration_duration...: avg=771.29µs min=642.39µs med=741.56µs max=2.13ms   p(90)=842.15µs p(95)=999.72µs
+    iterations...........: 1100   160.402398/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 3.0 MB 433 kB/s
+    data_sent............: 1.9 MB 283 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=64.85µs min=36.73µs med=62.89µs max=398.16µs p(90)=75.14µs  p(95)=86.95µs 
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   180.285729/s
+
+    EXECUTION
+    iteration_duration...: avg=87.41µs min=50.48µs med=82.38µs max=1.78ms   p(90)=103.84µs p(95)=128.24µs
+    iterations...........: 1100   180.285729/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.4 MB 236 kB/s
+    data_sent............: 206 kB 34 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=1.54ms min=1.03ms med=1.51ms max=2.02ms p(90)=1.68ms p(95)=1.72ms
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   141.089949/s
+
+    EXECUTION
+    iteration_duration...: avg=1.62ms min=1.08ms med=1.58ms max=3.57ms p(90)=1.75ms p(95)=1.83ms
+    iterations...........: 1100   141.089949/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.2 GB 149 MB/s
+    data_sent............: 72 MB  9.3 MB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=88.38µs  min=57.52µs  med=79.85µs  max=400.39µs p(90)=108.39µs p(95)=129.9µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   161.199323/s
+
+    EXECUTION
+    iteration_duration...: avg=741.44µs min=630.38µs med=704.61µs max=2.67ms   p(90)=835.44µs p(95)=1.01ms 
+    iterations...........: 1100   161.199323/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 2.5 MB 366 kB/s
+    data_sent............: 2.0 MB 293 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=90.91µs  min=58.42µs  med=84.46µs  max=459.99µs p(90)=111.65µs p(95)=129.3µs 
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   161.301207/s
+
+    EXECUTION
+    iteration_duration...: avg=736.88µs min=606.39µs med=708.49µs max=2ms      p(90)=794.97µs p(95)=956.88µs
+    iterations...........: 1100   161.301207/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 2.5 MB 366 kB/s
+    data_sent............: 1.9 MB 285 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=116.95µs min=61.2µs   med=111.45µs max=367.23µs p(90)=131.94µs p(95)=145.2µs 
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.536365/s
+
+    EXECUTION
+    iteration_duration...: avg=766.1µs  min=649.72µs med=740.97µs max=1.74ms   p(90)=821.91µs p(95)=931.79µs
+    iterations...........: 1100   160.536365/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 3.0 MB 433 kB/s
+    data_sent............: 2.0 MB 292 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=62.38µs min=36.86µs med=59.93µs max=311.87µs p(90)=72.26µs p(95)=79.6µs 
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   180.380671/s
+
+    EXECUTION
+    iteration_duration...: avg=84.28µs min=51.79µs med=78.6µs  max=2.3ms    p(90)=95.28µs p(95)=113.4µs
+    iterations...........: 1100   180.380671/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.4 MB 236 kB/s
+    data_sent............: 150 kB 25 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=116.92µs min=75.34µs  med=107.53µs max=547.84µs p(90)=129.15µs p(95)=164.02µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.47884/s
+
+    EXECUTION
+    iteration_duration...: avg=768.15µs min=655.06µs med=738.01µs max=2.45ms   p(90)=860.63µs p(95)=989.5µs 
+    iterations...........: 1100   160.47884/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 3.0 MB 433 kB/s
+    data_sent............: 1.9 MB 284 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=64.22µs min=33.8µs  med=60.65µs max=359.55µs p(90)=74.75µs  p(95)=85.5µs  
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   180.327868/s
+
+    EXECUTION
+    iteration_duration...: avg=86.58µs min=45.51µs med=80.23µs max=1.82ms   p(90)=101.56µs p(95)=123.87µs
+    iterations...........: 1100   180.327868/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.4 MB 236 kB/s
+    data_sent............: 206 kB 34 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=86.94µs  min=58.49µs  med=77.6µs   max=483.95µs p(90)=107.84µs p(95)=129.74µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   161.358217/s
+
+    EXECUTION
+    iteration_duration...: avg=735.05µs min=624.72µs med=703.28µs max=2.31ms   p(90)=804.58µs p(95)=981.99µs
+    iterations...........: 1100   161.358217/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 2.5 MB 366 kB/s
+    data_sent............: 2.0 MB 293 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=1.47ms min=1.11ms med=1.46ms max=1.9ms  p(90)=1.5ms  p(95)=1.53ms
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   142.786718/s
+
+    EXECUTION
+    iteration_duration...: avg=1.54ms min=1.18ms med=1.52ms max=3.49ms p(90)=1.58ms p(95)=1.65ms
+    iterations...........: 1100   142.786718/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.2 GB 151 MB/s
+    data_sent............: 72 MB  9.4 MB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=99.35µs  min=57.95µs  med=90.63µs  max=556.35µs p(90)=128.2µs  p(95)=168.25µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.75019/s
+
+    EXECUTION
+    iteration_duration...: avg=757.29µs min=603.45µs med=720.52µs max=2.03ms   p(90)=858.14µs p(95)=1ms     
+    iterations...........: 1100   160.75019/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 2.5 MB 365 kB/s
+    data_sent............: 1.9 MB 284 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=116.56µs min=73.77µs  med=108.19µs max=559.34µs p(90)=129.88µs p(95)=152.46µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.351559/s
+
+    EXECUTION
+    iteration_duration...: avg=772.71µs min=650.77µs med=742.79µs max=1.99ms   p(90)=862.39µs p(95)=1ms     
+    iterations...........: 1100   160.351559/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 3.0 MB 433 kB/s
+    data_sent............: 2.0 MB 291 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=116.92µs min=72.61µs med=110.91µs max=542.95µs p(90)=129.54µs p(95)=141.49µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.455014/s
+
+    EXECUTION
+    iteration_duration...: avg=769.53µs min=664.2µs med=743.09µs max=1.9ms    p(90)=838.32µs p(95)=949.55µs
+    iterations...........: 1100   160.455014/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 3.0 MB 433 kB/s
+    data_sent............: 2.0 MB 292 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=1.44ms min=868.12µs med=1.44ms max=2.22ms p(90)=1.48ms p(95)=1.5ms
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   143.206965/s
+
+    EXECUTION
+    iteration_duration...: avg=1.51ms min=920.13µs med=1.5ms  max=3.79ms p(90)=1.56ms p(95)=1.6ms
+    iterations...........: 1100   143.206965/s
+    vus..................: 1      min=0         max=1
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.2 GB 151 MB/s
+    data_sent............: 72 MB  9.4 MB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=117.93µs min=71.53µs  med=111.27µs max=492.73µs p(90)=131.85µs p(95)=141.31µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   160.481186/s
+
+    EXECUTION
+    iteration_duration...: avg=768.06µs min=643.37µs med=739.46µs max=2.05ms   p(90)=831.65µs p(95)=962.02µs
+    iterations...........: 1100   160.481186/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 3.0 MB 433 kB/s
+    data_sent............: 1.9 MB 284 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=86.14µs  min=57.44µs  med=75.7µs   max=353.92µs p(90)=104.98µs p(95)=137.88µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   161.439411/s
+
+    EXECUTION
+    iteration_duration...: avg=731.34µs min=601.12µs med=700.72µs max=1.79ms   p(90)=803.75µs p(95)=968.33µs
+    iterations...........: 1100   161.439411/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 2.5 MB 366 kB/s
+    data_sent............: 1.9 MB 285 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=90.39µs  min=58.38µs  med=79.7µs   max=372.77µs p(90)=110.02µs p(95)=139.91µs
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   161.179022/s
+
+    EXECUTION
+    iteration_duration...: avg=741.89µs min=624.31µs med=707.74µs max=1.81ms   p(90)=860.32µs p(95)=973.79µs
+    iterations...........: 1100   161.179022/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 2.5 MB 366 kB/s
+    data_sent............: 2.0 MB 293 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=63.88µs min=37.08µs med=61.32µs max=464.14µs p(90)=74.2µs p(95)=86.34µs 
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   180.319675/s
+
+    EXECUTION
+    iteration_duration...: avg=86.1µs  min=54.47µs med=80.99µs max=1.7ms    p(90)=100µs  p(95)=126.63µs
+    iterations...........: 1100   180.319675/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.4 MB 236 kB/s
+    data_sent............: 206 kB 34 kB/s
+
+
+
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration....: avg=63.05µs min=38.35µs med=60.37µs max=357.71µs p(90)=72.69µs p(95)=84.21µs 
+    http_req_failed......: 0.00%  0 out of 1100
+    http_reqs............: 1100   180.377086/s
+
+    EXECUTION
+    iteration_duration...: avg=84.73µs min=50.37µs med=79.41µs max=1.67ms   p(90)=98.97µs p(95)=123.21µs
+    iterations...........: 1100   180.377086/s
+    vus..................: 0      min=0         max=0
+    vus_max..............: 1      min=1         max=1
+
+    NETWORK
+    data_received........: 1.4 MB 236 kB/s
+    data_sent............: 150 kB 25 kB/s
+
+
+

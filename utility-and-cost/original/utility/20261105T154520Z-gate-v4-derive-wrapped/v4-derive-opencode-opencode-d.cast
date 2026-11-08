@@ -1,0 +1,12 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893807}
+[0.000409, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000807, "o", "\r<ytest -q in the workspace and report the summary line.' -m anthropic/claude-haiku-5-5 --auto; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000851, "o", "W2_BEGIN\r\n"]
+[1.012285, "o", "\u001b[0m\r\n"]
+[1.012344, "o", "> build · claude-haiku-5-5\r\n\u001b[0m\r\n"]
+[2.713607, "o", "\u001b[0m$ \u001b[0mpython3 -m pytest -q\r\n....                                                                     [100%]\r\n4 passed in 0.00s\r\n\u001b[0m\r\n"]
+[3.481773, "o", "The summary line is: `4 passed in 0.00s`\r\n\u001b[0m\r\n"]
+[3.514304, "o", "W2_ITEM_EXIT=0\r\n"]
+[3.514357, "o", "w2$ "]
+[3.514542, "o", "exit\r\n"]
+[3.514573, "o", "exit\r\n"]

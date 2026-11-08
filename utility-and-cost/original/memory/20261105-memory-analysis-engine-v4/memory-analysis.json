@@ -1,0 +1,2258 @@
+{
+ "docker-sandboxes/idle": {
+  "object": "docker-sandboxes",
+  "state": "idle",
+  "tiers": {
+   "1": {
+    "readings": 2,
+    "flagged": 1,
+    "flags": [
+     [],
+     [
+      "unstable"
+     ]
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1418.6,
+     1420.8
+    ],
+    "bare_reference": [
+     "paired",
+     "mean of clean"
+    ],
+    "extra_mib_all": [
+     1381.4,
+     1383.5
+    ],
+    "extra_range_all": [
+     1381.4,
+     1383.5
+    ],
+    "extra_mib_clean": [
+     1381.4
+    ],
+    "extra_range_clean": [
+     1381.4,
+     1381.4
+    ],
+    "shared_mib": [
+     122.7,
+     128.7
+    ],
+    "host_used_delta_mib": [
+     1003.7,
+     1011.3
+    ]
+   },
+   "2": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1125.6,
+     1126.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     1101.9,
+     1102.4
+    ],
+    "extra_range_all": [
+     1101.9,
+     1102.4
+    ],
+    "extra_mib_clean": [
+     1101.9,
+     1102.4
+    ],
+    "extra_range_clean": [
+     1101.9,
+     1102.4
+    ],
+    "shared_mib": [
+     121.9,
+     124.4
+    ],
+    "host_used_delta_mib": [
+     1969.2,
+     2008.8
+    ]
+   },
+   "4": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     971.3,
+     973.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     954.0,
+     956.2
+    ],
+    "extra_range_all": [
+     954.0,
+     956.2
+    ],
+    "extra_mib_clean": [
+     954.0,
+     956.2
+    ],
+    "extra_range_clean": [
+     954.0,
+     956.2
+    ],
+    "shared_mib": [
+     115.9,
+     118.8
+    ],
+    "host_used_delta_mib": [
+     3895.0,
+     3855.4
+    ]
+   },
+   "8": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     869.5,
+     884.2
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     856.1,
+     870.5
+    ],
+    "extra_range_all": [
+     856.1,
+     870.5
+    ],
+    "extra_mib_clean": [
+     856.1,
+     870.5
+    ],
+    "extra_range_clean": [
+     856.1,
+     870.5
+    ],
+    "shared_mib": [
+     117.9,
+     119.8
+    ],
+    "host_used_delta_mib": [
+     7447.3,
+     7629.8
+    ]
+   },
+   "16": {
+    "readings": 2,
+    "flagged": 1,
+    "flags": [
+     [
+      "unstable"
+     ],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     801.2,
+     807.0
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     789.3,
+     795.0
+    ],
+    "extra_range_all": [
+     789.3,
+     795.0
+    ],
+    "extra_mib_clean": [
+     795.0
+    ],
+    "extra_range_clean": [
+     795.0,
+     795.0
+    ],
+    "shared_mib": [
+     136.7,
+     140.3
+    ],
+    "host_used_delta_mib": [
+     14236.7,
+     14372.8
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 905.7,
+   "2": 873.5
+  },
+  "marginal_extra_fit1_range": [
+   873.5,
+   905.7
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 903.9,
+   "2": 868.6
+  },
+  "marginal_extra_fit2_range": [
+   868.6,
+   903.9
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   34.2
+  ],
+  "clean_readings": 8,
+  "readings": 10,
+  "main_comparison": "ok"
+ },
+ "docker-sandboxes/resident": {
+  "object": "docker-sandboxes",
+  "state": "resident",
+  "tiers": {
+   "1": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1679.9,
+     1676.9
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     1499.5,
+     1494.3
+    ],
+    "extra_range_all": [
+     1494.3,
+     1499.5
+    ],
+    "extra_mib_clean": [
+     1499.5,
+     1494.3
+    ],
+    "extra_range_clean": [
+     1494.3,
+     1499.5
+    ],
+    "shared_mib": [
+     113.3,
+     111.1
+    ],
+    "host_used_delta_mib": [
+     1269.6,
+     1305.3
+    ]
+   },
+   "2": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1370.4,
+     1363.2
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     1231.0,
+     1223.9
+    ],
+    "extra_range_all": [
+     1223.9,
+     1231.0
+    ],
+    "extra_mib_clean": [
+     1231.0,
+     1223.9
+    ],
+    "extra_range_clean": [
+     1223.9,
+     1231.0
+    ],
+    "shared_mib": [
+     123.1,
+     104.1
+    ],
+    "host_used_delta_mib": [
+     2654.6,
+     2608.1
+    ]
+   },
+   "4": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1210.2,
+     1212.8
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     1091.7,
+     1094.4
+    ],
+    "extra_range_all": [
+     1091.7,
+     1094.4
+    ],
+    "extra_mib_clean": [
+     1091.7,
+     1094.4
+    ],
+    "extra_range_clean": [
+     1091.7,
+     1094.4
+    ],
+    "shared_mib": [
+     104.3,
+     105.1
+    ],
+    "host_used_delta_mib": [
+     5142.8,
+     5116.0
+    ]
+   },
+   "8": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1104.1,
+     1115.6
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     996.1,
+     1007.8
+    ],
+    "extra_range_all": [
+     996.1,
+     1007.8
+    ],
+    "extra_mib_clean": [
+     996.1,
+     1007.8
+    ],
+    "extra_range_clean": [
+     996.1,
+     1007.8
+    ],
+    "shared_mib": [
+     133.3,
+     130.8
+    ],
+    "host_used_delta_mib": [
+     10014.3,
+     10194.6
+    ]
+   },
+   "16": {
+    "readings": 2,
+    "flagged": 0,
+    "flags": [
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2
+    ],
+    "per_unit_mib": [
+     1023.5,
+     1029.5
+    ],
+    "bare_reference": [
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     921.1,
+     927.1
+    ],
+    "extra_range_all": [
+     921.1,
+     927.1
+    ],
+    "extra_mib_clean": [
+     921.1,
+     927.1
+    ],
+    "extra_range_clean": [
+     921.1,
+     927.1
+    ],
+    "shared_mib": [
+     119.8,
+     148.9
+    ],
+    "host_used_delta_mib": [
+     19354.0,
+     19446.3
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 1099.8,
+   "2": 1109.3
+  },
+  "marginal_extra_fit1_range": [
+   1099.8,
+   1109.3
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 1096.0,
+   "2": 1104.9
+  },
+  "marginal_extra_fit2_range": [
+   1096.0,
+   1104.9
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   34.2
+  ],
+  "clean_readings": 10,
+  "readings": 10,
+  "main_comparison": "ok"
+ },
+ "engine-v4-shared/idle": {
+  "object": "engine-v4-shared",
+  "state": "idle",
+  "tiers": {
+   "1": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     79.8,
+     79.6,
+     79.8
+    ],
+    "bare_reference": [
+     "paired",
+     "mean of clean",
+     "paired"
+    ],
+    "extra_mib_all": [
+     42.5,
+     42.3,
+     42.5
+    ],
+    "extra_range_all": [
+     42.3,
+     42.5
+    ],
+    "extra_mib_clean": [
+     42.5,
+     42.3,
+     42.5
+    ],
+    "extra_range_clean": [
+     42.3,
+     42.5
+    ],
+    "shared_mib": [
+     27.3,
+     29.3,
+     27.3
+    ],
+    "host_used_delta_mib": [
+     173.4,
+     155.3,
+     77.1
+    ]
+   },
+   "2": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     58.7,
+     59.5,
+     59.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     35.0,
+     35.5,
+     35.7
+    ],
+    "extra_range_all": [
+     35.0,
+     35.7
+    ],
+    "extra_mib_clean": [
+     35.0,
+     35.5,
+     35.7
+    ],
+    "extra_range_clean": [
+     35.0,
+     35.7
+    ],
+    "shared_mib": [
+     32.9,
+     38.0,
+     31.0
+    ],
+    "host_used_delta_mib": [
+     185.6,
+     192.3,
+     144.1
+    ]
+   },
+   "4": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     48.9,
+     48.8,
+     48.7
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     31.6,
+     31.7,
+     31.7
+    ],
+    "extra_range_all": [
+     31.6,
+     31.7
+    ],
+    "extra_mib_clean": [
+     31.6,
+     31.7,
+     31.7
+    ],
+    "extra_range_clean": [
+     31.6,
+     31.7
+    ],
+    "shared_mib": [
+     42.6,
+     46.6,
+     39.6
+    ],
+    "host_used_delta_mib": [
+     278.7,
+     274.2,
+     198.8
+    ]
+   },
+   "8": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     43.4,
+     43.3,
+     43.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     29.9,
+     29.6,
+     29.6
+    ],
+    "extra_range_all": [
+     29.6,
+     29.9
+    ],
+    "extra_mib_clean": [
+     29.9,
+     29.6,
+     29.6
+    ],
+    "extra_range_clean": [
+     29.6,
+     29.9
+    ],
+    "shared_mib": [
+     54.3,
+     63.8,
+     54.3
+    ],
+    "host_used_delta_mib": [
+     416.3,
+     435.9,
+     360.7
+    ]
+   },
+   "16": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     40.5,
+     40.4,
+     40.5
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     28.6,
+     28.4,
+     28.6
+    ],
+    "extra_range_all": [
+     28.4,
+     28.6
+    ],
+    "extra_mib_clean": [
+     28.6,
+     28.4,
+     28.6
+    ],
+    "extra_range_clean": [
+     28.4,
+     28.6
+    ],
+    "shared_mib": [
+     78.2,
+     95.4,
+     78.2
+    ],
+    "host_used_delta_mib": [
+     754.8,
+     787.9,
+     700.5
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 28.5,
+   "2": 33.9,
+   "3": 32.0
+  },
+  "marginal_extra_fit1_range": [
+   28.5,
+   33.9
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 24.6,
+   "2": 27.0,
+   "3": 27.3
+  },
+  "marginal_extra_fit2_range": [
+   24.6,
+   27.3
+  ],
+  "fits_differ_over_20pct": [
+   2
+  ],
+  "shared_fixed_used_mib": [
+   143.6,
+   56.7
+  ],
+  "clean_readings": 15,
+  "readings": 15,
+  "main_comparison": "ok"
+ },
+ "engine-v4-shared/resident": {
+  "object": "engine-v4-shared",
+  "state": "resident",
+  "tiers": {
+   "1": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     234.4,
+     234.2,
+     234.8
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     53.9,
+     51.6,
+     55.1
+    ],
+    "extra_range_all": [
+     51.6,
+     55.1
+    ],
+    "extra_mib_clean": [
+     53.9,
+     51.6,
+     55.1
+    ],
+    "extra_range_clean": [
+     51.6,
+     55.1
+    ],
+    "shared_mib": [
+     29.3,
+     31.3,
+     29.3
+    ],
+    "host_used_delta_mib": [
+     264.4,
+     273.0,
+     182.7
+    ]
+   },
+   "2": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     181.8,
+     181.1,
+     182.0
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     42.5,
+     41.8,
+     42.2
+    ],
+    "extra_range_all": [
+     41.8,
+     42.5
+    ],
+    "extra_mib_clean": [
+     42.5,
+     41.8,
+     42.2
+    ],
+    "extra_range_clean": [
+     41.8,
+     42.5
+    ],
+    "shared_mib": [
+     37.9,
+     41.0,
+     36.0
+    ],
+    "host_used_delta_mib": [
+     397.5,
+     399.3,
+     336.9
+    ]
+   },
+   "4": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     155.1,
+     155.5,
+     155.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     36.6,
+     37.2,
+     37.1
+    ],
+    "extra_range_all": [
+     36.6,
+     37.2
+    ],
+    "extra_mib_clean": [
+     36.6,
+     37.2,
+     37.1
+    ],
+    "extra_range_clean": [
+     36.6,
+     37.2
+    ],
+    "shared_mib": [
+     42.6,
+     50.6,
+     47.6
+    ],
+    "host_used_delta_mib": [
+     667.6,
+     677.5,
+     601.0
+    ]
+   },
+   "8": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     141.6,
+     141.9,
+     142.0
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     33.7,
+     34.1,
+     34.5
+    ],
+    "extra_range_all": [
+     33.7,
+     34.5
+    ],
+    "extra_mib_clean": [
+     33.7,
+     34.1,
+     34.5
+    ],
+    "extra_range_clean": [
+     33.7,
+     34.5
+    ],
+    "shared_mib": [
+     63.8,
+     69.9,
+     58.3
+    ],
+    "host_used_delta_mib": [
+     1218.4,
+     1224.5,
+     1144.5
+    ]
+   },
+   "16": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     135.0,
+     134.8,
+     135.0
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     32.6,
+     32.4,
+     32.7
+    ],
+    "extra_range_all": [
+     32.4,
+     32.7
+    ],
+    "extra_mib_clean": [
+     32.6,
+     32.4,
+     32.7
+    ],
+    "extra_range_clean": [
+     32.4,
+     32.7
+    ],
+    "shared_mib": [
+     91.2,
+     108.9,
+     89.2
+    ],
+    "host_used_delta_mib": [
+     2301.7,
+     2311.3,
+     2221.3
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 35.3,
+   "2": 36.3,
+   "3": 34.8
+  },
+  "marginal_extra_fit1_range": [
+   34.8,
+   36.3
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 31.4,
+   "2": 30.5,
+   "3": 30.1
+  },
+  "marginal_extra_fit2_range": [
+   30.1,
+   31.4
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   143.6,
+   56.7
+  ],
+  "clean_readings": 15,
+  "readings": 15,
+  "main_comparison": "ok"
+ },
+ "bare-api-only/idle": {
+  "object": "bare-api-only",
+  "state": "idle",
+  "tiers": {
+   "1": {
+    "readings": 3,
+    "flagged": 1,
+    "flags": [
+     [],
+     [
+      "unstable"
+     ],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     37.3,
+     36.3,
+     37.3
+    ],
+    "bare_reference": [
+     "paired",
+     "mean of clean",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "extra_range_all": [
+     -1.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     -14.8,
+     15.7,
+     10.9
+    ]
+   },
+   "2": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     23.7,
+     23.9,
+     23.6
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     9.2,
+     29.3,
+     9.9
+    ]
+   },
+   "4": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     17.2,
+     17.1,
+     17.0
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     24.1,
+     27.8,
+     20.0
+    ]
+   },
+   "8": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     13.5,
+     13.7,
+     13.7
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     81.8,
+     49.4,
+     48.4
+    ]
+   },
+   "16": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     11.9,
+     12.0,
+     11.9
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     150.9,
+     144.5,
+     138.7
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 0.0,
+   "2": 0.0,
+   "3": 0.0
+  },
+  "marginal_extra_fit1_range": [
+   0.0,
+   0.0
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 0.0,
+   "2": 0.0,
+   "3": 0.0
+  },
+  "marginal_extra_fit2_range": [
+   0.0,
+   0.0
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   -11.2,
+   -1.3
+  ],
+  "clean_readings": 14,
+  "readings": 15,
+  "main_comparison": "ok"
+ },
+ "bare-api-only/resident": {
+  "object": "bare-api-only",
+  "state": "resident",
+  "tiers": {
+   "1": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     180.5,
+     182.6,
+     179.6
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     93.9,
+     106.0,
+     95.3
+    ]
+   },
+   "2": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     139.4,
+     139.3,
+     139.8
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     202.2,
+     207.4,
+     204.2
+    ]
+   },
+   "4": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     118.5,
+     118.4,
+     118.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     408.8,
+     412.4,
+     399.2
+    ]
+   },
+   "8": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     107.9,
+     107.8,
+     107.5
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     818.2,
+     808.3,
+     813.8
+    ]
+   },
+   "16": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     102.4,
+     102.4,
+     102.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_all": [
+     0.0,
+     0.0
+    ],
+    "extra_mib_clean": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "extra_range_clean": [
+     0.0,
+     0.0
+    ],
+    "shared_mib": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "host_used_delta_mib": [
+     1606.3,
+     1605.7,
+     1604.4
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 0.0,
+   "2": 0.0,
+   "3": 0.0
+  },
+  "marginal_extra_fit1_range": [
+   0.0,
+   0.0
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 0.0,
+   "2": 0.0,
+   "3": 0.0
+  },
+  "marginal_extra_fit2_range": [
+   0.0,
+   0.0
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   -11.2,
+   -1.3
+  ],
+  "clean_readings": 15,
+  "readings": 15,
+  "main_comparison": "ok"
+ },
+ "engine-v4-copy/idle": {
+  "object": "engine-v4-copy",
+  "state": "idle",
+  "tiers": {
+   "1": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     79.2,
+     79.2,
+     79.2
+    ],
+    "bare_reference": [
+     "paired",
+     "mean of clean",
+     "paired"
+    ],
+    "extra_mib_all": [
+     41.9,
+     41.9,
+     41.9
+    ],
+    "extra_range_all": [
+     41.9,
+     41.9
+    ],
+    "extra_mib_clean": [
+     41.9,
+     41.9,
+     41.9
+    ],
+    "extra_range_clean": [
+     41.9,
+     41.9
+    ],
+    "shared_mib": [
+     27.3,
+     29.3,
+     27.3
+    ],
+    "host_used_delta_mib": [
+     140.3,
+     129.2,
+     87.6
+    ]
+   },
+   "2": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     79.0,
+     78.9,
+     79.0
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     55.2,
+     54.9,
+     55.4
+    ],
+    "extra_range_all": [
+     54.9,
+     55.4
+    ],
+    "extra_mib_clean": [
+     55.2,
+     54.9,
+     55.4
+    ],
+    "extra_range_clean": [
+     54.9,
+     55.4
+    ],
+    "shared_mib": [
+     33.0,
+     38.0,
+     30.9
+    ],
+    "host_used_delta_mib": [
+     144.4,
+     156.2,
+     129.8
+    ]
+   },
+   "4": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     78.0,
+     77.9,
+     78.1
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     60.8,
+     60.8,
+     61.0
+    ],
+    "extra_range_all": [
+     60.8,
+     61.0
+    ],
+    "extra_mib_clean": [
+     60.8,
+     60.8,
+     61.0
+    ],
+    "extra_range_clean": [
+     60.8,
+     61.0
+    ],
+    "shared_mib": [
+     43.6,
+     45.6,
+     39.7
+    ],
+    "host_used_delta_mib": [
+     246.7,
+     237.3,
+     181.7
+    ]
+   },
+   "8": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     77.4,
+     77.4,
+     77.2
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     64.0,
+     63.7,
+     63.5
+    ],
+    "extra_range_all": [
+     63.5,
+     64.0
+    ],
+    "extra_mib_clean": [
+     64.0,
+     63.7,
+     63.5
+    ],
+    "extra_range_clean": [
+     63.5,
+     64.0
+    ],
+    "shared_mib": [
+     54.3,
+     65.3,
+     53.3
+    ],
+    "host_used_delta_mib": [
+     408.5,
+     425.9,
+     355.5
+    ]
+   },
+   "16": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     77.0,
+     77.1,
+     76.9
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     65.1,
+     65.1,
+     65.0
+    ],
+    "extra_range_all": [
+     65.0,
+     65.1
+    ],
+    "extra_mib_clean": [
+     65.1,
+     65.1,
+     65.0
+    ],
+    "extra_range_clean": [
+     65.0,
+     65.1
+    ],
+    "shared_mib": [
+     78.2,
+     95.4,
+     77.4
+    ],
+    "host_used_delta_mib": [
+     758.6,
+     758.4,
+     709.1
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 31.4,
+   "2": 34.6,
+   "3": 32.8
+  },
+  "marginal_extra_fit1_range": [
+   31.4,
+   34.6
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 28.2,
+   "2": 29.3,
+   "3": 31.1
+  },
+  "marginal_extra_fit2_range": [
+   28.2,
+   31.1
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   112.1,
+   79.7
+  ],
+  "clean_readings": 15,
+  "readings": 15,
+  "main_comparison": "ok"
+ },
+ "engine-v4-copy/resident": {
+  "object": "engine-v4-copy",
+  "state": "resident",
+  "tiers": {
+   "1": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     233.3,
+     233.8,
+     233.4
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     52.8,
+     51.2,
+     53.7
+    ],
+    "extra_range_all": [
+     51.2,
+     53.7
+    ],
+    "extra_mib_clean": [
+     52.8,
+     51.2,
+     53.7
+    ],
+    "extra_range_clean": [
+     51.2,
+     53.7
+    ],
+    "shared_mib": [
+     29.3,
+     31.3,
+     29.3
+    ],
+    "host_used_delta_mib": [
+     242.1,
+     241.4,
+     179.4
+    ]
+   },
+   "2": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     233.0,
+     232.3,
+     232.8
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     93.6,
+     93.1,
+     93.0
+    ],
+    "extra_range_all": [
+     93.0,
+     93.6
+    ],
+    "extra_mib_clean": [
+     93.6,
+     93.1,
+     93.0
+    ],
+    "extra_range_clean": [
+     93.0,
+     93.6
+    ],
+    "shared_mib": [
+     37.9,
+     42.0,
+     35.9
+    ],
+    "host_used_delta_mib": [
+     369.8,
+     369.9,
+     318.8
+    ]
+   },
+   "4": {
+    "readings": 3,
+    "flagged": 1,
+    "flags": [
+     [],
+     [
+      "unstable"
+     ],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     231.8,
+     232.0,
+     231.9
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     113.2,
+     113.7,
+     113.7
+    ],
+    "extra_range_all": [
+     113.2,
+     113.7
+    ],
+    "extra_mib_clean": [
+     113.2,
+     113.7
+    ],
+    "extra_range_clean": [
+     113.2,
+     113.7
+    ],
+    "shared_mib": [
+     42.6,
+     49.6,
+     46.7
+    ],
+    "host_used_delta_mib": [
+     649.9,
+     639.3,
+     612.6
+    ]
+   },
+   "8": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     231.5,
+     231.3,
+     231.3
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     123.6,
+     123.5,
+     123.8
+    ],
+    "extra_range_all": [
+     123.5,
+     123.8
+    ],
+    "extra_mib_clean": [
+     123.6,
+     123.5,
+     123.8
+    ],
+    "extra_range_clean": [
+     123.5,
+     123.8
+    ],
+    "shared_mib": [
+     65.3,
+     70.4,
+     58.4
+    ],
+    "host_used_delta_mib": [
+     1199.0,
+     1203.6,
+     1155.9
+    ]
+   },
+   "16": {
+    "readings": 3,
+    "flagged": 0,
+    "flags": [
+     [],
+     [],
+     []
+    ],
+    "seq": [
+     1,
+     2,
+     3
+    ],
+    "per_unit_mib": [
+     231.0,
+     230.9,
+     231.2
+    ],
+    "bare_reference": [
+     "paired",
+     "paired",
+     "paired"
+    ],
+    "extra_mib_all": [
+     128.6,
+     128.5,
+     128.8
+    ],
+    "extra_range_all": [
+     128.5,
+     128.8
+    ],
+    "extra_mib_clean": [
+     128.6,
+     128.5,
+     128.8
+    ],
+    "extra_range_clean": [
+     128.5,
+     128.8
+    ],
+    "shared_mib": [
+     90.2,
+     107.4,
+     88.4
+    ],
+    "host_used_delta_mib": [
+     2278.1,
+     2291.9,
+     2231.6
+    ]
+   }
+  },
+  "marginal_extra_fit1_mib": {
+   "1": 35.4,
+   "2": 37.1,
+   "3": 36.1
+  },
+  "marginal_extra_fit1_range": [
+   35.4,
+   37.1
+  ],
+  "marginal_extra_fit2_mib": {
+   "1": 32.1,
+   "2": 32.0,
+   "3": 34.4
+  },
+  "marginal_extra_fit2_range": [
+   32.0,
+   34.4
+  ],
+  "fits_differ_over_20pct": [],
+  "shared_fixed_used_mib": [
+   112.1,
+   79.7
+  ],
+  "clean_readings": 14,
+  "readings": 15,
+  "main_comparison": "ok"
+ }
+}

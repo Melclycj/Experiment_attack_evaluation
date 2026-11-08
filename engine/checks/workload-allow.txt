@@ -1,0 +1,156 @@
+# The deployment's workload seccomp allowlist (build plan 7.4 step 4; method in ../allowlist-derivation.md).
+# One syscall name per line; read by checks/gate_seed.py. Default action for every other call: EPERM.
+# Union of the calls measured on the host (strace -f) for the sources the cell's policy confines:
+#   agents Claude Code, Pi, OpenCode on the derivation set and once interactively, and the gate's ten commands:
+#     ExperimentLab/engine-v2/runs/20261030T131500Z-derive-host
+#   the in-cell Go frontend and the pty relay (their own processes only): runs/20261030T153500Z-derive-host-helpers-go
+#     (the Python frontend, measured in ExperimentLab/engine-v2/runs/20261030T132600Z-derive-host-helpers2, adds no
+#     name the other sources lack, so this list covers either frontend)
+#   the startup code between the filter and the agent's exec: read off native/sandbox/child.c (derive_host.STARTUP_READ)
+# The same 142 names as engine-v2's list: the Go frontend's 41 calls were all in it already.
+# Measured but left out because the policy compiler refuses them anyway (native/sandbox/policy.c forbidden[]):
+#   clone3, io_uring_enter, io_uring_setup, sysinfo
+# No privileged call (mount family, ptrace, process_vm_*, pidfd_getfd, bpf, perf_event_open, setns, userfaultfd,
+# kexec, module calls) was measured.
+accept4
+access
+arch_prctl
+bind
+brk
+capget
+chdir
+chmod
+chown
+clock_gettime
+clock_nanosleep
+clone
+close
+close_range
+connect
+copy_file_range
+dup
+dup2
+dup3
+epoll_create1
+epoll_ctl
+epoll_pwait
+epoll_pwait2
+epoll_wait
+eventfd2
+execve
+exit
+exit_group
+faccessat2
+fadvise64
+fallocate
+fchdir
+fchmod
+fcntl
+fdatasync
+flock
+fstat
+fstatfs
+fsync
+ftruncate
+futex
+getcwd
+getdents64
+getegid
+geteuid
+getgid
+getgroups
+getpeername
+getpgrp
+getpid
+getppid
+getrandom
+getrusage
+getsockname
+getsockopt
+gettid
+getuid
+inotify_add_watch
+inotify_init1
+inotify_rm_watch
+ioctl
+kill
+lgetxattr
+link
+linkat
+listen
+listxattr
+lseek
+lstat
+madvise
+mkdir
+mkdirat
+mmap
+mprotect
+mremap
+munmap
+nanosleep
+newfstatat
+open
+openat
+openat2
+pidfd_open
+pipe2
+poll
+prctl
+pread64
+preadv2
+prlimit64
+pselect6
+pwrite64
+pwritev
+read
+readlink
+readlinkat
+readv
+recvfrom
+recvmsg
+rename
+renameat
+renameat2
+restart_syscall
+rmdir
+rseq
+rt_sigaction
+rt_sigprocmask
+rt_sigreturn
+rt_sigsuspend
+sched_getaffinity
+sched_setaffinity
+sched_yield
+sendto
+set_robust_list
+set_tid_address
+setfsgid
+setfsuid
+setitimer
+setpgid
+setsid
+setsockopt
+shutdown
+sigaltstack
+signalfd4
+socket
+socketpair
+stat
+statfs
+statx
+symlink
+tgkill
+timer_create
+timer_settime
+timerfd_create
+timerfd_settime
+umask
+uname
+unlink
+unlinkat
+utimensat
+vfork
+wait4
+write
+writev

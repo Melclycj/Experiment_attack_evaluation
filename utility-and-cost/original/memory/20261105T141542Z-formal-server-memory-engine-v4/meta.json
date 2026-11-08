@@ -1,0 +1,241 @@
+{
+ "started_utc": "20261105T141542Z",
+ "mode": "formal",
+ "approval": "\u5f00\u8dd1",
+ "argv": [
+  "/opt/sota-measurement/driver/run_memory.py",
+  "--config",
+  "config/server-memory-engine-v4.json",
+  "--mode",
+  "formal",
+  "--approval",
+  "\u5f00\u8dd1"
+ ],
+ "config": {
+  "label": "server-memory-engine-v4",
+  "objects": [
+   "engine-v4-shared",
+   "engine-v4-copy",
+   "bare-api-only",
+   "docker-sandboxes"
+  ],
+  "tiers": [
+   1,
+   2,
+   4,
+   8,
+   16
+  ],
+  "reps_pass1": 2,
+  "reps_pass2": 1,
+  "seed": 20261105,
+  "preflight_cpu_seconds": 60,
+  "default_time_cap_s": 5400,
+  "night_deadline_s": 36000,
+  "timing": {
+   "baseline_window": 15,
+   "min_settle": {
+    "idle": 15,
+    "resident": 150
+   },
+   "max_settle": 180,
+   "window": 10,
+   "recovery_wait": 20,
+   "cleanup_wait": 180
+  }
+ },
+ "timing": {
+  "interval": 1.0,
+  "baseline_window": 15,
+  "min_settle": {
+   "idle": 15,
+   "resident": 150
+  },
+  "max_settle": 180,
+  "stable_window": 10,
+  "stable_mib": 20,
+  "stable_mib_per_unit": 5,
+  "window": 10,
+  "tolerance_mib": 300,
+  "recovery_wait": 20,
+  "cleanup_wait": 180,
+  "min_coverage": 0.8
+ },
+ "limits": {
+  "min_available_mib": 3072,
+  "max_used_ratio": 0.9,
+  "min_disk_free_gib": 5.0,
+  "interference_mib": 300,
+  "projection_factor": 1.25
+ },
+ "schedule": [
+  {
+   "pass_no": 1,
+   "object": "docker-sandboxes",
+   "reps": 2
+  },
+  {
+   "pass_no": 1,
+   "object": "engine-v4-shared",
+   "reps": 2
+  },
+  {
+   "pass_no": 1,
+   "object": "bare-api-only",
+   "reps": 2
+  },
+  {
+   "pass_no": 1,
+   "object": "engine-v4-copy",
+   "reps": 2
+  },
+  {
+   "pass_no": 2,
+   "object": "engine-v4-copy",
+   "reps": 1
+  },
+  {
+   "pass_no": 2,
+   "object": "bare-api-only",
+   "reps": 1
+  },
+  {
+   "pass_no": 2,
+   "object": "engine-v4-shared",
+   "reps": 1
+  },
+  {
+   "pass_no": 2,
+   "object": "docker-sandboxes",
+   "reps": 1
+  }
+ ],
+ "versions": {
+  "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"",
+  "instance_type": "m8i.4xlarge",
+  "cpu": "model name\t: Intel(R) Xeon(R) 6975P-C",
+  "nproc": "16",
+  "thp": "always [madvise] never",
+  "ksm": "0",
+  "claude": "2.1.312 (Claude Code)",
+  "claude_sha256": "4f4178ce41d83e23341ebfbaecdbcf8ea6bf7baea0690025abe49eeec3a5d01d  /opt/node-v22.18.0-linux-x64/lib/node_modules/@anthropic-ai/claude-code/bin/claude.exe",
+  "k6": "k6 v2.3.0 (commit/e088784614, go1.26.8, linux/amd64)",
+  "docker": "containerd.io\t2.4.2-3~ubuntu.24.04~noble\ndocker-ce\t5:29.9.2-1~ubuntu.24.04~noble",
+  "nono": "nono 0.80.0",
+  "openshell": "openshell 0.1.6",
+  "escrow_commit": "fatal: detected dubious ownership in repository at '/home/jerry/sota-src/benign-attach-gateway'\nTo add an exception for this directory, call:\n\n\tgit config --global --add safe.directory /home/jerry/sota-src/benign-attach-gateway"
+ },
+ "driver_pid": 55629,
+ "preflight": [
+  {
+   "check": "running as root",
+   "ok": true,
+   "detail": "",
+   "blocking": true
+  },
+  {
+   "check": "Claude Code 2.1.312",
+   "ok": true,
+   "detail": "2.1.312 (Claude Code)",
+   "blocking": true
+  },
+  {
+   "check": "Docker not running",
+   "ok": true,
+   "detail": "",
+   "blocking": true
+  },
+  {
+   "check": "available memory",
+   "ok": true,
+   "detail": "62198 MiB",
+   "blocking": true
+  },
+  {
+   "check": "no swap in use",
+   "ok": true,
+   "detail": "0 MiB",
+   "blocking": true
+  },
+  {
+   "check": "disk free",
+   "ok": true,
+   "detail": "172.6 GiB",
+   "blocking": true
+  },
+  {
+   "check": "other CPU",
+   "ok": true,
+   "detail": "0.0% over 60s",
+   "blocking": true
+  },
+  {
+   "check": "no Claude Code running",
+   "ok": true,
+   "detail": "pids []",
+   "blocking": true
+  },
+  {
+   "check": "/dev/kvm",
+   "ok": true,
+   "detail": "",
+   "blocking": true
+  },
+  {
+   "check": "no VM processes",
+   "ok": true,
+   "detail": "pids []",
+   "blocking": true
+  },
+  {
+   "check": "no unit or holder processes",
+   "ok": true,
+   "detail": "pids []",
+   "blocking": true
+  },
+  {
+   "check": "no shared-group processes",
+   "ok": true,
+   "detail": "pids []",
+   "blocking": true
+  },
+  {
+   "check": "no engine row or PDP processes",
+   "ok": true,
+   "detail": "pids []",
+   "blocking": true
+  },
+  {
+   "check": "nothing mounted under the work root",
+   "ok": true,
+   "detail": "[]",
+   "blocking": true
+  },
+  {
+   "check": "no Kairos namespaces",
+   "ok": true,
+   "detail": "",
+   "blocking": true
+  },
+  {
+   "check": "tools",
+   "ok": true,
+   "detail": "missing []",
+   "blocking": true
+  },
+  {
+   "check": "objects known",
+   "ok": true,
+   "detail": "[\"engine-v4-shared\", \"engine-v4-copy\", \"bare-api-only\", \"docker-sandboxes\"]",
+   "blocking": true
+  },
+  {
+   "check": "model API key",
+   "ok": true,
+   "detail": "200",
+   "blocking": true
+  }
+ ]
+}

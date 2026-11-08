@@ -1,0 +1,58 @@
+{"command": 0, "exit_code": 0, "argv": ["/mnt/d/Thesis/ExperimentLab/engine-v3/native", "sandbox", "BUILD_DIR=/tmp/engine-gate-build-2p4dj4je"]}
+{"command": 1, "exit_code": 0, "argv": ["-o", "/tmp/engine-gate-build-2p4dj4je/engine-frontend", "."]}
+{"command": 2, "exit_code": 0, "argv": ["-o", "/tmp/engine-gate-build-2p4dj4je/engine-mcp", "."]}
+{"command": 3, "exit_code": 0, "argv": ["/usr/sbin/mkfs.btrfs", "-q", "/tmp/engine-gate-vqlouu9v/runtime.btrfs"]}
+{"command": 4, "exit_code": 0, "argv": ["/usr/sbin/mkfs.btrfs", "-q", "/tmp/engine-gate-vqlouu9v/workspace.btrfs"]}
+{"command": 5, "exit_code": 0, "argv": ["loop,nosuid,nodev", "/tmp/engine-gate-vqlouu9v/runtime.btrfs", "/var/lib/engine-gate-v4-derive-claude"]}
+{"command": 6, "exit_code": 0, "argv": ["loop,nosuid,nodev", "/tmp/engine-gate-vqlouu9v/workspace.btrfs", "/tmp/engine-gate-vqlouu9v/workspaces"]}
+{"command": 7, "exit_code": 0, "argv": ["/mnt/d/Thesis/ExperimentLab/engine-v3/frontend/make_ca_pool.py", "/var/lib/engine-gate-v4-derive-claude/ca-pool", "16"]}
+{"command": 8, "exit_code": 0, "argv": ["show", "--raw", "/var/lib/engine-gate-v4-derive-claude"]}
+{"command": 9, "exit_code": 0, "argv": ["subvolume", "create", "/tmp/engine-gate-vqlouu9v/workspaces/work0"]}
+{"command": 10, "exit_code": 0, "argv": ["--bind", "/tmp/engine-gate-vqlouu9v/workspaces/work0", "/var/lib/engine-gate-v4-derive-claude/work0"]}
+{"command": 11, "exit_code": 0, "argv": ["/tmp/engine-gate-build-2p4dj4je/w2-catalog", "/var/lib/engine-gate-v4-derive-claude", "catalog.json"]}
+{"preflight": {"frontend_usage": {"exit_code": 2, "stdout": "", "stderr": "usage: engine-frontend [options] <proxy socket> <port> <ready file>\n", "elapsed_seconds": 0.0}, "agent_version": {"exit_code": 0, "stdout": "2.1.312 (Claude Code)\n", "stderr": "", "elapsed_seconds": 0.01}, "git_version": {"exit_code": 0, "stdout": "git version 2.43.0\n", "stderr": "", "elapsed_seconds": 0.0}, "curl_version": {"exit_code": 0, "stdout": "curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.7\nRelease-Date: 2023-12-06, security patched: 8.5.0-2ubuntu10.16\nProtocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp\nFeatures: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM PSL SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd\n", "stderr": "", "elapsed_seconds": 0.0}, "node_version": {"exit_code": 0, "stdout": "v22.23.4\n", "stderr": "", "elapsed_seconds": 0.0}, "uv_version": {"exit_code": 0, "stdout": "uv 0.13.6 (x86_64-unknown-linux-gnu)\n", "stderr": "", "elapsed_seconds": 0.0}, "gh_version": {"exit_code": 0, "stdout": "gh version 2.103.3 (2026-10-26)\nhttps://github.com/cli/cli/releases/tag/v2.103.3\n", "stderr": "", "elapsed_seconds": 0.02}, "pi_version": {"exit_code": 0, "stdout": "1.4.0\n", "stderr": "", "elapsed_seconds": 0.21}, "opencode_version": {"exit_code": 0, "stdout": "1.19.5\n", "stderr": "", "elapsed_seconds": 0.3}, "rg_version": {"exit_code": 0, "stdout": "ripgrep 15.2.0 (rev e89fff89ac)\n\nfeatures:+pcre2\nsimd(compile):+SSE2,-SSSE3,-AVX2\nsimd(runtime):+SSE2,+SSSE3,+AVX2\n\nPCRE2 10.45 is available (JIT is available)\n", "stderr": "", "elapsed_seconds": 0.0}, "fd_version": {"exit_code": 0, "stdout": "fd 10.5.1\n", "stderr": "", "elapsed_seconds": 0.0}, "pytest_version": {"exit_code": 0, "stdout": "pytest 9.1.1\n", "stderr": "", "elapsed_seconds": 0.41}}}
+{"command": 12, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 13, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 14, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 15, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 16, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 17, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 18, "exit_code": 2, "argv": ["admin", "ws", "list"]}
+{"command": 19, "exit_code": 0, "argv": ["admin", "ws", "list"]}
+{"command": 20, "exit_code": 0, "argv": ["api-key", "--truth-env", "W2_GATE_TRUTH"]}
+{"command": 21, "exit_code": 0, "argv": ["gate", "--approval", "never"]}
+{"command": 22, "exit_code": 0, "argv": ["admin", "ws", "list"]}
+{"command": 23, "exit_code": 0, "argv": ["W2_GIT_USER", "--truth-b-env", "W2_GH_TRUTH"]}
+{"command": 24, "exit_code": 0, "argv": ["/Melclycj/Thesis-testbox.git/", "--account", "git"]}
+{"command": 25, "exit_code": 0, "argv": ["bearer", "--truth-env", "W2_NPM_TRUTH"]}
+{"command": 26, "exit_code": 0, "argv": ["GET", "--account", "npm"]}
+{"command": 27, "exit_code": 0, "argv": ["DELETE", "--prefix", "/mcp"]}
+{"command": 28, "exit_code": 1, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 29, "exit_code": 1, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 30, "exit_code": 1, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 31, "exit_code": 1, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 32, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 33, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 34, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 35, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 36, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 37, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 38, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 39, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 40, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 41, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 42, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 43, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 44, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 45, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 46, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 47, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 48, "exit_code": 0, "argv": ["start", "work0", "claude-shell-0"]}
+{"command": 49, "exit_code": 0, "argv": ["admin", "row", "list"]}
+{"command": 50, "exit_code": 0, "argv": ["-c", "\nimport json, os, sys\nout = {}\nfor name, action in (('list', lambda: os.listdir(os.path.dirname(sys.argv[1]))),\n                     ('read', lambda: os.close(os.open(sys.argv[1], os.O_RDONLY))),\n                     ('append', lambda: os.close(os.open(sys.argv[1], os.O_WRONLY | os.O_APPEND)))):\n    try:\n        action()\n        out[name] = 0\n    except OSError as error:\n        out[name] = error.errno\nprint(json.dumps(out))\n", "/tmp/engine-gate-evidence-ecwmsxpb/events.jsonl"]}
+{"command": 51, "exit_code": 0, "argv": ["-c", "\nimport json, os, sys\nout = {}\nfor name, action in (('list', lambda: os.listdir(os.path.dirname(sys.argv[1]))),\n                     ('read', lambda: os.close(os.open(sys.argv[1], os.O_RDONLY))),\n                     ('append', lambda: os.close(os.open(sys.argv[1], os.O_WRONLY | os.O_APPEND)))):\n    try:\n        action()\n        out[name] = 0\n    except OSError as error:\n        out[name] = error.errno\nprint(json.dumps(out))\n", "/tmp/engine-gate-evidence-ecwmsxpb/events.jsonl"]}
+{"command": 52, "exit_code": 0, "argv": ["/usr/bin/umount", "/var/lib/engine-gate-v4-derive-claude/work0"]}
+{"command": 53, "exit_code": 0, "argv": ["/usr/bin/umount", "/tmp/engine-gate-vqlouu9v/workspaces"]}
+{"command": 54, "exit_code": 0, "argv": ["/usr/bin/umount", "/var/lib/engine-gate-v4-derive-claude"]}
+{"record": "/mnt/d/Thesis/ExperimentLab/engine-v3/runs/20261105T154520Z-gate-v4-derive-wrapped/v4-derive-claude.json", "result": "passed"}
+exit status: 0

@@ -1,0 +1,10 @@
+#!/usr/bin/python3 -IB
+"""Admin client entry (run as the engine uid or root on the host, never inside a cell):
+python3 -I -B bin/engine-client --root ROOT admin questions | admin entry|cred|ws|row ... | attach EXECUTION [--record F]"""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from client.main import main  # noqa: E402
+
+raise SystemExit(main(sys.argv[1:]))

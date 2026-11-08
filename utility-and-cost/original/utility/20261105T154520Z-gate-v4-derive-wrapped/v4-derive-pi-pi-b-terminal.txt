@@ -1,0 +1,18 @@
+attached to 5bcc4d500addaa1ce979da8b4abe89f7:2; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <ument c with default 0 and update the tests to cover it.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+Done. Files are in `/work`:
+
+- **`calc/__init__.py`**: `add(a, b, c=0)` returns `a + b + c`. It started as `add(a, b)` and I changed it with an edit.
+- **`tests/test_calc.py`**: four pytest tests:
+  - `test_add_positive_numbers`: `add(2, 3) == 5`
+  - `test_add_negative_numbers`: `add(-4, -6) == -10`
+  - `test_add_with_third_argument`: `add(1, 2, 3) == 6`
+  - `test_add_third_argument_defaults_to_zero`: `add(1, 2) == add(1, 2, 0) == 3`
+
+All 4 tests pass. `python` isn't on the PATH here, so I ran them with `python3 -m pytest`.
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

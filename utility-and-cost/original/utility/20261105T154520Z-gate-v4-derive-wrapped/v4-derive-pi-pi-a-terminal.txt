@@ -1,0 +1,9 @@
+attached to 5bcc4d500addaa1ce979da8b4abe89f7:1; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ printf 'W2_%s\n' BEGIN; pi -p 'Without using any tools, explain in three sentences what Linux seccomp is.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. Originally it offered a strict mode that permitted only a few calls like read, write, and exit, but the seccomp-bpf extension lets a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This reduces the kernel attack surface available to a process, which is why sandboxes and container runtimes such as Docker use it.
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

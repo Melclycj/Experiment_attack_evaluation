@@ -1,0 +1,9 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893651}
+[0.000283, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000643, "o", "\r< pytest -q in the workspace and report the summary line.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000715, "o", "W2_BEGIN\r\n"]
+[3.381875, "o", "The summary line from `python3 -m pytest -q` in `/work` is:\r\n\r\n```\r\n4 passed in 0.00s\r\n```\r\n"]
+[3.388739, "o", "W2_ITEM_EXIT=0\r\n"]
+[3.388782, "o", "w2$ "]
+[3.38892, "o", "exit\r\n"]
+[3.388929, "o", "exit\r\n"]

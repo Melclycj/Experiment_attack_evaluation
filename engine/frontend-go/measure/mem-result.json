@@ -1,0 +1,105 @@
+{
+ "when": "2026-10-31T01:48:35+1100",
+ "kernel": "6.6.87.2-microsoft-standard-WSL2",
+ "results": [
+  {
+   "label": "python",
+   "argv": [
+    "/home/jerry/.venvs/engine-v2-frontend/bin/python",
+    "-I",
+    "-B",
+    "/mnt/d/Thesis/ExperimentLab/engine-v2/frontend/engine_frontend.py",
+    "--confdir",
+    "/tmp/w2-frontend-mem-a9ou7mkv/conf-python",
+    "--ca-dir",
+    "/tmp/w2-frontend-mem-a9ou7mkv/pool/60db2488efb7403e",
+    "/tmp/w2-frontend-mem-a9ou7mkv/proxy.sock",
+    "60681",
+    "/tmp/w2-frontend-mem-a9ou7mkv/ready-python"
+   ],
+   "exe": "/home/jerry/.venvs/engine-v2-frontend/bin/python",
+   "ready_after_s": 0.467,
+   "idle_s": 5.0,
+   "smaps_rollup_kB": {
+    "Rss": 73808,
+    "Pss": 65569,
+    "Pss_Dirty": 50520,
+    "Pss_Anon": 50520,
+    "Pss_File": 15049,
+    "Pss_Shmem": 0,
+    "Shared_Clean": 10868,
+    "Shared_Dirty": 0,
+    "Private_Clean": 12420,
+    "Private_Dirty": 50520,
+    "Referenced": 73808,
+    "Anonymous": 50520,
+    "KSM": 0,
+    "LazyFree": 0,
+    "AnonHugePages": 0,
+    "ShmemPmdMapped": 0,
+    "FilePmdMapped": 0,
+    "Shared_Hugetlb": 0,
+    "Private_Hugetlb": 0,
+    "Swap": 0,
+    "SwapPss": 0,
+    "Locked": 0
+   },
+   "status": {
+    "VmHWM": "73664 kB",
+    "VmRSS": "73664 kB",
+    "RssAnon": "50432 kB",
+    "RssFile": "23232 kB",
+    "RssShmem": "0 kB",
+    "Threads": "2"
+   }
+  },
+  {
+   "label": "go",
+   "argv": [
+    "/tmp/w2-fe-go-bin.RC23Os/engine-frontend",
+    "--confdir",
+    "/tmp/w2-frontend-mem-a9ou7mkv/conf-go",
+    "--ca-dir",
+    "/tmp/w2-frontend-mem-a9ou7mkv/pool/60db2488efb7403e",
+    "/tmp/w2-frontend-mem-a9ou7mkv/proxy.sock",
+    "40049",
+    "/tmp/w2-frontend-mem-a9ou7mkv/ready-go"
+   ],
+   "exe": "/tmp/w2-fe-go-bin.RC23Os/engine-frontend",
+   "ready_after_s": 0.01,
+   "idle_s": 5.0,
+   "smaps_rollup_kB": {
+    "Rss": 6900,
+    "Pss": 6896,
+    "Pss_Dirty": 1624,
+    "Pss_Anon": 1624,
+    "Pss_File": 5272,
+    "Pss_Shmem": 0,
+    "Shared_Clean": 4,
+    "Shared_Dirty": 0,
+    "Private_Clean": 5272,
+    "Private_Dirty": 1624,
+    "Referenced": 6900,
+    "Anonymous": 1624,
+    "KSM": 0,
+    "LazyFree": 0,
+    "AnonHugePages": 0,
+    "ShmemPmdMapped": 0,
+    "FilePmdMapped": 0,
+    "Shared_Hugetlb": 0,
+    "Private_Hugetlb": 0,
+    "Swap": 0,
+    "SwapPss": 0,
+    "Locked": 0
+   },
+   "status": {
+    "VmHWM": "6336 kB",
+    "VmRSS": "6336 kB",
+    "RssAnon": "1344 kB",
+    "RssFile": "4992 kB",
+    "RssShmem": "0 kB",
+    "Threads": "5"
+   }
+  }
+ ]
+}

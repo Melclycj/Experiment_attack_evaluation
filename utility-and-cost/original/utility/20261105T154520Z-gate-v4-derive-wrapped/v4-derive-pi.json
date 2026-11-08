@@ -1,0 +1,3494 @@
+{
+  "started_at_utc": "2026-11-05T15:45:53.171992+00:00",
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/make",
+        "-s",
+        "-C",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/native",
+        "sandbox",
+        "BUILD_DIR=/tmp/engine-gate-build-ljk4010u"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 30.157
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/local/go/bin/go",
+        "-C",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/frontend-go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/tmp/engine-gate-build-ljk4010u/engine-frontend",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.659
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/env",
+        "HOME=/home/jerry",
+        "CGO_ENABLED=0",
+        "GOTOOLCHAIN=local",
+        "/usr/local/go/bin/go",
+        "-C",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/mcp-go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/tmp/engine-gate-build-ljk4010u/engine-mcp",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.196
+    },
+    {
+      "argv": [
+        "/usr/sbin/mkfs.btrfs",
+        "-q",
+        "/tmp/engine-gate-ijn48wu5/runtime.btrfs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.034
+    },
+    {
+      "argv": [
+        "/usr/sbin/mkfs.btrfs",
+        "-q",
+        "/tmp/engine-gate-ijn48wu5/workspace.btrfs"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.026
+    },
+    {
+      "argv": [
+        "/usr/bin/mount",
+        "-o",
+        "loop,nosuid,nodev",
+        "/tmp/engine-gate-ijn48wu5/runtime.btrfs",
+        "/var/lib/engine-gate-v4-derive-pi"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.396
+    },
+    {
+      "argv": [
+        "/usr/bin/mount",
+        "-o",
+        "loop,nosuid,nodev",
+        "/tmp/engine-gate-ijn48wu5/workspace.btrfs",
+        "/tmp/engine-gate-ijn48wu5/workspaces"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.01
+    },
+    {
+      "argv": [
+        "/home/jerry/.venvs/engine-v2-frontend/bin/python",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/frontend/make_ca_pool.py",
+        "/var/lib/engine-gate-v4-derive-pi/ca-pool",
+        "16"
+      ],
+      "exit_code": 0,
+      "stdout": "16 CA entries in /var/lib/engine-gate-v4-derive-pi/ca-pool\n",
+      "stderr": "",
+      "elapsed_seconds": 0.151
+    },
+    {
+      "argv": [
+        "/usr/bin/btrfs",
+        "filesystem",
+        "show",
+        "--raw",
+        "/var/lib/engine-gate-v4-derive-pi"
+      ],
+      "exit_code": 0,
+      "stdout": "Label: none  uuid: 73a8e259-205b-4cca-9751-9db9c2c4a9b0\n\tTotal devices 1 FS bytes used 710062080\n\tdevid    1 size 6442450944 used 2524971008 path /dev/loop0\n\n",
+      "stderr": "",
+      "elapsed_seconds": 0.004
+    },
+    {
+      "argv": [
+        "/usr/bin/btrfs",
+        "subvolume",
+        "create",
+        "/tmp/engine-gate-ijn48wu5/workspaces/work0"
+      ],
+      "exit_code": 0,
+      "stdout": "Create subvolume '/tmp/engine-gate-ijn48wu5/workspaces/work0'\n",
+      "stderr": "",
+      "elapsed_seconds": 0.001
+    },
+    {
+      "argv": [
+        "/usr/bin/mount",
+        "--bind",
+        "/tmp/engine-gate-ijn48wu5/workspaces/work0",
+        "/var/lib/engine-gate-v4-derive-pi/work0"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.001
+    },
+    {
+      "argv": [
+        "/tmp/engine-gate-build-ljk4010u/w2-catalog",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "catalog.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"catalog_digest\":\"sha256:0fce2a5386a44ba2c523123b304d3986fe8243058949f0151b948f4f19ccaaec\",\"policies\":[{\"policy_id\":\"workload\",\"source_digest\":\"sha256:2f8e38a375eb20a628497df14f1b75316f6bc4a1d6e25190d2b7ea2046bb2e4b\",\"bpf_digest\":\"sha256:62eee83e6a131f8e24d6d707d9b23db08cfe2327e014f3ae470bd77b1286cb47\",\"instructions\":172}]}\n",
+      "stderr": "",
+      "elapsed_seconds": 7.736
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.198
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.201
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.201
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.225
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.265
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.209
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "cannot reach the management port /var/lib/engine-gate-v4-derive-pi/state/admin.sock: No such file or directory\n",
+      "elapsed_seconds": 0.208
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "workspace=work0 root=/var/lib/engine-gate-v4-derive-pi/work0 state=ok entries=1\n",
+      "stderr": "",
+      "elapsed_seconds": 0.189
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "cred",
+        "put",
+        "api.anthropic.com:443",
+        "gate",
+        "api-key",
+        "--truth-env",
+        "W2_GATE_TRUTH"
+      ],
+      "exit_code": 0,
+      "stdout": "ok\n",
+      "stderr": "",
+      "elapsed_seconds": 0.305
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "entry",
+        "put",
+        "work0",
+        "exact",
+        "allow",
+        "api.anthropic.com:443",
+        "--method",
+        "POST",
+        "--method",
+        "GET",
+        "--prefix",
+        "/v1/",
+        "--prefix",
+        "/api/",
+        "--account",
+        "gate",
+        "--approval",
+        "never"
+      ],
+      "exit_code": 0,
+      "stdout": "mirror=persisted\n",
+      "stderr": "",
+      "elapsed_seconds": 0.2
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "ws",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "workspace=work0 root=/var/lib/engine-gate-v4-derive-pi/work0 state=ok entries=2\n",
+      "stderr": "",
+      "elapsed_seconds": 0.166
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "cred",
+        "put",
+        "github.com:443",
+        "git",
+        "basic",
+        "--truth-env",
+        "W2_GIT_USER",
+        "--truth-b-env",
+        "W2_GH_TRUTH"
+      ],
+      "exit_code": 0,
+      "stdout": "ok\n",
+      "stderr": "",
+      "elapsed_seconds": 0.195
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "entry",
+        "put",
+        "work0",
+        "exact",
+        "allow",
+        "github.com:443",
+        "--method",
+        "GET",
+        "--method",
+        "POST",
+        "--prefix",
+        "/octocat/Hello-World.git/",
+        "--prefix",
+        "/Melclycj/Thesis-testbox.git/",
+        "--account",
+        "git"
+      ],
+      "exit_code": 0,
+      "stdout": "mirror=persisted\n",
+      "stderr": "",
+      "elapsed_seconds": 0.197
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "cred",
+        "put",
+        "registry.npmjs.org:443",
+        "npm",
+        "bearer",
+        "--truth-env",
+        "W2_NPM_TRUTH"
+      ],
+      "exit_code": 0,
+      "stdout": "ok\n",
+      "stderr": "",
+      "elapsed_seconds": 0.205
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "entry",
+        "put",
+        "work0",
+        "exact",
+        "allow",
+        "registry.npmjs.org:443",
+        "--method",
+        "GET",
+        "--account",
+        "npm"
+      ],
+      "exit_code": 0,
+      "stdout": "mirror=persisted\n",
+      "stderr": "",
+      "elapsed_seconds": 0.208
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "entry",
+        "put",
+        "work0",
+        "exact",
+        "allow",
+        "mcp.deepwiki.com:443",
+        "--method",
+        "POST",
+        "--method",
+        "GET",
+        "--method",
+        "DELETE",
+        "--prefix",
+        "/mcp"
+      ],
+      "exit_code": 0,
+      "stdout": "mirror=persisted\n",
+      "stderr": "",
+      "elapsed_seconds": 0.231
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "refused (refused): Refused: control not ready\n",
+      "elapsed_seconds": 0.184
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "refused (refused): Refused: control not ready\n",
+      "elapsed_seconds": 0.188
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "refused (refused): Refused: control not ready\n",
+      "elapsed_seconds": 0.203
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "refused (refused): Refused: control not ready\n",
+      "elapsed_seconds": 0.214
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:1\n",
+      "stderr": "",
+      "elapsed_seconds": 0.223
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.149
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:2\n",
+      "stderr": "",
+      "elapsed_seconds": 0.191
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.297
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:3\n",
+      "stderr": "",
+      "elapsed_seconds": 0.195
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.179
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:4\n",
+      "stderr": "",
+      "elapsed_seconds": 0.235
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.187
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:5\n",
+      "stderr": "",
+      "elapsed_seconds": 0.218
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.187
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:6\n",
+      "stderr": "",
+      "elapsed_seconds": 0.192
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.202
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:7\n",
+      "stderr": "",
+      "elapsed_seconds": 0.239
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.151
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "start",
+        "work0",
+        "pi-shell-0"
+      ],
+      "exit_code": 0,
+      "stdout": "execution=5bcc4d500addaa1ce979da8b4abe89f7:8\n",
+      "stderr": "",
+      "elapsed_seconds": 0.202
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=1000",
+        "--regid=1000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "/mnt/d/Thesis/ExperimentLab/engine-v3/bin/engine-client",
+        "--root",
+        "/var/lib/engine-gate-v4-derive-pi",
+        "admin",
+        "row",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "(none)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.192
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=70998",
+        "--regid=70998",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "\nimport json, os, sys\nout = {}\nfor name, action in (('list', lambda: os.listdir(os.path.dirname(sys.argv[1]))),\n                     ('read', lambda: os.close(os.open(sys.argv[1], os.O_RDONLY))),\n                     ('append', lambda: os.close(os.open(sys.argv[1], os.O_WRONLY | os.O_APPEND)))):\n    try:\n        action()\n        out[name] = 0\n    except OSError as error:\n        out[name] = error.errno\nprint(json.dumps(out))\n",
+        "/tmp/engine-gate-evidence-q6wf2li8/events.jsonl"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"list\": 0, \"read\": 0, \"append\": 13}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.014
+    },
+    {
+      "argv": [
+        "/usr/bin/setpriv",
+        "--reuid=70000",
+        "--regid=70000",
+        "--clear-groups",
+        "--bounding-set=-all",
+        "--inh-caps=-all",
+        "--ambient-caps=-all",
+        "--no-new-privs",
+        "/usr/bin/python3",
+        "-I",
+        "-B",
+        "-c",
+        "\nimport json, os, sys\nout = {}\nfor name, action in (('list', lambda: os.listdir(os.path.dirname(sys.argv[1]))),\n                     ('read', lambda: os.close(os.open(sys.argv[1], os.O_RDONLY))),\n                     ('append', lambda: os.close(os.open(sys.argv[1], os.O_WRONLY | os.O_APPEND)))):\n    try:\n        action()\n        out[name] = 0\n    except OSError as error:\n        out[name] = error.errno\nprint(json.dumps(out))\n",
+        "/tmp/engine-gate-evidence-q6wf2li8/events.jsonl"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"list\": 13, \"read\": 13, \"append\": 13}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.014
+    },
+    {
+      "argv": [
+        "/usr/bin/umount",
+        "/var/lib/engine-gate-v4-derive-pi/work0"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.001
+    },
+    {
+      "argv": [
+        "/usr/bin/umount",
+        "/tmp/engine-gate-ijn48wu5/workspaces"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.018
+    },
+    {
+      "argv": [
+        "/usr/bin/umount",
+        "/var/lib/engine-gate-v4-derive-pi"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.091
+    }
+  ],
+  "result": "passed",
+  "suite": "derive",
+  "frontend": "go",
+  "runtime_mode": "shared",
+  "seed_kind": "experiment",
+  "agents": [
+    "pi"
+  ],
+  "scope": "build plan 7.4 step 5: the derivation set, one execution per item and agent, typed at the cell shell, driven only through the admin client",
+  "inputs": [
+    {
+      "path": "ExperimentLab/engine-v3/bin/connector",
+      "digest": "sha256:43b9173ea36cca37b12933ad909afaf35beb0bab0972dc9e23e553c82ab496f1"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/bin/engine",
+      "digest": "sha256:8bfebdb614b123782cc76fe3b8b9ac1ab8935999a895f932fbc3de84f7b89589"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/bin/engine-client",
+      "digest": "sha256:0a2296d931c368b3fe2dda1c240e942881462e051833f384d13557be95e5f147"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/bin/engine-scenario",
+      "digest": "sha256:20de65ecd358adc025fbca980e548430ebe318da4de42ffa031fd7ad2de816fd"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/bin/engine-workspace",
+      "digest": "sha256:566a242c3cca3944b051e98f74e5611bed0f9346fcbde3395628ac240f318811"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/bin/file-worker",
+      "digest": "sha256:5e75f45fb894e31769ac1fcd888048ebb266ae052d5bd5925b1e1a4229f2941e"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/bin/simple-pdp",
+      "digest": "sha256:034a3617968825f7b227349055523098610e5f7cc99dfd54e0c9725f0a162a97"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/derive_cell.py",
+      "digest": "sha256:bb002b6064bbbb0f3652a3f0e41e99bd74261bc2f0c43fb91b1848a9806a45b3"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/derive_host.py",
+      "digest": "sha256:72bb48e43f0d3528ab90b9cb5df3148c5d1113279b04d7b7bad1f72817228202"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/derive_proxy.py",
+      "digest": "sha256:af903f3777e623edee7af4bdad51e4445daf6b612a65185ca4cc9e7196c1a725"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/file_read_cases.py",
+      "digest": "sha256:6db24c1241e4be41157d624d72be307ff6d4d98e7e293be5deea9ec990b794e7"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/file_suite.py",
+      "digest": "sha256:6982329e00ae099f0c31c0ad8e9d22cafec6193e629905dc38e0cbff80ef0947"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/gate_items.py",
+      "digest": "sha256:07da02962f6ed258165ed652049dc681f5b6e82784af91fa13e9f743aeac0388"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/gate_seed.py",
+      "digest": "sha256:55342b4bb67417e674957dfa847720daf9de7185aa7f79535b2db3fdd594448c"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/receiver_differential.py",
+      "digest": "sha256:c9bc76c431d9a9fab28ae3dd0582df07e7d54b6344bca9aafa3ed953a4a504f1"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/run_engine_checks.py",
+      "digest": "sha256:c8775443cfd67c6e4eeb547f471b5da3d324fa3941a932fd166c6df1740998ce"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/run_gate.py",
+      "digest": "sha256:0cae6a34242939b2d20dc3b3e0be3d019e49c710aaba72623afc20e045536992"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/transfer_runtimes.py",
+      "digest": "sha256:40293e3d310d0f663eb0568229fa8d87e592c11f2d8d31bbe3190daece498ed3"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/workload-allow.txt",
+      "digest": "sha256:9fb3803f5bf1412e684aa19dca94d02dc0bf91f39882c8c915ea45801075f803"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/checks/workspace_suite.py",
+      "digest": "sha256:174bb4d1775dc4d3bd6031a53f6471016c8659c3ef2bf7ca1aac5eda76554dea"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/__init__.py",
+      "digest": "sha256:20d6359c1c78c72830880d0088996ae4751254e3ac6243fd3447c4e5dc780802"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/admin.py",
+      "digest": "sha256:ad3eb344cb886144c8dabaed620fd8a8588d1604d6ac15520ac552ac9d3e7ef1"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/attach.py",
+      "digest": "sha256:d354e0750cbbe48417d1ee7efb516d3c7911d7f2f19305b352d3ee82dd4bd109"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/link.py",
+      "digest": "sha256:85779bf657c0a79ff585e272c090ba83eab5317d9450581341a3f51f0187c7ee"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/main.py",
+      "digest": "sha256:3ac042f4cce7ca84f04521c205fa5d4a34b427d2fbcef4534fb475df80fb4ea5"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/render.py",
+      "digest": "sha256:88e21195b4cb053fb5d35abb01bcc3d420b0d65ef3565d2fa865010fc285abab"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/client/workspace.py",
+      "digest": "sha256:bbd8f14c24a66edce9e81deae14e7f29ae64f3cbb0f6552802d5b034df500fb7"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/__init__.py",
+      "digest": "sha256:a52d747e1209997b8afc13a43aebc1022282b0b52f56828fe64b669cad743ab6"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/canonical.py",
+      "digest": "sha256:84290446407d3979a429180848ceea93af750308dbf95a92668d0176177aa4cb"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/channel.py",
+      "digest": "sha256:f41f19ade996a69f67aaf90275401cf2e5e1685cdc72cf0978b69b58aea9b0a9"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/main.py",
+      "digest": "sha256:9740dc596166fb15e9ac7baa5d2576affa539dd3b20a31fcdfe1853d1c1c7fe8"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/reader.py",
+      "digest": "sha256:7497b73be0e05786d200117eea558824733e37f654b107e7c84bc0229acb0cc4"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/session.py",
+      "digest": "sha256:37159fc13ce6fa2d4b1e75239a36308ab305fff8caed39ba64981ad271bbc77c"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/token_response.py",
+      "digest": "sha256:93e25bd8a1390eb7ac97c716350269e1b1d0d4e3e61db9a9ef133085a36b03cf"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/connector/upstream.py",
+      "digest": "sha256:b13a2d826ab51b1301ba0043aeccaec2f25cbdc26ab69e34535ec5ef27dec924"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/__init__.py",
+      "digest": "sha256:aa601cdc30053bb421137bdb0afbe915a8e3b1b657692573ee3278c50008b333"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/admin.py",
+      "digest": "sha256:fa4e6aaf76f106b9ff860eaef1ce775213352eca7b2508e485d50f60285c9556"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/control.py",
+      "digest": "sha256:9ac12a4b9a2c4b5152244be59746e0fee11800d12d04a1fe32745aab46ad495b"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/credentials.py",
+      "digest": "sha256:9b3dd0798ff0e1d42931ea3393114edfc3e564f86e654fdfb9911278e44b0261"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/ffi.py",
+      "digest": "sha256:96ffb7a8a9dcc6036a2f6f03ac14f72dfdbc647c9168c5817d708c2a75eeb04e"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/fileobjects.py",
+      "digest": "sha256:14674ce70cc33353147398b57aca2ded327001f46ce2014aacfb49f7527d626c"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/fileport.py",
+      "digest": "sha256:57d93b9c64465f87916bfd80ce9b5d41ff72da52b2f65fa19b95ded5c2b5e1cc"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/hook.py",
+      "digest": "sha256:9ac86327ca360e75b9d24c0a7bc7d6ce47b991eaedc4c65246a82b23027a41fd"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/judgment.py",
+      "digest": "sha256:ec0f85eee3985af81e9a00fbd8a8d3b316293403982400c5c71a195bca9a319c"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/lifecycle.py",
+      "digest": "sha256:1d19bf434e55464ea46ba5a3bdb277933cfd7b1b0cd6ce8792e34d545d5bed98"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/loop.py",
+      "digest": "sha256:a99fd49fcb7e325c6f0fd1aec4f2012e8a3296d859607bc5bdf4d781ae9bf662"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/main.py",
+      "digest": "sha256:540c794e8713eec160b93cc54ebd2d0062e1845fdc5a8c3e4c1ef549b7730101"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/matching.py",
+      "digest": "sha256:dd20d089c364855fb0e1c2ac00b33e5e6c9f21e48c075bda0dd65035fdd2d3b1"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/objects.py",
+      "digest": "sha256:eae8976f29fcb087490899448178c4820a33e9e5a5b66aa4b487d29384456763"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/pdp.py",
+      "digest": "sha256:4d4ead368a73a694a73a68e7962aaf7e9d20e42809ff8335515d55dbfa1c1f66"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/phases.py",
+      "digest": "sha256:df6ae467ff88e551c5a07ca65b03c55649004039a08eb275e91094c295444c94"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/receive.py",
+      "digest": "sha256:6bc695c6bbc9e4c8c4133534516e2293710a931e6280d1de77d1d0c3d042c4c7"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/records.py",
+      "digest": "sha256:a7509f634df634988f18b4d04515173ef8a31db8ae4f62658f6bcc716e4993d2"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/startup.py",
+      "digest": "sha256:632396b732e8dbe61332661f141af05ca7f1f337d6d1b4d0279dbe0463fc3ae3"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/workspaces.py",
+      "digest": "sha256:af9aa3601593746581bec486f070057fce8e5cfce83551494de9831331fe5a2b"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/engine/writer.py",
+      "digest": "sha256:971ba4efad29926e0ac32c5c745c1d525127d2ebf6cc6ca83fa3b26ec4d26bfa"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend/engine_frontend.py",
+      "digest": "sha256:b64e1464739295325b8589e4bb4eed4fd42c71dd9d476aa1b028723d4aef6eaa"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend/make_ca_pool.py",
+      "digest": "sha256:e6c3169d8d0e28f9ed49c71af2354fa377de4154bdc9ef1be1999d8c566c7d35"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/certs.go",
+      "digest": "sha256:eb755833e1d538ea8236b4f4ffe9769aa4ba00976a6893638cfd87885fdfe02a"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/exchange.go",
+      "digest": "sha256:4380fb0a6da9a06117493aabb9f3b3219234fc53761f572657dacc3e47614fec"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/go.mod",
+      "digest": "sha256:32ebdda26c2aebd195272ea9d988bf4b6cfab1f10e8bb0689b2c52c06568c33f"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/host.go",
+      "digest": "sha256:65bab9c94eb22e25f9236ab9e0a1aae97fc0e9528b8d143f6ed04fa4bd272409"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/main.go",
+      "digest": "sha256:5ffe1df488c4cd764c7c17b3393fb01566f044b617e4ed0d4e28fe4352a11a93"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/tunnel.go",
+      "digest": "sha256:b6dab86662330fb35c28bd38774c7efeea29a2b92d3d47a86c3688c78e47bb5b"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/frontend-go/wire.go",
+      "digest": "sha256:d07487befa32c09230f28e43faa3d50e99c2696217f5ccadd27d50daf11108f0"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/fakeport_test.go",
+      "digest": "sha256:2377075b91b03cb7564bb10f3e22b98362bfa46b9805759753ed85aa95ec76e8"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/go.mod",
+      "digest": "sha256:8a45a2aeff5fd2a22fd254c8ac8ab8ea540152cd1db9be1781bad8c8c2353acd"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/main.go",
+      "digest": "sha256:3fd8d4f85402d2473e45a25a7770ef9343281e94c74e24bacd7af1013fa5b541"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/mcp.go",
+      "digest": "sha256:a65eacbfa5338b913ff5f57fd73ac268a8fd083a428fa413a31e53ddedd37d10"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/mcp_test.go",
+      "digest": "sha256:d37e55666369dde591733bde5fb951c9dbe160a796fc1a9c33b3cad85eb0f729"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/tools.go",
+      "digest": "sha256:c8431c18d0f6c6d78804ae758aefc61e11eed2f08fe511e7e776d6578649f808"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/tools_test.go",
+      "digest": "sha256:c082a4414eef3b39e45638d36fd5831af542d13286b7c616cea3d2eeba3dde90"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/mcp-go/wire.go",
+      "digest": "sha256:a5a5d26c4689ccbe083f8612a9e532582e5a5d236f37edf61469eee583256dd0"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/Makefile",
+      "digest": "sha256:85d09b62db772e97ecab763625336f2c80f5abeb7771bd8173dadfddd032e14b"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/catalog.c",
+      "digest": "sha256:2a1f44a8fc4bde11e9d3b51a88df7b185ca51e03262f9e486b61d37f4cf0b4ff"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/catalog.h",
+      "digest": "sha256:cc5524ee56a80df4d06f6cc2471206a0120e7f453568189ef9015fb209ac1c26"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/catalog_tool.c",
+      "digest": "sha256:93b145d5b60366fb7d3d1cc175bfe4d201ebfdf224dc9e2882ef32f1eb1020be"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/cell.c",
+      "digest": "sha256:088d8f1e100b67835e27d0acacf7ca2119d6f71a2137f5e1f1c5be0945da17d3"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/child.c",
+      "digest": "sha256:2cd05b4abd77836f9cedbfbcc8a45224f28163a127cce20ce7260bb67117706b"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/contract.c",
+      "digest": "sha256:16ee1bf8d0cd2e7c9cf2ea49e02f5fef1c2aac51cb5e4faeb15b0f2e61cb9bfa"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/contract.h",
+      "digest": "sha256:6e67448ee7c8f0b625bdbc4555d5c91f24b1200d7855e2eeb79027a6db5be8d7"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/policy.c",
+      "digest": "sha256:b748960d72f50435a554ecd6f02ac135f9ee74b89496e1fdba7b2dc02d9bfe0a"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/recover.c",
+      "digest": "sha256:659cc324930ac7ac54d2170c8bc420db3fb990189280759949d9e135a78f656f"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/spawner.c",
+      "digest": "sha256:5d3f1067ebaa12f62cfc77bbff2c3fa63f4baeb3be2ac4e4e57974a329862fc1"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/spawner.h",
+      "digest": "sha256:3a8ac9129fe72c0201beb8b80ad5f749cd7440bc29775bdc2e0267cdbb472a10"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/storage.c",
+      "digest": "sha256:735f5245c20c82ea2295cb460163734bacd4924eec198e660b449bef780a8193"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/storage.h",
+      "digest": "sha256:a21d3bb9bc2282d718182948e6fe36c820c0d0b52c01c4cab52ae943797336d3"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/support.c",
+      "digest": "sha256:c3cefbad4c19eee860e19dbf9318580bef483f8e0233e908990e2cca205afff0"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/support.h",
+      "digest": "sha256:67aba65b4de0be293547735f01b837aa6d6ac6b3e16a6910fd779d6c809bde77"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/transport.c",
+      "digest": "sha256:0fa5c45885bcd794436c9c3e028a56947fd124a237584175bb6795c4c7aedbf3"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/native/sandbox/transport.h",
+      "digest": "sha256:5df5fab66b09b30fc1419843dc8d9e8cbc03055f02e9beef3bc826e0cc1d915b"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/pdp/__init__.py",
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/pdp/simple.py",
+      "digest": "sha256:a147e4c74077ce6e99ab20c10e6b0cb8404d511f61e40b6a9464cc25ad4c5235"
+    },
+    {
+      "path": "ExperimentLab/engine-v3/relay/relay.c",
+      "digest": "sha256:d9b9147d613d1e660e89f032b304d21c935a39265623280ab0ca9d56f4094abb"
+    }
+  ],
+  "seed": {
+    "entries": 20957,
+    "versions": {
+      "claude": "2.1.312 (Claude Code)",
+      "bash": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+      "frontend": "go",
+      "mcp_sha256": "sha256:fe7c1be8885e35bc297bb367723ce9c69487c1c42719e2b1360b3c757d1fc6f6",
+      "mcp_build": [
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w"
+      ],
+      "python": "3.12.3",
+      "go": "go version go1.27.2 linux/amd64",
+      "glibc": "2.39",
+      "libraries": [
+        "lib/x86_64-linux-gnu/libXau.so.6",
+        "lib/x86_64-linux-gnu/libXdmcp.so.6",
+        "lib/x86_64-linux-gnu/libacl.so.1",
+        "lib/x86_64-linux-gnu/libattr.so.1",
+        "lib/x86_64-linux-gnu/libbrotlicommon.so.1",
+        "lib/x86_64-linux-gnu/libbrotlidec.so.1",
+        "lib/x86_64-linux-gnu/libbsd.so.0",
+        "lib/x86_64-linux-gnu/libbz2.so.1.0",
+        "lib/x86_64-linux-gnu/libc.so.6",
+        "lib/x86_64-linux-gnu/libcom_err.so.2",
+        "lib/x86_64-linux-gnu/libcrypt.so.1",
+        "lib/x86_64-linux-gnu/libcrypto.so.3",
+        "lib/x86_64-linux-gnu/libcurl-gnutls.so.4",
+        "lib/x86_64-linux-gnu/libcurl.so.4",
+        "lib/x86_64-linux-gnu/libdb-5.3.so",
+        "lib/x86_64-linux-gnu/libdl.so.2",
+        "lib/x86_64-linux-gnu/libexpat.so.1",
+        "lib/x86_64-linux-gnu/libffi.so.8",
+        "lib/x86_64-linux-gnu/libgcc_s.so.1",
+        "lib/x86_64-linux-gnu/libgdbm.so.6",
+        "lib/x86_64-linux-gnu/libgmp.so.10",
+        "lib/x86_64-linux-gnu/libgnutls.so.30",
+        "lib/x86_64-linux-gnu/libgssapi_krb5.so.2",
+        "lib/x86_64-linux-gnu/libhogweed.so.6",
+        "lib/x86_64-linux-gnu/libidn2.so.0",
+        "lib/x86_64-linux-gnu/libk5crypto.so.3",
+        "lib/x86_64-linux-gnu/libkeyutils.so.1",
+        "lib/x86_64-linux-gnu/libkrb5.so.3",
+        "lib/x86_64-linux-gnu/libkrb5support.so.0",
+        "lib/x86_64-linux-gnu/liblber.so.2",
+        "lib/x86_64-linux-gnu/libldap.so.2",
+        "lib/x86_64-linux-gnu/liblzma.so.5",
+        "lib/x86_64-linux-gnu/libm.so.6",
+        "lib/x86_64-linux-gnu/libmd.so.0",
+        "lib/x86_64-linux-gnu/libncursesw.so.6",
+        "lib/x86_64-linux-gnu/libnettle.so.8",
+        "lib/x86_64-linux-gnu/libnghttp2.so.14",
+        "lib/x86_64-linux-gnu/libp11-kit.so.0",
+        "lib/x86_64-linux-gnu/libpanelw.so.6",
+        "lib/x86_64-linux-gnu/libpcre2-8.so.0",
+        "lib/x86_64-linux-gnu/libpsl.so.5",
+        "lib/x86_64-linux-gnu/libpthread.so.0",
+        "lib/x86_64-linux-gnu/libreadline.so.8",
+        "lib/x86_64-linux-gnu/libresolv.so.2",
+        "lib/x86_64-linux-gnu/librt.so.1",
+        "lib/x86_64-linux-gnu/librtmp.so.1",
+        "lib/x86_64-linux-gnu/libsasl2.so.2",
+        "lib/x86_64-linux-gnu/libselinux.so.1",
+        "lib/x86_64-linux-gnu/libsqlite3.so.0",
+        "lib/x86_64-linux-gnu/libssh.so.4",
+        "lib/x86_64-linux-gnu/libssl.so.3",
+        "lib/x86_64-linux-gnu/libstdc++.so.6",
+        "lib/x86_64-linux-gnu/libtasn1.so.6",
+        "lib/x86_64-linux-gnu/libtinfo.so.6",
+        "lib/x86_64-linux-gnu/libunistring.so.5",
+        "lib/x86_64-linux-gnu/libxcb.so.1",
+        "lib/x86_64-linux-gnu/libz.so.1",
+        "lib/x86_64-linux-gnu/libzstd.so.1",
+        "lib64/ld-linux-x86-64.so.2"
+      ],
+      "not_found": [],
+      "git": "git version 2.43.0",
+      "curl": "curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.7",
+      "node": "v22.23.4",
+      "npm": "10.9.9",
+      "pip": "pip-24.0.dist-info",
+      "uv": {
+        "url": "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz",
+        "archive_sha256": "f29c3e94ffabd7e6f3ba521dba169a9b7ec12100bf3257087f0f24f6123f3645",
+        "binary_sha256": "23803452c0fbe125033054cd9ff245f1d649fb65b4b73f68429f4abda432436d"
+      },
+      "gh": {
+        "url": "https://github.com/cli/cli/releases/download/v2.103.3/gh_2.103.3_linux_amd64.tar.gz",
+        "archive_sha256": "4c806978ffce1cec70853302a56d70ac6da4f19bae7adca4e1a8ab00633dd91d",
+        "binary_sha256": "b768184570b12536be4ac1528893f6340d1c6a7b40b56ad45bca9cd0e87ad34d"
+      },
+      "rg": {
+        "url": "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz",
+        "archive_sha256": "33e15bcf1624b25cdd2a55813a47a2f95dbe126268203e76aa6a585d1e7b149c",
+        "binary_sha256": "e62198eb19b136b88c330af83647b5a962cb99b6b1f066758568f12de1974849"
+      },
+      "fd": {
+        "url": "https://github.com/sharkdp/fd/releases/download/v10.5.1/fd-v10.5.1-x86_64-unknown-linux-musl.tar.gz",
+        "archive_sha256": "f6c95edb190c241df6fddc815a5bab4051444993ac5d92ddc6eec0e0dc2342c7",
+        "binary_sha256": "86102b09f45e4f63cf1f67f98e8d2f7fd6e9420a9c7d1f77401a1b979004b8b1"
+      },
+      "pi": "1.4.0",
+      "opencode": "1.19.5",
+      "opencode_sha256": "sha256:7df4e4136301f16589b0f30bf91a61380fca5f8ef22dd36570f5ebe1d4ec802c",
+      "packages": {
+        "coreutils": "9.4-3ubuntu6.3",
+        "grep": "3.11-4build1",
+        "findutils": "4.9.0-5build1",
+        "sed": "4.9-2ubuntu0.24.04.1",
+        "diffutils": "1:3.10-1ubuntu0.1"
+      },
+      "pytest": {
+        "pytest": "9.1.1",
+        "pluggy": "1.6.0",
+        "iniconfig": "2.3.0",
+        "packaging": "26.3",
+        "pygments": "2.17.2"
+      },
+      "foreign_elf_left_out": [
+        "usr/lib/pi/node_modules/@earendil-works/pi-tui/native/linux/prebuilds/linux-arm64/linux-platform-x11.node"
+      ]
+    },
+    "bytes": 939203890
+  },
+  "preflight": {
+    "frontend_usage": {
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "usage: engine-frontend [options] <proxy socket> <port> <ready file>\n",
+      "elapsed_seconds": 0.0
+    },
+    "agent_version": {
+      "exit_code": 0,
+      "stdout": "2.1.312 (Claude Code)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.01
+    },
+    "git_version": {
+      "exit_code": 0,
+      "stdout": "git version 2.43.0\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0
+    },
+    "curl_version": {
+      "exit_code": 0,
+      "stdout": "curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.7\nRelease-Date: 2023-12-06, security patched: 8.5.0-2ubuntu10.16\nProtocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp\nFeatures: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM PSL SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0
+    },
+    "node_version": {
+      "exit_code": 0,
+      "stdout": "v22.23.4\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0
+    },
+    "uv_version": {
+      "exit_code": 0,
+      "stdout": "uv 0.13.6 (x86_64-unknown-linux-gnu)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0
+    },
+    "gh_version": {
+      "exit_code": 0,
+      "stdout": "gh version 2.103.3 (2026-10-26)\nhttps://github.com/cli/cli/releases/tag/v2.103.3\n",
+      "stderr": "",
+      "elapsed_seconds": 0.02
+    },
+    "pi_version": {
+      "exit_code": 0,
+      "stdout": "1.4.0\n",
+      "stderr": "",
+      "elapsed_seconds": 0.2
+    },
+    "opencode_version": {
+      "exit_code": 0,
+      "stdout": "1.19.5\n",
+      "stderr": "",
+      "elapsed_seconds": 0.31
+    },
+    "rg_version": {
+      "exit_code": 0,
+      "stdout": "ripgrep 15.2.0 (rev e89fff89ac)\n\nfeatures:+pcre2\nsimd(compile):+SSE2,-SSSE3,-AVX2\nsimd(runtime):+SSE2,+SSSE3,+AVX2\n\nPCRE2 10.45 is available (JIT is available)\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0
+    },
+    "fd_version": {
+      "exit_code": 0,
+      "stdout": "fd 10.5.1\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0
+    },
+    "pytest_version": {
+      "exit_code": 0,
+      "stdout": "pytest 9.1.1\n",
+      "stderr": "",
+      "elapsed_seconds": 0.4
+    }
+  },
+  "catalog_check_seconds": 7.736,
+  "mode": "recorded",
+  "workspaces": "workspace=work0 root=/var/lib/engine-gate-v4-derive-pi/work0 state=ok entries=2\n",
+  "items": [
+    {
+      "name": "pi-a",
+      "goal": "derivation (a) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; pi -p 'Without using any tools, explain in three sentences what Linux seccomp is.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s)",
+      "started_at_utc": "2026-11-05T15:46:53.811011+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:1",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "printf 'W2_%s\\n' BEGIN; pi -p 'Without using any tools, explain in three sentences what Linux seccomp is.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\nLinux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. Originally it offered a strict mode that permitted only a few calls like read, write, and exit, but the seccomp-bpf extension lets a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This reduces the kernel attack surface available to a process, which is why sandboxes and container runtimes such as Docker use it.\r\nW2_ITEM_EXIT=0\r\n",
+      "finished_at_utc": "2026-11-05T15:47:10.510565+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6665,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "model POST api.anthropic.com/v1/messages allow/placed -> 1:200"
+    },
+    {
+      "name": "pi-b",
+      "goal": "derivation (b) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; pi -p 'Using your file-writing tool, create calc/__init__.py defining add(a, b) that returns a + b, and tests/test_calc.py with two pytest tests for add. Then, using your file-editing tool, change add to take a third argument c with default 0 and update the tests to cover it.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s)",
+      "started_at_utc": "2026-11-05T15:47:10.510585+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:2",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "\r<ument c with default 0 and update the tests to cover it.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\nDone. Files are in `/work`:\r\n\r\n- **`calc/__init__.py`**: `add(a, b, c=0)` returns `a + b + c`. It started as `add(a, b)` and I changed it with an edit.\r\n- **`tests/test_calc.py`**: four pytest tests:\r\n  - `test_add_positive_numbers`: `add(2, 3) == 5`\r\n  - `test_add_negative_numbers`: `add(-4, -6) == -10`\r\n  - `test_add_with_third_argument`: `add(1, 2, 3) == 6`\r\n  - `test_add_third_argument_defaults_to_zero`: `add(1, 2) == add(1, 2, 0) == 3`\r\n\r\nAll 4 tests pass. `python` isn't on the PATH here, so I ran them with `python3 -m pytest`.\r\nW2_ITEM_EXIT=0\r\n",
+      "finished_at_utc": "2026-11-05T15:47:22.402262+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6860,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 7726,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 3,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 9237,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 4,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 9741,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "files True/True, c True"
+    },
+    {
+      "name": "pi-c",
+      "goal": "derivation (c) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; pi -p 'Using your shell tool, run each of these commands in the workspace and show their output: ls -la; cat calc/__init__.py; grep -rn '\"'\"'def '\"'\"' .; find . -name '\"'\"'*.py'\"'\"'; sed -n '\"'\"'1,5p'\"'\"' tests/test_calc.py; wc -l calc/__init__.py tests/test_calc.py; diff calc/__init__.py tests/test_calc.py' --model anthropic/claude-haiku-5-5; s=$?; (exit $s)",
+      "started_at_utc": "2026-11-05T15:47:22.402283+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:3",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "\r<s/test_calc.py; diff calc/__init__.py tests/test_calc.py' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\nAll seven commands ran in `/work`. Each one's output is below.\r\n\r\n**`ls -la`**\r\n```\r\ntotal 0\r\ndrwx------ 1 70002 70002  44 Nov  5 15:47 .\r\ndrwxr-xr-x 9     0     0 260 Nov  5 15:47 ..\r\ndrwxr-xr-x 1 70002 70002  64 Nov  5 15:47 .pytest_cache\r\ndrwxr-xr-x 1 70002 70002  44 Nov  5 15:47 calc\r\ndrwxr-xr-x 1 70002 70002  46 Nov  5 15:47 tests\r\n```\r\n\r\n**`cat calc/__init__.py`**\r\n```python\r\ndef add(a, b, c=0):\r\n    return a + b + c\r\n```\r\n\r\n**`grep -rn 'def ' .`**\r\n```\r\n./calc/__init__.py:1:def add(a, b, c=0):\r\n./tests/test_calc.py:4:def test_add_positive_numbers():\r\n./tests/test_calc.py:8:def test_add_negative_numbers():\r\n./tests/test_calc.py:12:def test_add_with_third_argument():\r\n./tests/test_calc.py:16:def test_add_third_argument_defaults_to_zero():\r\n```\r\n\r\n**`find . -name '*.py'`**\r\n```\r\n./calc/__init__.py\r\n./tests/test_calc.py\r\n```\r\n\r\n**`sed -n '1,5p' tests/test_calc.py`**\r\n```python\r\nfrom calc import add\r\n\r\n\r\ndef test_add_positive_numbers():\r\n    assert add(2, 3) == 5\r\n```\r\n\r\n**`wc -l calc/__init__.py tests/test_calc.py`**\r\n```\r\n  2 calc/__init__.py\r\n 17 tests/test_calc.py\r\n 19 total\r\n```\r\n\r\n**`diff calc/__init__.py tests/test_calc.py`** (exit code 1, meaning the files differ)\r\n```\r\n1,2c1,17\r\n< def add(a, b, c=0):\r\n<     return a + b + c\r\n---\r\n> from calc import add\r\n> \r\n> \r\n> def test_add_positive_numbers():\r\n>     assert add(2, 3) == 5\r\n> \r\n> \r\n> def test_add_negative_numbers():\r\n>     assert add(-4, -6) == -10\r\n> \r\n> \r\n> def test_add_with_third_argument():\r\n>     assert add(1, 2, 3) == 6\r\n> \r\n> \r\n> def test_add_third_argument_defaults_to_zero():\r\n>     assert add(1, 2) == add(1, 2, 0) == 3\r\n```\r\n\r\nThe diff is expected: `calc/__init__.py` holds the implementation and `tests/test_calc.py` holds the tests. The `.pytest_cache` directory suggests pytest has been run here before.\r\nW2_ITEM_EXIT=0\r\nw2$ ",
+      "finished_at_utc": "2026-11-05T15:47:30.650414+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6868,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 11031,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "{'defadd': True, 'tests/test_calc.py': True, 'calc/__init__.py': True}"
+    },
+    {
+      "name": "pi-d",
+      "goal": "derivation (d) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; pi -p 'Using your shell tool, run python3 -m pytest -q in the workspace and report the summary line.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s)",
+      "started_at_utc": "2026-11-05T15:47:30.650444+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:4",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "\r< pytest -q in the workspace and report the summary line.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\nThe summary line from `python3 -m pytest -q` in `/work` is:\r\n\r\n```\r\n4 passed in 0.00s\r\n```\r\nW2_ITEM_EXIT=0\r\n",
+      "finished_at_utc": "2026-11-05T15:47:34.915396+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6684,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 7171,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "host rerun: 4 passed in 0.00s"
+    },
+    {
+      "name": "pi-e",
+      "goal": "derivation (e) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; pi -p 'Using your shell tool: run git init in the workspace and commit all files; clone https://github.com/octocat/Hello-World.git into /tmp/hw; clone https://github.com/Melclycj/Thesis-testbox.git into /tmp/tb, append one line with the current UTC time to w2-derive-log.txt, commit it and run git push. Use the author name w2-derive and the email w2-derive@users.noreply.github.com for both commits.' --model anthropic/claude-haiku-5-5; s=$?; test -d /tmp/hw/.git >/dev/null 2>&1 && printf 'W2_%s\\n' HW_CLONED; (exit $s)",
+      "started_at_utc": "2026-11-05T15:47:34.915414+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:5",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "\r<thropic/claude-haiku-5-5; s=$?; test -d /tmp/hw/.git >/dev/null 2>&1 && printf 'W2_%s\\n' HW_CLONED; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\nAll steps are done, but I made a mistake in the log file along the way that you should know about.\r\n\r\n- **Workspace (`/work`)**: `git init` and an initial commit (`f4f065c`) by `w2-derive <w2-derive@users.noreply.github.com>`. The commit also picked up two `__pycache__/*.pyc` files. Remove them and add a `.gitignore` if you don't want them tracked.\r\n- **`/tmp/hw`**: cloned `octocat/Hello-World` (HEAD `7fd1a60`). I did not commit or push there, since no change was requested.\r\n- **`/tmp/tb`**: cloned `Melclycj/Thesis-testbox` and appended a UTC timestamp to `w2-derive-log.txt`. The original last line had no trailing newline, so my append merged it with the new timestamp (`2026-11-01 20:00:15 UTC2026-11-05 15:47:47 UTC`). That was committed as `1f89302` and pushed. I then made a follow-up commit `049c149` that splits the line back apart and pushed it. The final file is correct, and the push succeeded. The history now contains the bad intermediate commit, and I did not rewrite it, since that would require a force push.\r\n\r\nThe appended line is `2026-11-05 15:47:47 UTC`. Both commits are authored by `w2-derive <w2-derive@users.noreply.github.com>`.\r\nW2_HW_CLONED\r\nW2_ITEM_EXIT=0\r\n",
+      "finished_at_utc": "2026-11-05T15:48:05.317499+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6984,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 9222,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 3,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/octocat/Hello-World.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "cache-control",
+            "git-protocol",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 4,
+          "method": "POST",
+          "host": "github.com",
+          "port": 443,
+          "path": "/octocat/Hello-World.git/git-upload-pack",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "content-type",
+            "git-protocol",
+            "user-agent"
+          ],
+          "body_len": 175,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 5,
+          "method": "POST",
+          "host": "github.com",
+          "port": 443,
+          "path": "/octocat/Hello-World.git/git-upload-pack",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "content-type",
+            "git-protocol",
+            "user-agent"
+          ],
+          "body_len": 317,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 6,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "cache-control",
+            "git-protocol",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 401
+        },
+        {
+          "seq": 7,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "cache-control",
+            "git-protocol",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 8,
+          "method": "POST",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/git-upload-pack",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "content-type",
+            "git-protocol",
+            "user-agent"
+          ],
+          "body_len": 175,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 9,
+          "method": "POST",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/git-upload-pack",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "content-type",
+            "git-protocol",
+            "user-agent"
+          ],
+          "body_len": 217,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 10,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 10809,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 11,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 13349,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 12,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "cache-control",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 401
+        },
+        {
+          "seq": 13,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "cache-control",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 14,
+          "method": "POST",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/git-receive-pack",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "content-type",
+            "user-agent"
+          ],
+          "body_len": 525,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 15,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 14236,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 16,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "cache-control",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 401
+        },
+        {
+          "seq": 17,
+          "method": "GET",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/info/refs",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "cache-control",
+            "pragma",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 18,
+          "method": "POST",
+          "host": "github.com",
+          "port": 443,
+          "path": "/Melclycj/Thesis-testbox.git/git-receive-pack",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "content-type",
+            "user-agent"
+          ],
+          "body_len": 542,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "git",
+          "placement": 3,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 19,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 17949,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 20,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 23237,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 21,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 25974,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "workspace commit True, clone True, push POST github.com/Melclycj/Thesis-testbox.git/git-receive-pack allow/placed -> 1:200; POST github.com/Melclycj/Thesis-testbox.git/git-receive-pack allow/placed -> 1:200",
+      "github_commit": true
+    },
+    {
+      "name": "pi-f",
+      "goal": "derivation (f) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; pi -p 'Using your shell tool: run python3 -m pip install --target /tmp/pip-t six; run uv venv /tmp/uvv and then uv pip install --python /tmp/uvv/bin/python six; run npm install --prefix /tmp/npm-t is-number. Then import each package once and show the output.' --model anthropic/claude-haiku-5-5; s=$?; test -f /tmp/pip-t/six.py >/dev/null 2>&1 && printf 'W2_%s\\n' PIP_OK; ls /tmp/uvv/lib/python3*/site-packages/six.py >/dev/null 2>&1 && printf 'W2_%s\\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\\n' NPM_OK; (exit $s)",
+      "started_at_utc": "2026-11-05T15:48:05.317533+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:6",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "\r<_%s\\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\\n' NPM_OK; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\nAll three installs succeeded, and each package imported once.\r\n\r\n- **pip (`/tmp/pip-t`)**: installed `six` 1.17.0. Import needs `PYTHONPATH=/tmp/pip-t`. Output: `pip six: 1.17.0`\r\n- **uv (`/tmp/uvv`)**: created the venv on CPython 3.12.3 and installed `six` 1.17.0. Output: `uv six: 1.17.0`\r\n- **npm (`/tmp/npm-t`)**: installed `is-number`. Loaded from `/tmp/npm-t/node_modules/is-number`. Output: `npm is-number: true false` (`isNumber(5)` is `true`, `isNumber('abc')` is `false`)\r\nW2_PIP_OK\r\nW2_UV_OK\r\nW2_NPM_OK\r\nW2_ITEM_EXIT=0\r\n",
+      "finished_at_utc": "2026-11-05T15:48:15.074483+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6842,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "GET",
+          "host": "pypi.org",
+          "port": 443,
+          "path": "/simple/six/",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "cache-control",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 3,
+          "method": "GET",
+          "host": "files.pythonhosted.org",
+          "port": 443,
+          "path": "/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl.metadata",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 4,
+          "method": "GET",
+          "host": "files.pythonhosted.org",
+          "port": 443,
+          "path": "/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 5,
+          "method": "GET",
+          "host": "pypi.org",
+          "port": 443,
+          "path": "/simple/six/",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 6,
+          "method": "GET",
+          "host": "files.pythonhosted.org",
+          "port": 443,
+          "path": "/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl.metadata",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 7,
+          "method": "GET",
+          "host": "files.pythonhosted.org",
+          "port": 443,
+          "path": "/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 8,
+          "method": "GET",
+          "host": "registry.npmjs.org",
+          "port": 443,
+          "path": "/is-number",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "npm-auth-type",
+            "npm-command",
+            "pacote-pkg-id",
+            "pacote-req-type",
+            "pacote-version",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "npm",
+          "placement": 2,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 9,
+          "method": "GET",
+          "host": "registry.npmjs.org",
+          "port": 443,
+          "path": "/is-number/-/is-number-7.0.0.tgz",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "authorization",
+            "npm-auth-type",
+            "npm-command",
+            "pacote-integrity",
+            "pacote-pkg-id",
+            "pacote-req-type",
+            "pacote-version",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "npm",
+          "placement": 2,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 10,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 8045,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 11,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 10320,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "{'PIP_OK': True, 'UV_OK': True, 'NPM_OK': True}"
+    },
+    {
+      "name": "pi-h",
+      "goal": "derivation (h) for pi: allowlist-derivation.md",
+      "command": "printf 'W2_%s\\n' BEGIN; mkdir -p ~/.pi/agent && printf '%s' '{\"mcpServers\": {\"deepwiki\": {\"url\": \"https://mcp.deepwiki.com/mcp\"}}}' > ~/.pi/agent/mcp.json && pi -p 'Call the deepwiki read_wiki_structure tool for the repository facebook/react and reply with how many top-level topics it lists, as a number only.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s)",
+      "started_at_utc": "2026-11-05T15:48:15.074499+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:7",
+      "ready": true,
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "\r<th how many top-level topics it lists, as a number only.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\nW2_BEGIN\r\n8\r\nW2_ITEM_EXIT=0\r\n",
+      "finished_at_utc": "2026-11-05T15:48:27.958394+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 9030,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "POST",
+          "host": "mcp.deepwiki.com",
+          "port": 443,
+          "path": "/mcp",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent"
+          ],
+          "body_len": 161,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 3,
+          "method": "POST",
+          "host": "mcp.deepwiki.com",
+          "port": 443,
+          "path": "/mcp",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "content-type",
+            "mcp-protocol-version",
+            "sec-fetch-mode",
+            "user-agent"
+          ],
+          "body_len": 54,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 202
+        },
+        {
+          "seq": 4,
+          "method": "GET",
+          "host": "mcp.deepwiki.com",
+          "port": 443,
+          "path": "/mcp",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "mcp-protocol-version",
+            "sec-fetch-mode",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 405
+        },
+        {
+          "seq": 5,
+          "method": "POST",
+          "host": "mcp.deepwiki.com",
+          "port": 443,
+          "path": "/mcp",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "content-type",
+            "mcp-protocol-version",
+            "sec-fetch-mode",
+            "user-agent"
+          ],
+          "body_len": 46,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 6,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 12985,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 7,
+          "method": "POST",
+          "host": "mcp.deepwiki.com",
+          "port": 443,
+          "path": "/mcp",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "content-type",
+            "mcp-protocol-version",
+            "sec-fetch-mode",
+            "user-agent"
+          ],
+          "body_len": 156,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 8,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 16520,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "MCP POST 2xx 4"
+    },
+    {
+      "name": "pi-a-interactive",
+      "goal": "derivation (a) interactively for pi",
+      "command": "pi --model anthropic/claude-haiku-5-5; printf 'W2_TUI_EXIT=%s\\n' $?; true",
+      "started_at_utc": "2026-11-05T15:48:27.958409+00:00",
+      "execution": "5bcc4d500addaa1ce979da8b4abe89f7:8",
+      "ready": true,
+      "drive": {
+        "answered": [],
+        "reply_seen": true,
+        "ok": true
+      },
+      "finished": true,
+      "exit": 0,
+      "terminal_tail": "pi --model anthropic/claude-haiku-5-5; printf 'W2_TUI_EXIT=%s\\n' $?; true; echo W2_ITEM_EXIT=$?\r\n\u001b[?1049h\u001b[?7l\u001b[?1000h\u001b[?1002h\u001b[?1003h\u001b[?1004h\u001b[?1006h\u001b[2J\u001b[H\u001b[?25l\u001b[?2004h\u001b[>7u\u001b[?u\u001b]7501;?\u001b\\\u001b[c\u001b[?25l\u001b[?2031h\u001b]10;?\u0007\u001b]11;?\u0007\u001b]4;0;?\u0007\u001b]4;1;?\u0007\u001b]4;2;?\u0007\u001b]4;3;?\u0007\u001b]4;4;?\u0007\u001b]4;5;?\u0007\u001b]4;6;?\u0007\u001b]4;7;?\u0007\u001b]4;8;?\u0007\u001b]4;9;?\u0007\u001b]4;10;?\u0007\u001b]4;11;?\u0007\u001b]4;12;?\u0007\u001b]4;13;?\u0007\u001b]4;14;?\u0007\u001b]4;15;?\u0007\u001b[c\u001b[?2026h\u001b[2J\u001b[1;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[2;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[3;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[4;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[5;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[6;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[7;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[8;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[9;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[10;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[11;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[12;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[13;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[14;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[15;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[16;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[17;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[18;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[19;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[20;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[21;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[22;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[23;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[24;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[25;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[26;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[27;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[28;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[29;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[30;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[31;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[32;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[33;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[34;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[35;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[36;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[37;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[38;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[39;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[40;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[41;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[42;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[43;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[44;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[45;1H\u001b[2K\u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[39m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[2K\u001b[7m \u001b[27m                                                                                                                                                                                                       \u001b[0m\u001b]8;;\u0007\u001b[48;1H\u001b[2K\u001b[39m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[49;1H\u001b[2K\u001b[39m\u001b[2m/work (main)\u001b[22;39m\u001b[0m\u001b]8;;\u0007\u001b[50;1H\u001b[2K\u001b[39m\u001b[2m0.0%/1.0M (auto)\u001b[22;39m\u001b[39m\u001b[2m                                                                                                                                                               claude-haiku-5-5 • medium\u001b[22;39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b]0;π - work\u0007\u001b[?2026h\u001b[2;1H\u001b[2K \u001b[38;5;174m\u001b[48;5;67m▀\u001b[0m\u001b[38;5;174m▀█\u001b[0m  \u001b[39m\u001b[2mv1.4.0\u001b[22;39m                                                                                                                                                                                            \u001b[0m\u001b]8;;\u0007\u001b[3;1H\u001b[2K \u001b[38;5;67m█▀\u001b[0m \u001b[38;5;179m█\u001b[0m \u001b[39m\u001b[2mescape\u001b[22;39m\u001b[39m\u001b[2m interrupt\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2mctrl+c/ctrl+d\u001b[22;39m\u001b[39m\u001b[2m clear/exit\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2m/\u001b[22;39m\u001b[39m\u001b[2m commands\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2m!\u001b[22;39m\u001b[39m\u001b[2m bash\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2mctrl+o\u001b[22;39m\u001b[39m\u001b[2m more\u001b[22;39m                                                                                                                   \u001b[0m\u001b]8;;\u0007\u001b[4;1H\u001b[2K \u001b[39m\u001b[2mPress ctrl+o to show full startup help and loaded resources.\u001b[22;39m                                                                                                                                           \u001b[0m\u001b]8;;\u0007\u001b[5;1H\u001b[2K                                                                                                                                                                                                        \u001b[0m\u001b]8;;\u0007\u001b[6;1H\u001b[2K \u001b[39m\u001b[2mPi can explain its own features and look up its docs. Ask it how to use or extend Pi.\u001b[22;39m                                                                                                                  \u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[38;5;6m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[48;1H\u001b[2K\u001b[38;5;6m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[47;1H\u001b[2KWithout using any tools, explain in three sentences what Linux seccomp is.\u001b[7m \u001b[27m                                                                                                                             \u001b[0m\u001b]8;;\u0007\u001b[47;75H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[47;1H\u001b[2K\u001b[7m \u001b[27m                                                                                                                                                                                                       \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[8;1H\u001b[2K\u001b[49m                                                                                                                                                                                                        \u001b[49m\u001b[0m\u001b]8;;\u0007\u001b[9;1H\u001b[2K\u001b[49m \u001b[39mWithout using any tools, explain in three sentences what Linux seccomp is.                                                                                                                             \u001b[49m\u001b[0m\u001b]8;;\u0007\u001b[10;1H\u001b[2K\u001b[49m                                                                                                                                                                                                        \u001b[49m\u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠋\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[50;1H\u001b[2K\u001b[39m\u001b[2m0.1%/1.0M (auto)\u001b[22;39m\u001b[39m\u001b[2m                                                                                                                                                               claude-haiku-5-5 • medium\u001b[22;39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠙\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠹\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠸\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠼\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠴\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠦\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠧\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠇\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠏\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠋\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠙\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠹\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠸\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠼\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠴\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠦\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠧\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠇\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠏\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Lin                                                                                                                                                                                                    \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠋\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠙\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which                                                                                                                         \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is                                                                                               \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was                                                                       \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a                                                          \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that                                         \u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠹\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that perm                                    \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that permitted only a                        \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that permitted only a few cal                \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that permitted only a few calls like         \u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠸\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[12;1H\u001b[2K Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that permitted only a few calls like read,   \u001b[0m\u001b]8;;\u0007\u001b[13;1H\u001b[2K write, and                                                                                                                                                                                             \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and ex                                                                                                                                                                                          \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was                                                                                                                                                                               \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was ext                                                                                                                                                                           \u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠼\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as                                                                                                                                                                   \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-b                                                                                                                                                         \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to                                                                                                                                                    \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let                                                                                                                                                \u001b[0m\u001b]8;;\u0007\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠴\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install                                                                                                                              \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF fil                                                                                                                    \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that all                                                                                                        \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠦\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, den                                                                                                \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, tra                                                                                        \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps                                                                                      \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each                                                                        \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠧\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each sy                                                                     \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number                                            \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This                        \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This l                      \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠇\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This lets appl              \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[13;1H\u001b[2K write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This lets applications and  \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K s                                                                                                                                                                                                      \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like                                                                                                                                                                                         \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠏\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like Docker, Chrome,                                                                                                                                                                         \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like Docker, Chrome, and systemd reduce their                                                                                                                                                \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like Docker, Chrome, and systemd reduce their kernel att                                                                                                                                     \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like Docker, Chrome, and systemd reduce their kernel attack surface by bl                                                                                                                    \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m── \u001b[39m\u001b[38;5;6m⠋\u001b[39m \u001b[38;5;6mWorking\u001b[39m\u001b[38;5;6m ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like Docker, Chrome, and systemd reduce their kernel attack surface by blocking ever                                                                                                         \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[14;1H\u001b[2K sandboxes like Docker, Chrome, and systemd reduce their kernel attack surface by blocking everything they don't need.                                                                                  \u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[46;1H\u001b[2K\u001b[38;5;6m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\u001b[50;1H\u001b[2K\u001b[39m\u001b[2m↑4 ↓165 R2.5k CH99.8% $0.000 0.3%/1.0M (auto)\u001b[22;39m\u001b[39m\u001b[2m                                                                                                                                  claude-haiku-5-5 • medium\u001b[22;39m\u001b[0m\u001b]8;;\u0007\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2031l\u001b[<u\u001b[?2026h\u001b[47;1H\u001b[?25l\u001b[?2026l\u001b[?2026h\u001b[?1006l\u001b[?1004l\u001b[?1003l\u001b[?1002l\u001b[?1000l\u001b[?7h\u001b[?2026l\u001b[?25h\u001b[?2004l\u001b[?2026h\u001b[?1049l\u001b[?25h\u001b[?2026l\u001b[?2026h\u001b[0m\u001b]8;;\u0007\r\r\n \u001b[38;5;174m\u001b[48;5;67m▀\u001b[0m\u001b[38;5;174m▀█\u001b[0m  \u001b[39m\u001b[2mv1.4.0\u001b[22;39m                                                                                                                                                                                            \u001b[0m\u001b]8;;\u0007\r\r\n \u001b[38;5;67m█▀\u001b[0m \u001b[38;5;179m█\u001b[0m \u001b[39m\u001b[2mescape\u001b[22;39m\u001b[39m\u001b[2m interrupt\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2mctrl+c/ctrl+d\u001b[22;39m\u001b[39m\u001b[2m clear/exit\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2m/\u001b[22;39m\u001b[39m\u001b[2m commands\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2m!\u001b[22;39m\u001b[39m\u001b[2m bash\u001b[22;39m\u001b[39m\u001b[2m · \u001b[22;39m\u001b[39m\u001b[2mctrl+o\u001b[22;39m\u001b[39m\u001b[2m more\u001b[22;39m                                                                                                                   \u001b[0m\u001b]8;;\u0007\r\r\n \u001b[39m\u001b[2mPress ctrl+o to show full startup help and loaded resources.\u001b[22;39m                                                                                                                                           \u001b[0m\u001b]8;;\u0007\r\r\n                                                                                                                                                                                                        \u001b[0m\u001b]8;;\u0007\r\r\n \u001b[39m\u001b[2mPi can explain its own features and look up its docs. Ask it how to use or extend Pi.\u001b[22;39m                                                                                                                  \u001b[0m\u001b]8;;\u0007\r\r\n\u001b[0m\u001b]8;;\u0007\r\r\n\u001b]133;A\u0007\u001b[49m                                                                                                                                                                                                        \u001b[49m\u001b[0m\u001b]8;;\u0007\r\r\n\u001b[49m \u001b[39mWithout using any tools, explain in three sentences what Linux seccomp is.                                                                                                                             \u001b[49m\u001b[0m\u001b]8;;\u0007\r\r\n\u001b]133;B\u0007\u001b]133;C\u0007\u001b[49m                                                                                                                                                                                                        \u001b[49m\u001b[0m\u001b]8;;\u0007\r\r\n\u001b]133;A\u0007\u001b[0m\u001b]8;;\u0007\r\r\n Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process is allowed to make. It was originally a strict mode that permitted only a few calls like read,   \u001b[0m\u001b]8;;\u0007\r\r\n write, and exit, but was extended as seccomp-bpf to let a process install a BPF filter that allows, denies, traps, or logs each syscall based on its number and arguments. This lets applications and  \u001b[0m\u001b]8;;\u0007\r\r\n\u001b]133;B\u0007\u001b]133;C\u0007 sandboxes like Docker, Chrome, and systemd reduce their kernel attack surface by blocking everything they don't need.                                                                                  \u001b[0m\u001b]8;;\u0007\r\r\n\u001b[0m\u001b]8;;\u0007\r\r\n\u001b[38;5;6m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\r\r\n\u001b[7m \u001b[27m                                                                                                                                                                                                       \u001b[0m\u001b]8;;\u0007\r\r\n\u001b[38;5;6m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\u001b[39m\u001b[0m\u001b]8;;\u0007\r\r\n\u001b[39m\u001b[2m/work (main)\u001b[22;39m\u001b[0m\u001b]8;;\u0007\r\r\n\u001b[39m\u001b[2m↑4 ↓165 R2.5k CH99.8% $0.000 0.3%/1.0M (auto)\u001b[22;39m\u001b[39m\u001b[2m                                                                                                                                  claude-haiku-5-5 • medium\u001b[22;39m\u001b[0m\u001b]8;;\u0007\u001b[?2026l\u001b[3A\u001b[1G\u001b[?25l \u001b[4B\r\r\n\u001b[?25h\u001b[?2004l\u001b]0;π - work\u0007\u001b[2mTo resume this session:\u001b[22m pi --session 01a1ac65-b3c0-7689-975f-1c6bfcd83134\r\nW2_TUI_EXIT=0\r\nW2_ITEM_EXIT=0\r\nw2$ ",
+      "finished_at_utc": "2026-11-05T15:48:43.764136+00:00",
+      "requests": [
+        {
+          "seq": 1,
+          "method": "GET",
+          "host": "pi.dev",
+          "port": 443,
+          "path": "/api/models/providers/anthropic",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "sec-fetch-mode",
+            "user-agent"
+          ],
+          "body_len": 0,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "none",
+          "account": null,
+          "placement": null,
+          "result": 1,
+          "status": 200
+        },
+        {
+          "seq": 2,
+          "method": "POST",
+          "host": "api.anthropic.com",
+          "port": 443,
+          "path": "/v1/messages",
+          "header_names": [
+            "accept",
+            "accept-encoding",
+            "accept-language",
+            "anthropic-beta",
+            "anthropic-dangerous-direct-browser-access",
+            "anthropic-version",
+            "content-type",
+            "sec-fetch-mode",
+            "user-agent",
+            "x-api-key",
+            "x-stainless-arch",
+            "x-stainless-lang",
+            "x-stainless-os",
+            "x-stainless-package-version",
+            "x-stainless-retry-count",
+            "x-stainless-runtime",
+            "x-stainless-runtime-version",
+            "x-stainless-timeout"
+          ],
+          "body_len": 6665,
+          "decision": "allow",
+          "basis": "recorded_allow",
+          "credential": "placed",
+          "account": "gate",
+          "placement": 1,
+          "result": 1,
+          "status": 200
+        }
+      ],
+      "ok": true,
+      "observed": "model POST api.anthropic.com/v1/messages allow/placed -> 1:200"
+    }
+  ],
+  "question_transcript": "watching for questions; end of input (Ctrl-D) quits, open questions then time out at the core\n\n",
+  "questions_answered": 0,
+  "supervisor_killed": [],
+  "record_access": {
+    "shape": {
+      "engine-gate-evidence-q6wf2li8": {
+        "uid": 1000,
+        "gid": 70998,
+        "mode": "0o750"
+      },
+      "events.jsonl": {
+        "uid": 1000,
+        "gid": 70998,
+        "mode": "0o640"
+      }
+    },
+    "tried": {
+      "pdp": {
+        "list": 0,
+        "read": 0,
+        "append": 13
+      },
+      "pool": {
+        "list": 13,
+        "read": 13,
+        "append": 13
+      }
+    },
+    "ok": true
+  },
+  "timings": {
+    "control_ready_seconds": 7.123,
+    "spawn_seconds": [
+      0.062,
+      0.026,
+      0.024,
+      0.024,
+      0.025,
+      0.024,
+      0.024,
+      0.024
+    ],
+    "spawn_max_seconds": 0.062
+  },
+  "port_faults": [],
+  "sentinel": {
+    "hits": [],
+    "credential_store_hits": [
+      "anthropic:/var/lib/engine-gate-v4-derive-pi/state/credentials/api.anthropic.com:443/gate.1.truth_a",
+      "gh:/var/lib/engine-gate-v4-derive-pi/state/credentials/github.com:443/git.1.truth_b",
+      "npm:/var/lib/engine-gate-v4-derive-pi/state/credentials/registry.npmjs.org:443/npm.1.truth_a"
+    ],
+    "searched": [
+      "/var/lib/engine-gate-v4-derive-pi",
+      "/tmp/engine-gate-ijn48wu5/workspaces",
+      "/tmp/engine-gate-evidence-q6wf2li8",
+      "/mnt/d/Thesis/ExperimentLab/engine-v3/runs/20261105T154520Z-gate-v4-derive-wrapped"
+    ]
+  },
+  "cleanup": {
+    "deployment_removed": true,
+    "scratch_removed": true
+  },
+  "finished_at_utc": "2026-11-05T15:48:45.905208+00:00"
+}

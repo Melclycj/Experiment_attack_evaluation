@@ -1,0 +1,2770 @@
+{
+ "config": {
+  "label": "latency-engine-v4",
+  "passes": 3,
+  "warmup": 100,
+  "measured": 1000,
+  "settle_s": 6,
+  "seed": 20261106
+ },
+ "blocks": [
+  {
+   "pass": 1,
+   "order": 0,
+   "block": "plain-keepalive-small",
+   "cls": "plain",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:32:46.699841Z",
+   "end_utc": "2026-11-06T02:33:02.717203Z",
+   "load_at_start": 0.6015625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-plain-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p1-plain-keepalive-small-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:1",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-keepalive-small",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:1",
+    "uid": 70000,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.245,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 7.374565,
+   "p99": 64.199878,
+   "n": 1000,
+   "slow_samples": 11,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 5.631591796875,
+    "p99": 62.771484375
+   }
+  },
+  {
+   "pass": 1,
+   "order": 0,
+   "block": "plain-keepalive-small",
+   "cls": "plain",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:33:02.717350Z",
+   "end_utc": "2026-11-06T02:33:09.752854Z",
+   "load_at_start": 0.826171875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-plain-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p1-plain-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.080094,
+   "p99": 0.231391,
+   "n": 1000,
+   "slow_samples": 22,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 1,
+   "block": "plain-clientcold-small",
+   "cls": "plain",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:33:09.752978Z",
+   "end_utc": "2026-11-06T02:33:16.789828Z",
+   "load_at_start": 0.759765625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-plain-clientcold-small-direct.json.gz",
+   "upstream_file": "upstream/p1-plain-clientcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.740582,
+   "p99": 1.263729,
+   "n": 1000,
+   "slow_samples": 4,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 1,
+   "block": "plain-clientcold-small",
+   "cls": "plain",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:33:16.789950Z",
+   "end_utc": "2026-11-06T02:33:32.801832Z",
+   "load_at_start": 0.80322265625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-plain-clientcold-small-engine.json.gz",
+   "upstream_file": "upstream/p1-plain-clientcold-small-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:2",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-clientcold-small",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:2",
+    "uid": 70001,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.357254,
+   "p99": 9.681071,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 5.785400390625,
+    "p99": 6.936279296875
+   }
+  },
+  {
+   "pass": 1,
+   "order": 2,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:33:32.801965Z",
+   "end_utc": "2026-11-06T02:33:47.820256Z",
+   "load_at_start": 0.859375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p1-cred-keepalive-small-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:3",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-small",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:3",
+    "uid": 70002,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.248,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 7.933641,
+   "p99": 9.301044,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.16748046875,
+    "p99": 7.594482421875
+   }
+  },
+  {
+   "pass": 1,
+   "order": 2,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:33:47.820388Z",
+   "end_utc": "2026-11-06T02:33:54.856278Z",
+   "load_at_start": 0.97705078125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p1-cred-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.082282,
+   "p99": 0.271827,
+   "n": 1000,
+   "slow_samples": 26,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 3,
+   "block": "cred-keepalive-big",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "big",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:33:54.856403Z",
+   "end_utc": "2026-11-06T02:34:02.891276Z",
+   "load_at_start": 0.8984375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-keepalive-big-direct.json.gz",
+   "upstream_file": "upstream/p1-cred-keepalive-big-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 1.583114,
+   "p99": 2.086859,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 3,
+   "block": "cred-keepalive-big",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "big",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:34:02.891412Z",
+   "end_utc": "2026-11-06T02:34:20.907872Z",
+   "load_at_start": 1.00048828125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-keepalive-big-engine.json.gz",
+   "upstream_file": "upstream/p1-cred-keepalive-big-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:4",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-big",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:4",
+    "uid": 70003,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.251,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 10.637013,
+   "p99": 12.125619,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 7.575927734375,
+    "p99": 9.009033203125
+   }
+  },
+  {
+   "pass": 1,
+   "order": 4,
+   "block": "cred-bothcold-small",
+   "cls": "cred",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:34:20.908013Z",
+   "end_utc": "2026-11-06T02:34:27.944629Z",
+   "load_at_start": 1.09326171875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-bothcold-small-direct.json.gz",
+   "upstream_file": "upstream/p1-cred-bothcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.703115,
+   "p99": 1.35182,
+   "n": 1000,
+   "slow_samples": 4,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 4,
+   "block": "cred-bothcold-small",
+   "cls": "cred",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:34:27.944758Z",
+   "end_utc": "2026-11-06T02:34:44.954978Z",
+   "load_at_start": 0.9248046875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-bothcold-small-engine.json.gz",
+   "upstream_file": "upstream/p1-cred-bothcold-small-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:5",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-bothcold-small",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:5",
+    "uid": 70004,
+    "row_start_s": 0.115,
+    "moved_by_s": 0.245,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 9.153396,
+   "p99": 10.485869,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.5693359375,
+    "p99": 7.877685546875
+   }
+  },
+  {
+   "pass": 1,
+   "order": 5,
+   "block": "plain-bothcold-small",
+   "cls": "plain",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:34:44.955109Z",
+   "end_utc": "2026-11-06T02:35:01.964514Z",
+   "load_at_start": 1.02099609375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-plain-bothcold-small-engine.json.gz",
+   "upstream_file": "upstream/p1-plain-bothcold-small-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:6",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-bothcold-small",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:6",
+    "uid": 70005,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 9.205896,
+   "p99": 10.635875,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.5986328125,
+    "p99": 7.933349609375
+   }
+  },
+  {
+   "pass": 1,
+   "order": 5,
+   "block": "plain-bothcold-small",
+   "cls": "plain",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:35:01.964653Z",
+   "end_utc": "2026-11-06T02:35:09.000524Z",
+   "load_at_start": 0.8046875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-plain-bothcold-small-direct.json.gz",
+   "upstream_file": "upstream/p1-plain-bothcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.708192,
+   "p99": 1.22361,
+   "n": 1000,
+   "slow_samples": 2,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 6,
+   "block": "cred-clientcold-small",
+   "cls": "cred",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:35:09.000643Z",
+   "end_utc": "2026-11-06T02:35:16.037331Z",
+   "load_at_start": 0.740234375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-clientcold-small-direct.json.gz",
+   "upstream_file": "upstream/p1-cred-clientcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.73949,
+   "p99": 1.221653,
+   "n": 1000,
+   "slow_samples": 1,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 1,
+   "order": 6,
+   "block": "cred-clientcold-small",
+   "cls": "cred",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:35:16.037454Z",
+   "end_utc": "2026-11-06T02:35:32.046386Z",
+   "load_at_start": 0.6806640625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-clientcold-small-engine.json.gz",
+   "upstream_file": "upstream/p1-cred-clientcold-small-engine.log.gz",
+   "execution": "2f14286789b010a27f9c7e5aec004ba6:7",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-clientcold-small",
+    "execution": "2f14286789b010a27f9c7e5aec004ba6:7",
+    "uid": 70006,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.56694,
+   "p99": 9.940945,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 5.939697265625,
+    "p99": 7.2470703125
+   }
+  },
+  {
+   "pass": 2,
+   "order": 0,
+   "block": "plain-keepalive-small",
+   "cls": "plain",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:35:59.514543Z",
+   "end_utc": "2026-11-06T02:36:14.526126Z",
+   "load_at_start": 0.9375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-plain-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p2-plain-keepalive-small-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:1",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-keepalive-small",
+    "execution": "838a0e21533454c28d1d96e9f3037474:1",
+    "uid": 70000,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.245,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 7.807932,
+   "p99": 9.273222,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.134033203125,
+    "p99": 7.510009765625
+   }
+  },
+  {
+   "pass": 2,
+   "order": 0,
+   "block": "plain-keepalive-small",
+   "cls": "plain",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:36:14.526272Z",
+   "end_utc": "2026-11-06T02:36:21.562838Z",
+   "load_at_start": 1.03759765625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-plain-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p2-plain-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.078125,
+   "p99": 0.219411,
+   "n": 1000,
+   "slow_samples": 18,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 1,
+   "block": "plain-clientcold-small",
+   "cls": "plain",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:36:21.562971Z",
+   "end_utc": "2026-11-06T02:36:37.574892Z",
+   "load_at_start": 0.87744140625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-plain-clientcold-small-engine.json.gz",
+   "upstream_file": "upstream/p2-plain-clientcold-small-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:2",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-clientcold-small",
+    "execution": "838a0e21533454c28d1d96e9f3037474:2",
+    "uid": 70001,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.245,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.584612,
+   "p99": 10.267735,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 5.9580078125,
+    "p99": 7.623046875
+   }
+  },
+  {
+   "pass": 2,
+   "order": 1,
+   "block": "plain-clientcold-small",
+   "cls": "plain",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:36:37.575046Z",
+   "end_utc": "2026-11-06T02:36:44.613227Z",
+   "load_at_start": 0.91748046875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-plain-clientcold-small-direct.json.gz",
+   "upstream_file": "upstream/p2-plain-clientcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.736086,
+   "p99": 1.203068,
+   "n": 1000,
+   "slow_samples": 1,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 2,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:36:44.613363Z",
+   "end_utc": "2026-11-06T02:36:51.649102Z",
+   "load_at_start": 0.84375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p2-cred-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.079831,
+   "p99": 0.257596,
+   "n": 1000,
+   "slow_samples": 26,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 2,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:36:51.649229Z",
+   "end_utc": "2026-11-06T02:37:06.655858Z",
+   "load_at_start": 0.71337890625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p2-cred-keepalive-small-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:3",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-small",
+    "execution": "838a0e21533454c28d1d96e9f3037474:3",
+    "uid": 70002,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.243,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 7.874759,
+   "p99": 9.290621,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.224609375,
+    "p99": 7.68212890625
+   }
+  },
+  {
+   "pass": 2,
+   "order": 3,
+   "block": "cred-bothcold-small",
+   "cls": "cred",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:37:06.655993Z",
+   "end_utc": "2026-11-06T02:37:13.692022Z",
+   "load_at_start": 0.86328125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-bothcold-small-direct.json.gz",
+   "upstream_file": "upstream/p2-cred-bothcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.7016,
+   "p99": 1.287193,
+   "n": 1000,
+   "slow_samples": 5,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 3,
+   "block": "cred-bothcold-small",
+   "cls": "cred",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:37:13.692146Z",
+   "end_utc": "2026-11-06T02:37:30.701968Z",
+   "load_at_start": 0.7939453125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-bothcold-small-engine.json.gz",
+   "upstream_file": "upstream/p2-cred-bothcold-small-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:4",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-bothcold-small",
+    "execution": "838a0e21533454c28d1d96e9f3037474:4",
+    "uid": 70003,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 9.484806,
+   "p99": 10.885324,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.79541015625,
+    "p99": 8.141357421875
+   }
+  },
+  {
+   "pass": 2,
+   "order": 4,
+   "block": "cred-keepalive-big",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "big",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:37:30.702105Z",
+   "end_utc": "2026-11-06T02:37:49.715237Z",
+   "load_at_start": 0.69775390625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-keepalive-big-engine.json.gz",
+   "upstream_file": "upstream/p2-cred-keepalive-big-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:5",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-big",
+    "execution": "838a0e21533454c28d1d96e9f3037474:5",
+    "uid": 70004,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.248,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 10.884037,
+   "p99": 12.407503,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 7.83935546875,
+    "p99": 9.4111328125
+   }
+  },
+  {
+   "pass": 2,
+   "order": 4,
+   "block": "cred-keepalive-big",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "big",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:37:49.715379Z",
+   "end_utc": "2026-11-06T02:37:57.750781Z",
+   "load_at_start": 0.7333984375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-keepalive-big-direct.json.gz",
+   "upstream_file": "upstream/p2-cred-keepalive-big-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 1.522867,
+   "p99": 2.00079,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 5,
+   "block": "plain-bothcold-small",
+   "cls": "plain",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:37:57.750909Z",
+   "end_utc": "2026-11-06T02:38:04.788054Z",
+   "load_at_start": 0.70068359375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-plain-bothcold-small-direct.json.gz",
+   "upstream_file": "upstream/p2-plain-bothcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.721969,
+   "p99": 1.266806,
+   "n": 1000,
+   "slow_samples": 5,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 5,
+   "block": "plain-bothcold-small",
+   "cls": "plain",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:38:04.788180Z",
+   "end_utc": "2026-11-06T02:38:21.797530Z",
+   "load_at_start": 0.64453125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-plain-bothcold-small-engine.json.gz",
+   "upstream_file": "upstream/p2-plain-bothcold-small-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:6",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-bothcold-small",
+    "execution": "838a0e21533454c28d1d96e9f3037474:6",
+    "uid": 70005,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 9.291291,
+   "p99": 10.876054,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.655517578125,
+    "p99": 8.1943359375
+   }
+  },
+  {
+   "pass": 2,
+   "order": 6,
+   "block": "cred-clientcold-small",
+   "cls": "cred",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:38:21.797664Z",
+   "end_utc": "2026-11-06T02:38:38.810952Z",
+   "load_at_start": 0.6767578125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-clientcold-small-engine.json.gz",
+   "upstream_file": "upstream/p2-cred-clientcold-small-engine.log.gz",
+   "execution": "838a0e21533454c28d1d96e9f3037474:7",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-clientcold-small",
+    "execution": "838a0e21533454c28d1d96e9f3037474:7",
+    "uid": 70006,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.248,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.753599,
+   "p99": 10.340701,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.045166015625,
+    "p99": 7.552734375
+   }
+  },
+  {
+   "pass": 2,
+   "order": 6,
+   "block": "cred-clientcold-small",
+   "cls": "cred",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:38:38.811082Z",
+   "end_utc": "2026-11-06T02:38:45.848096Z",
+   "load_at_start": 0.68701171875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-clientcold-small-direct.json.gz",
+   "upstream_file": "upstream/p2-cred-clientcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.74129,
+   "p99": 1.289907,
+   "n": 1000,
+   "slow_samples": 1,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 0,
+   "block": "cred-clientcold-small",
+   "cls": "cred",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:39:13.234734Z",
+   "end_utc": "2026-11-06T02:39:29.242051Z",
+   "load_at_start": 0.7255859375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-clientcold-small-engine.json.gz",
+   "upstream_file": "upstream/p3-cred-clientcold-small-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:1",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-clientcold-small",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:1",
+    "uid": 70000,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.243,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.579061,
+   "p99": 10.176173,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 5.935791015625,
+    "p99": 7.334228515625
+   }
+  },
+  {
+   "pass": 3,
+   "order": 0,
+   "block": "cred-clientcold-small",
+   "cls": "cred",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:39:29.242189Z",
+   "end_utc": "2026-11-06T02:39:36.279041Z",
+   "load_at_start": 0.87255859375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-clientcold-small-direct.json.gz",
+   "upstream_file": "upstream/p3-cred-clientcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.74167,
+   "p99": 1.228554,
+   "n": 1000,
+   "slow_samples": 5,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 1,
+   "block": "cred-keepalive-big",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "big",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:39:36.279167Z",
+   "end_utc": "2026-11-06T02:39:44.314758Z",
+   "load_at_start": 0.80224609375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-keepalive-big-direct.json.gz",
+   "upstream_file": "upstream/p3-cred-keepalive-big-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 1.502535,
+   "p99": 1.919089,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 1,
+   "block": "cred-keepalive-big",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "big",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:39:44.314883Z",
+   "end_utc": "2026-11-06T02:40:03.323199Z",
+   "load_at_start": 0.89990234375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-keepalive-big-engine.json.gz",
+   "upstream_file": "upstream/p3-cred-keepalive-big-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:2",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-big",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:2",
+    "uid": 70001,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.243,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 10.740432,
+   "p99": 12.207238,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 7.679931640625,
+    "p99": 9.09326171875
+   }
+  },
+  {
+   "pass": 3,
+   "order": 2,
+   "block": "plain-clientcold-small",
+   "cls": "plain",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:40:03.323343Z",
+   "end_utc": "2026-11-06T02:40:10.360109Z",
+   "load_at_start": 1.16796875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-plain-clientcold-small-direct.json.gz",
+   "upstream_file": "upstream/p3-plain-clientcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.738915,
+   "p99": 1.216033,
+   "n": 1000,
+   "slow_samples": 3,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 2,
+   "block": "plain-clientcold-small",
+   "cls": "plain",
+   "conn": "clientcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:40:10.360228Z",
+   "end_utc": "2026-11-06T02:40:26.368182Z",
+   "load_at_start": 1.07421875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-plain-clientcold-small-engine.json.gz",
+   "upstream_file": "upstream/p3-plain-clientcold-small-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:3",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-clientcold-small",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:3",
+    "uid": 70002,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.43991,
+   "p99": 10.543662,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 5.843505859375,
+    "p99": 7.592041015625
+   }
+  },
+  {
+   "pass": 3,
+   "order": 3,
+   "block": "plain-bothcold-small",
+   "cls": "plain",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:40:26.368317Z",
+   "end_utc": "2026-11-06T02:40:43.376758Z",
+   "load_at_start": 0.9228515625,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-plain-bothcold-small-engine.json.gz",
+   "upstream_file": "upstream/p3-plain-bothcold-small-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:4",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-bothcold-small",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:4",
+    "uid": 70003,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.243,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 9.248675,
+   "p99": 10.467218,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.616943359375,
+    "p99": 7.91064453125
+   }
+  },
+  {
+   "pass": 3,
+   "order": 3,
+   "block": "plain-bothcold-small",
+   "cls": "plain",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:40:43.376896Z",
+   "end_utc": "2026-11-06T02:40:50.414682Z",
+   "load_at_start": 0.87841796875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-plain-bothcold-small-direct.json.gz",
+   "upstream_file": "upstream/p3-plain-bothcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.699196,
+   "p99": 1.168451,
+   "n": 1000,
+   "slow_samples": 5,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 4,
+   "block": "cred-bothcold-small",
+   "cls": "cred",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:40:50.414805Z",
+   "end_utc": "2026-11-06T02:40:57.450822Z",
+   "load_at_start": 0.8076171875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-bothcold-small-direct.json.gz",
+   "upstream_file": "upstream/p3-cred-bothcold-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.706316,
+   "p99": 1.264068,
+   "n": 1000,
+   "slow_samples": 5,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 4,
+   "block": "cred-bothcold-small",
+   "cls": "cred",
+   "conn": "bothcold",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:40:57.450941Z",
+   "end_utc": "2026-11-06T02:41:14.463888Z",
+   "load_at_start": 0.68310546875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-bothcold-small-engine.json.gz",
+   "upstream_file": "upstream/p3-cred-bothcold-small-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:5",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-bothcold-small",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:5",
+    "uid": 70004,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.248,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 1000,
+    "client_new_connections": 1000,
+    "upstream_new_connections": 1000,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 9.318624,
+   "p99": 10.734758,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.675537109375,
+    "p99": 7.752197265625
+   }
+  },
+  {
+   "pass": 3,
+   "order": 5,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:41:14.464024Z",
+   "end_utc": "2026-11-06T02:41:21.498333Z",
+   "load_at_start": 0.76611328125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p3-cred-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.080759,
+   "p99": 0.209557,
+   "n": 1000,
+   "slow_samples": 22,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 5,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:41:21.498459Z",
+   "end_utc": "2026-11-06T02:41:37.507353Z",
+   "load_at_start": 0.64794921875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p3-cred-keepalive-small-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:6",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-small",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:6",
+    "uid": 70005,
+    "row_start_s": 0.116,
+    "moved_by_s": 0.246,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.266752,
+   "p99": 9.571083,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.412109375,
+    "p99": 7.821044921875
+   }
+  },
+  {
+   "pass": 3,
+   "order": 6,
+   "block": "plain-keepalive-small",
+   "cls": "plain",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T02:41:37.507495Z",
+   "end_utc": "2026-11-06T02:41:44.542225Z",
+   "load_at_start": 0.81201171875,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-plain-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p3-plain-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.079201,
+   "p99": 0.233867,
+   "n": 1000,
+   "slow_samples": 23,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 6,
+   "block": "plain-keepalive-small",
+   "cls": "plain",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T02:41:44.542343Z",
+   "end_utc": "2026-11-06T02:42:00.550190Z",
+   "load_at_start": 0.74658203125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-plain-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p3-plain-keepalive-small-engine.log.gz",
+   "execution": "76cd9b99f1295c5d49d599c994beb53c:7",
+   "row": {
+    "unit": "u1",
+    "runtime": "plain-keepalive-small",
+    "execution": "76cd9b99f1295c5d49d599c994beb53c:7",
+    "uid": 70006,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.244,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 8.04557,
+   "p99": 9.294582,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": 6.29248046875,
+    "p99": 7.611572265625
+   }
+  }
+ ],
+ "differences": {
+  "plain-keepalive-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 7.374565,
+      "direct_ms": 0.080094,
+      "diff_ms": 7.294471
+     },
+     "p99": {
+      "engine_ms": 64.199878,
+      "direct_ms": 0.231391,
+      "diff_ms": 63.968486999999996
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 7.807932,
+      "direct_ms": 0.078125,
+      "diff_ms": 7.729807
+     },
+     "p99": {
+      "engine_ms": 9.273222,
+      "direct_ms": 0.219411,
+      "diff_ms": 9.053811000000001
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.04557,
+      "direct_ms": 0.079201,
+      "diff_ms": 7.966368999999999
+     },
+     "p99": {
+      "engine_ms": 9.294582,
+      "direct_ms": 0.233867,
+      "diff_ms": 9.060715
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    7.294471,
+    7.966368999999999
+   ],
+   "p99_diff_range_ms": [
+    9.053811000000001,
+    63.968486999999996
+   ],
+   "clean_passes": 3
+  },
+  "plain-clientcold-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.357254,
+      "direct_ms": 0.740582,
+      "diff_ms": 7.616671999999999
+     },
+     "p99": {
+      "engine_ms": 9.681071,
+      "direct_ms": 1.263729,
+      "diff_ms": 8.417342
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.584612,
+      "direct_ms": 0.736086,
+      "diff_ms": 7.848526
+     },
+     "p99": {
+      "engine_ms": 10.267735,
+      "direct_ms": 1.203068,
+      "diff_ms": 9.064667
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.43991,
+      "direct_ms": 0.738915,
+      "diff_ms": 7.700994999999999
+     },
+     "p99": {
+      "engine_ms": 10.543662,
+      "direct_ms": 1.216033,
+      "diff_ms": 9.327629
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    7.616671999999999,
+    7.848526
+   ],
+   "p99_diff_range_ms": [
+    8.417342,
+    9.327629
+   ],
+   "clean_passes": 3
+  },
+  "cred-keepalive-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 7.933641,
+      "direct_ms": 0.082282,
+      "diff_ms": 7.8513589999999995
+     },
+     "p99": {
+      "engine_ms": 9.301044,
+      "direct_ms": 0.271827,
+      "diff_ms": 9.029217
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 7.874759,
+      "direct_ms": 0.079831,
+      "diff_ms": 7.794928
+     },
+     "p99": {
+      "engine_ms": 9.290621,
+      "direct_ms": 0.257596,
+      "diff_ms": 9.033025
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.266752,
+      "direct_ms": 0.080759,
+      "diff_ms": 8.185993
+     },
+     "p99": {
+      "engine_ms": 9.571083,
+      "direct_ms": 0.209557,
+      "diff_ms": 9.361526
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    7.794928,
+    8.185993
+   ],
+   "p99_diff_range_ms": [
+    9.029217,
+    9.361526
+   ],
+   "clean_passes": 3
+  },
+  "cred-keepalive-big": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 10.637013,
+      "direct_ms": 1.583114,
+      "diff_ms": 9.053899
+     },
+     "p99": {
+      "engine_ms": 12.125619,
+      "direct_ms": 2.086859,
+      "diff_ms": 10.03876
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 10.884037,
+      "direct_ms": 1.522867,
+      "diff_ms": 9.36117
+     },
+     "p99": {
+      "engine_ms": 12.407503,
+      "direct_ms": 2.00079,
+      "diff_ms": 10.406713
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 10.740432,
+      "direct_ms": 1.502535,
+      "diff_ms": 9.237897
+     },
+     "p99": {
+      "engine_ms": 12.207238,
+      "direct_ms": 1.919089,
+      "diff_ms": 10.288149
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    9.053899,
+    9.36117
+   ],
+   "p99_diff_range_ms": [
+    10.03876,
+    10.406713
+   ],
+   "clean_passes": 3
+  },
+  "cred-bothcold-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 9.153396,
+      "direct_ms": 0.703115,
+      "diff_ms": 8.450281
+     },
+     "p99": {
+      "engine_ms": 10.485869,
+      "direct_ms": 1.35182,
+      "diff_ms": 9.134049
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 9.484806,
+      "direct_ms": 0.7016,
+      "diff_ms": 8.783206
+     },
+     "p99": {
+      "engine_ms": 10.885324,
+      "direct_ms": 1.287193,
+      "diff_ms": 9.598131
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 9.318624,
+      "direct_ms": 0.706316,
+      "diff_ms": 8.612308
+     },
+     "p99": {
+      "engine_ms": 10.734758,
+      "direct_ms": 1.264068,
+      "diff_ms": 9.47069
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    8.450281,
+    8.783206
+   ],
+   "p99_diff_range_ms": [
+    9.134049,
+    9.598131
+   ],
+   "clean_passes": 3
+  },
+  "plain-bothcold-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 9.205896,
+      "direct_ms": 0.708192,
+      "diff_ms": 8.497703999999999
+     },
+     "p99": {
+      "engine_ms": 10.635875,
+      "direct_ms": 1.22361,
+      "diff_ms": 9.412265
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 9.291291,
+      "direct_ms": 0.721969,
+      "diff_ms": 8.569322
+     },
+     "p99": {
+      "engine_ms": 10.876054,
+      "direct_ms": 1.266806,
+      "diff_ms": 9.609248
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 9.248675,
+      "direct_ms": 0.699196,
+      "diff_ms": 8.549479
+     },
+     "p99": {
+      "engine_ms": 10.467218,
+      "direct_ms": 1.168451,
+      "diff_ms": 9.298767000000002
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    8.497703999999999,
+    8.569322
+   ],
+   "p99_diff_range_ms": [
+    9.298767000000002,
+    9.609248
+   ],
+   "clean_passes": 3
+  },
+  "cred-clientcold-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.56694,
+      "direct_ms": 0.73949,
+      "diff_ms": 7.827450000000001
+     },
+     "p99": {
+      "engine_ms": 9.940945,
+      "direct_ms": 1.221653,
+      "diff_ms": 8.719292
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.753599,
+      "direct_ms": 0.74129,
+      "diff_ms": 8.012309
+     },
+     "p99": {
+      "engine_ms": 10.340701,
+      "direct_ms": 1.289907,
+      "diff_ms": 9.050794
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 8.579061,
+      "direct_ms": 0.74167,
+      "diff_ms": 7.837390999999999
+     },
+     "p99": {
+      "engine_ms": 10.176173,
+      "direct_ms": 1.228554,
+      "diff_ms": 8.947619
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    7.827450000000001,
+    8.012309
+   ],
+   "p99_diff_range_ms": [
+    8.719292,
+    9.050794
+   ],
+   "clean_passes": 3
+  }
+ },
+ "core": {
+  "engine-v4-latency-20261106T023228": {
+   "plain-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.272215,
+      "p99": 0.516954
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.163635,
+      "p99": 0.400443
+     }
+    }
+   },
+   "plain-clientcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.292283,
+      "p99": 0.491176
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.174564,
+      "p99": 0.365164
+     }
+    }
+   },
+   "cred-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.301523,
+      "p99": 0.544062
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.178993,
+      "p99": 0.426203
+     }
+    }
+   },
+   "cred-keepalive-big": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.327224,
+      "p99": 0.611347
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.190757,
+      "p99": 0.456112
+     }
+    }
+   },
+   "cred-bothcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.30816,
+      "p99": 0.487426
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.180787,
+      "p99": 0.35666
+     }
+    }
+   },
+   "plain-bothcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.304222,
+      "p99": 0.527734
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.179998,
+      "p99": 0.40067
+     }
+    }
+   },
+   "cred-clientcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.296357,
+      "p99": 0.497315
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.17507,
+      "p99": 0.356685
+     }
+    }
+   }
+  },
+  "engine-v4-latency-20261106T023541": {
+   "plain-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.299814,
+      "p99": 0.563753
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.18177,
+      "p99": 0.447115
+     }
+    }
+   },
+   "plain-clientcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.303682,
+      "p99": 0.485249
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.177277,
+      "p99": 0.34891
+     }
+    }
+   },
+   "cred-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.292553,
+      "p99": 0.53423
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.172676,
+      "p99": 0.40924
+     }
+    }
+   },
+   "cred-bothcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.322082,
+      "p99": 0.560577
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.189085,
+      "p99": 0.418268
+     }
+    }
+   },
+   "cred-keepalive-big": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.331638,
+      "p99": 0.561524
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.194704,
+      "p99": 0.399722
+     }
+    }
+   },
+   "plain-bothcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.302609,
+      "p99": 0.491691
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.180342,
+      "p99": 0.371222
+     }
+    }
+   },
+   "cred-clientcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.324322,
+      "p99": 0.529012
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.193831,
+      "p99": 0.395766
+     }
+    }
+   }
+  },
+  "engine-v4-latency-20261106T023855": {
+   "cred-clientcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.312788,
+      "p99": 0.476076
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.184216,
+      "p99": 0.338909
+     }
+    }
+   },
+   "cred-keepalive-big": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.327773,
+      "p99": 0.533042
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.191537,
+      "p99": 0.380649
+     }
+    }
+   },
+   "plain-clientcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.300226,
+      "p99": 0.460282
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.181998,
+      "p99": 0.334454
+     }
+    }
+   },
+   "plain-bothcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.311977,
+      "p99": 0.511285
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.186409,
+      "p99": 0.389348
+     }
+    }
+   },
+   "cred-bothcold-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.323545,
+      "p99": 0.539379
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.192901,
+      "p99": 0.398434
+     }
+    }
+   },
+   "cred-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.33761,
+      "p99": 0.5525
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.206469,
+      "p99": 0.434048
+     }
+    }
+   },
+   "plain-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 0,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.347097,
+      "p99": 0.581298
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.218009,
+      "p99": 0.456335
+     }
+    }
+   }
+  }
+ },
+ "passes": [
+  {
+   "pass": 1,
+   "calibration_s": 0.7471778180042747,
+   "fsync_ms": {
+    "median": 3.455351004959084,
+    "p99": 4.382001992780715,
+    "mean": 3.482785779349797
+   },
+   "start_utc": "2026-11-06T02:32:28Z"
+  },
+  {
+   "pass": 2,
+   "calibration_s": 0.7807093409937806,
+   "fsync_ms": {
+    "median": 3.4650579909794033,
+    "p99": 4.2760189971886575,
+    "mean": 3.486606856844446
+   },
+   "start_utc": "2026-11-06T02:35:41Z"
+  },
+  {
+   "pass": 3,
+   "calibration_s": 0.8183387860044604,
+   "fsync_ms": {
+    "median": 3.4251549950568005,
+    "p99": 3.991965000750497,
+    "mean": 3.426328810804989
+   },
+   "start_utc": "2026-11-06T02:38:55Z"
+  }
+ ]
+}

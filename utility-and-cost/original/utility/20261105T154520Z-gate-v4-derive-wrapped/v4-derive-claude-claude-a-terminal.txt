@@ -1,0 +1,9 @@
+attached to 6b32d748d73d0e00c476ff134c071875:1; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <x seccomp is.' --model haiku --disallowedTools WebSearch --permission-mode bypassPermissions; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+Linux seccomp (secure computing mode) is a kernel feature that restricts which system calls a process can make, reducing the attack surface if that process is compromised. A process can enter a restricted "strict" mode that allows only a few calls, or install a custom filter (a classic BPF program, "seccomp-bpf") that allows, denies, logs, or kills based on the call number and its arguments. Container runtimes, browsers, and sandboxes like Docker and Chromium use it to limit what untrusted code can ask the kernel to do.
+[?25hW2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

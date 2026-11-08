@@ -1,0 +1,7 @@
+attached to 6b32d748d73d0e00c476ff134c071875:8; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <cp-config '{"mcpServers":{"deepwiki":{"type":"http","url":"https://mcp.deepwiki.com/mcp"}}}'; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+8
+[?25hW2_ITEM_EXIT=0
+w2$ 
+the relay closed the connection (the row ended, or another client is attached)

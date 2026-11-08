@@ -1,0 +1,55 @@
+attached to ecae69c69860363bdfed0f5665dc721c:6; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <_%s\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\n' NPM_OK; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+[0m
+> build · claude-haiku-5-5
+[0m
+[0m$ [0muv venv /tmp/uvv
+Using CPython 3.12.3 interpreter at: /usr/bin/python3
+Creating virtual environment at: /tmp/uvv
+Activate with: source /tmp/uvv/bin/activate
+[0m
+[0m$ [0mnpm install --prefix /tmp/npm-t is-number
+added 1 package in 274ms
+[0m
+[0m$ [0mpython3 -m pip install --target /tmp/pip-t six
+Collecting six
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata
+     - 1.7 kB 19.7 MB/s 0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl
+   - 11.1 kB 125.2 MB/s 0:00:00
+Installing collected packages: six
+Successfully installed six-1.17.0
+[0m
+[0m$ [0muv pip install --python /tmp/uvv/bin/python six
+Using Python 3.12.3 environment at: /tmp/uvv
+Resolved 1 package in 42ms
+Prepared 1 package in 12ms
+Installed 1 package in 3ms
+ + six==1.17.0
+[0m
+[0m$ [0mPYTHONPATH=/tmp/pip-t python3 -c "import six; print('six (pip --target):', six.__version__)"
+six (pip --target): 1.17.0
+[0m
+[0m$ [0m/tmp/uvv/bin/python -c "import six; print('six (uv venv):', six.__version__)"
+six (uv venv): 1.17.0
+[0m
+[0m$ [0mnode -e "const isNumber = require('/tmp/npm-t/node_modules/is-number'); console.log('is-number:', isNumber(42), isNumber('abc'))"
+is-number: true false
+[0m
+All three installs succeeded, and each package imported once.
+
+1. **pip `--target`**: `python3 -m pip install --target /tmp/pip-t six` installed six 1.17.0. Import (with `PYTHONPATH=/tmp/pip-t`) printed: `six (pip --target): 1.17.0`
+2. **uv venv**: `uv venv /tmp/uvv` created the venv on CPython 3.12.3. Then `uv pip install --python /tmp/uvv/bin/python six` installed `six==1.17.0`. Import printed: `six (uv venv): 1.17.0`
+3. **npm**: `npm install --prefix /tmp/npm-t is-number` added 1 package. Import via `require` printed: `is-number: true false`
+
+The `is-number` check called `isNumber(42)` and `isNumber('abc')`, which returned `true` and `false`.
+[0m
+W2_PIP_OK
+W2_UV_OK
+W2_NPM_OK
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

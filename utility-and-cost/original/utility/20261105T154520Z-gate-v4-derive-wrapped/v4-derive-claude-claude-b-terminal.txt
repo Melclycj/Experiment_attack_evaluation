@@ -1,0 +1,14 @@
+attached to 6b32d748d73d0e00c476ff134c071875:2; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ < to cover it.' --model haiku --disallowedTools WebSearch --permission-mode bypassPermissions; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+I created `calc/__init__.py` and `tests/test_calc.py`, then added the third argument. All four tests pass.
+
+- **`calc/__init__.py`**: `add(a, b, c=0)` returns `a + b + c`.
+- **`tests/test_calc.py`**: two tests for the original two-argument behavior (positive and negative numbers), plus two for the new argument: one checks `add(1, 2, 3) == 6`, and one checks that omitting `c` gives the same result as passing `0`.
+
+I ran `python3 -m pytest -q tests/test_calc.py` from `/work`; `python` isn't on the PATH here, so I used `python3`. The `calc` import works because the test is run from `/work`.
+[?25hW2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

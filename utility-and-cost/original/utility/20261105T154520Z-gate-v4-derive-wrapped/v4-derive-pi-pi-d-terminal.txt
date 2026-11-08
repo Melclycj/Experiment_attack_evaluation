@@ -1,0 +1,13 @@
+attached to 5bcc4d500addaa1ce979da8b4abe89f7:4; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ < pytest -q in the workspace and report the summary line.' --model anthropic/claude-haiku-5-5; s=$?; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+The summary line from `python3 -m pytest -q` in `/work` is:
+
+```
+4 passed in 0.00s
+```
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

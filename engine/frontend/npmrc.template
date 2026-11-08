@@ -1,0 +1,7 @@
+; .npmrc for the cell (build plan 5.3): npm sends this token as `Authorization: Bearer <token>` on every registry
+; request; the connector replaces the placeholder (SPEC §3.2 placement 2) after the core allowed the request, so the
+; real token never exists inside the cell. The deployment copies this file to the runtime seed's HOME and fills the
+; placeholder it registered for the npm account (CRED_PUT with placement 2).
+//registry.npmjs.org/:_authToken=W2-PLACEHOLDER-npm-alice
+; the CA the frontend signs with is trusted through NODE_EXTRA_CA_CERTS (set by the child); npm also honours:
+cafile=/w2/ca/ca.pem

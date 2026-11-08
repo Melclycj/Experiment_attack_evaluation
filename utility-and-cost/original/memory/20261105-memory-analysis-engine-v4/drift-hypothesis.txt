@@ -1,0 +1,29 @@
+## bare-api-only, unit PSS per agent (resident)
+N= 1  this round 179.6–182.6   10-30 187.1–187.5   10-31 180.4–181.8   10-31 evening 186.5–187.3
+N= 2  this round 139.3–139.8   10-30 141.6–142.2   10-31 139.1–139.3   10-31 evening 141.9–142.2
+N= 4  this round 118.3–118.5   10-30 119.4–119.7   10-31 118.5–118.6   10-31 evening 119.6–119.9
+N= 8  this round 107.5–107.9   10-30 108.2–108.5   10-31 107.5–107.8   10-31 evening 108.3–108.4
+N=16  this round 102.3–102.4   10-30 102.5–102.6   10-31 102.2–102.3   10-31 evening 102.7–102.8
+
+## docker-sandboxes, non-shared extra per agent (resident, each round against its own bare-api-only)
+N= 1  this round 1494.3–1499.5   10-30 1481.5–1517.1   10-31 evening 1480.0–1489.7
+N= 2  this round 1223.9–1231.0   10-30 1223.0–1231.1   10-31 evening 1219.5–1227.0
+N= 4  this round 1091.7–1094.4   10-30 1090.3–1093.0   10-31 evening 1087.7–1092.1
+N= 8  this round 996.1–1007.8   10-30 1005.4–1007.7   10-31 evening 1007.0–1007.9
+N=16  this round 921.1–927.1   10-30 927.2–929.3   10-31 evening 926.1–927.9
+
+## hypothesis A: this paper's largest repetition against min(250, VM smallest / 4)
+engine-v4-shared N= 1 (clean 51.6–55.1, all 51.6–55.1): docker-sandboxes 55.1 对 250.0 满足; gondolin 55.1 对 176.5 满足; kairos 55.1 对 112.1 满足
+engine-v4-shared N= 2 (clean 41.8–42.5, all 41.8–42.5): docker-sandboxes 42.5 对 250.0 满足; gondolin 42.5 对 173.9 满足; kairos 42.5 对 115.6 满足
+engine-v4-shared N= 4 (clean 36.6–37.2, all 36.6–37.2): docker-sandboxes 37.2 对 250.0 满足; gondolin 37.2 对 175.2 满足; kairos 37.2 对 118.3 满足
+engine-v4-shared N= 8 (clean 33.7–34.5, all 33.7–34.5): docker-sandboxes 34.5 对 249.0 满足; gondolin 34.5 对 174.2 满足; kairos 34.5 对 120.0 满足
+engine-v4-shared N=16 (clean 32.4–32.7, all 32.4–32.7): docker-sandboxes 32.7 对 230.3 满足; gondolin 32.7 对 173.4 满足; kairos 32.7 对 119.2 满足
+engine-v4-shared: 每档都满足
+
+engine-v4-copy N= 1 (clean 51.2–53.7, all 51.2–53.7): docker-sandboxes 53.7 对 250.0 满足; gondolin 53.7 对 176.5 满足; kairos 53.7 对 112.1 满足
+engine-v4-copy N= 2 (clean 93.0–93.6, all 93.0–93.6): docker-sandboxes 93.6 对 250.0 满足; gondolin 93.6 对 173.9 满足; kairos 93.6 对 115.6 满足
+engine-v4-copy N= 4 (clean 113.2–113.7, all 113.2–113.7): docker-sandboxes 113.7 对 250.0 满足; gondolin 113.7 对 175.2 满足; kairos 113.7 对 118.3 满足
+engine-v4-copy N= 8 (clean 123.5–123.8, all 123.5–123.8): docker-sandboxes 123.8 对 249.0 满足; gondolin 123.8 对 174.2 满足; kairos 123.8 对 120.0 不满足
+engine-v4-copy N=16 (clean 128.5–128.8, all 128.5–128.8): docker-sandboxes 128.8 对 230.3 满足; gondolin 128.8 对 173.4 满足; kairos 128.8 对 119.2 不满足
+engine-v4-copy: 有档不满足或不可检验
+

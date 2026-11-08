@@ -1,0 +1,1 @@
+{"label": "latency-control-tmpfs", "passes": 3, "warmup": 100, "measured": 1000, "settle_s": 6, "seed": 20261107, "blocks": ["cred-keepalive-small"], "evidence_tmpfs": true}

@@ -1,0 +1,20 @@
+{
+ "mode": "formal",
+ "command": "/opt/sota-measurement/driver/latency.py config/latency-control-disk.json formal",
+ "start_utc": "20261106T031547Z",
+ "versions": {
+  "kernel": "7.0.0-1014-aws",
+  "k6": "k6 v2.3.0 (commit/e088784614, go1.26.8, linux/amd64)",
+  "nginx": "nginx version: nginx/1.24.0 (Ubuntu)",
+  "openssl": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+  "python": "3.12.3",
+  "disk": "NAME    MODEL                       SIZE\nloop0                              28.4M\nloop1                                74M\nloop2                              44.7M\nloop3                              32.5M\nnvme0n1 Amazon Elastic Block Store  200G",
+  "cpu": "model name\t: Intel(R) Xeon(R) 6975P-C"
+ },
+ "preflight": [],
+ "engine": "/opt/thesis/ExperimentLab/engine-v3",
+ "row_uids": {
+  "connector": 70999,
+  "file_worker": 70996
+ }
+}

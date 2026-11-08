@@ -1,0 +1,446 @@
+{
+ "config": {
+  "label": "latency-control-tmpfs",
+  "passes": 3,
+  "warmup": 100,
+  "measured": 1000,
+  "settle_s": 6,
+  "seed": 20261107,
+  "blocks": [
+   "cred-keepalive-small"
+  ],
+  "evidence_tmpfs": true
+ },
+ "blocks": [
+  {
+   "pass": 1,
+   "order": 0,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T03:14:20.308023Z",
+   "end_utc": "2026-11-06T03:14:28.312575Z",
+   "load_at_start": 0.47412109375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p1-cred-keepalive-small-engine.log.gz",
+   "execution": "8de2ee9cde6e256eea631bc45c71a1bb:1",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-small",
+    "execution": "8de2ee9cde6e256eea631bc45c71a1bb:1",
+    "uid": 70000,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.245,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 1.038794,
+   "p99": 1.701226,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": -0.16943359375,
+    "p99": 0.37890625
+   }
+  },
+  {
+   "pass": 1,
+   "order": 0,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T03:14:28.313337Z",
+   "end_utc": "2026-11-06T03:14:35.348293Z",
+   "load_at_start": 0.4814453125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p1-cred-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p1-cred-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.083181,
+   "p99": 0.216558,
+   "n": 1000,
+   "slow_samples": 19,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 0,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T03:14:55.464587Z",
+   "end_utc": "2026-11-06T03:15:02.499238Z",
+   "load_at_start": 0.67578125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p2-cred-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.078179,
+   "p99": 0.236573,
+   "n": 1000,
+   "slow_samples": 22,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 2,
+   "order": 0,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T03:15:02.499364Z",
+   "end_utc": "2026-11-06T03:15:10.505429Z",
+   "load_at_start": 0.57177734375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p2-cred-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p2-cred-keepalive-small-engine.log.gz",
+   "execution": "07e18447ddb75818ce4ca3f03b35b3c0:1",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-small",
+    "execution": "07e18447ddb75818ce4ca3f03b35b3c0:1",
+    "uid": 70000,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.246,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 1.104999,
+   "p99": 2.001238,
+   "n": 1000,
+   "slow_samples": 0,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": -0.172119140625,
+    "p99": 0.516357421875
+   }
+  },
+  {
+   "pass": 3,
+   "order": 0,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "direct",
+   "start_utc": "2026-11-06T03:15:30.669323Z",
+   "end_utc": "2026-11-06T03:15:37.705541Z",
+   "load_at_start": 0.74609375,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-keepalive-small-direct.json.gz",
+   "upstream_file": "upstream/p3-cred-keepalive-small-direct.log.gz",
+   "execution": null,
+   "row": null,
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 0.082756,
+   "p99": 0.227052,
+   "n": 1000,
+   "slow_samples": 19,
+   "allow_to_upstream_ms": null
+  },
+  {
+   "pass": 3,
+   "order": 0,
+   "block": "cred-keepalive-small",
+   "cls": "cred",
+   "conn": "keepalive",
+   "size": "small",
+   "arm": "engine",
+   "start_utc": "2026-11-06T03:15:37.705665Z",
+   "end_utc": "2026-11-06T03:15:45.713646Z",
+   "load_at_start": 0.71142578125,
+   "throttled_periods": 0,
+   "throttled_usec": 0,
+   "k6_file": "k6/p3-cred-keepalive-small-engine.json.gz",
+   "upstream_file": "upstream/p3-cred-keepalive-small-engine.log.gz",
+   "execution": "01ea1b83b1b5f78c9f59c75224a2d09b:1",
+   "row": {
+    "unit": "u1",
+    "runtime": "cred-keepalive-small",
+    "execution": "01ea1b83b1b5f78c9f59c75224a2d09b:1",
+    "uid": 70000,
+    "row_start_s": 0.114,
+    "moved_by_s": 0.245,
+    "moved": 6,
+    "cell": [
+     "engine-frontend",
+     "engine-mcp",
+     "k6",
+     "w2-relay"
+    ],
+    "outside": {
+     "connector": 1,
+     "file_worker": 1
+    }
+   },
+   "problems": [],
+   "connections": {
+    "client_tls_handshakes": 0,
+    "client_new_connections": 0,
+    "upstream_new_connections": 0,
+    "upstream_session_reused": 0,
+    "protocols": [
+     "HTTP/1.1"
+    ],
+    "upstream_protocols": [
+     "TLSv1.3"
+    ]
+   },
+   "median": 1.068097,
+   "p99": 1.775116,
+   "n": 1000,
+   "slow_samples": 2,
+   "allow_to_upstream_ms": {
+    "n": 1000,
+    "median": -0.1376953125,
+    "p99": 0.4287109375
+   }
+  }
+ ],
+ "differences": {
+  "cred-keepalive-small": {
+   "passes": [
+    {
+     "pass": 1,
+     "problems": [],
+     "median": {
+      "engine_ms": 1.038794,
+      "direct_ms": 0.083181,
+      "diff_ms": 0.955613
+     },
+     "p99": {
+      "engine_ms": 1.701226,
+      "direct_ms": 0.216558,
+      "diff_ms": 1.4846679999999999
+     }
+    },
+    {
+     "pass": 2,
+     "problems": [],
+     "median": {
+      "engine_ms": 1.104999,
+      "direct_ms": 0.078179,
+      "diff_ms": 1.02682
+     },
+     "p99": {
+      "engine_ms": 2.001238,
+      "direct_ms": 0.236573,
+      "diff_ms": 1.764665
+     }
+    },
+    {
+     "pass": 3,
+     "problems": [],
+     "median": {
+      "engine_ms": 1.068097,
+      "direct_ms": 0.082756,
+      "diff_ms": 0.985341
+     },
+     "p99": {
+      "engine_ms": 1.775116,
+      "direct_ms": 0.227052,
+      "diff_ms": 1.5480639999999999
+     }
+    }
+   ],
+   "median_diff_range_ms": [
+    0.955613,
+    1.02682
+   ],
+   "p99_diff_range_ms": [
+    1.4846679999999999,
+    1.764665
+   ],
+   "clean_passes": 3
+  }
+ },
+ "core": {
+  "engine-v4-latency-20261106T031401": {
+   "cred-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.263644,
+      "p99": 0.341533
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.148481,
+      "p99": 0.209559
+     }
+    }
+   }
+  },
+  "engine-v4-latency-20261106T031437": {
+   "cred-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.274292,
+      "p99": 0.375274
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.15813,
+      "p99": 0.225765
+     }
+    }
+   }
+  },
+  "engine-v4-latency-20261106T031512": {
+   "cred-keepalive-small": {
+    "decided": 1100,
+    "allowed": 1100,
+    "placed": 1100,
+    "segments_ms": {
+     "admitted to decided": {
+      "n": 1100,
+      "median": 0.261428,
+      "p99": 0.363399
+     },
+     "PDP round trip": {
+      "n": 1100,
+      "median": 0.148543,
+      "p99": 0.225398
+     }
+    }
+   }
+  }
+ },
+ "passes": [
+  {
+   "pass": 1,
+   "calibration_s": 0.7595865140028764,
+   "fsync_ms": {
+    "median": 0.0012039963621646166,
+    "p99": 0.0030380033422261477,
+    "mean": 0.001457092359487433
+   },
+   "start_utc": "2026-11-06T03:14:01Z"
+  },
+  {
+   "pass": 2,
+   "calibration_s": 0.7518686109979171,
+   "fsync_ms": {
+    "median": 0.0011119991540908813,
+    "p99": 0.0028679933166131377,
+    "mean": 0.0011951682463404723
+   },
+   "start_utc": "2026-11-06T03:14:37Z"
+  },
+  {
+   "pass": 3,
+   "calibration_s": 0.7523950780014275,
+   "fsync_ms": {
+    "median": 0.0011119991540908813,
+    "p99": 0.002821005182340741,
+    "mean": 0.0012050941295456141
+   },
+   "start_utc": "2026-11-06T03:15:12Z"
+  }
+ ]
+}

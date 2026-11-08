@@ -1,0 +1,10 @@
+#!/usr/bin/python3 -IB
+"""Connector entry (started by the spawner as the connector uid with fd 3 = proxy listener, fd 4 = judgment end):
+python3 -I -B bin/connector --library LIBW2SANDBOX [--ca-file F] [--deny-address A]... [--nat64-prefix P]... UID EXECUTION"""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from connector.main import main  # noqa: E402
+
+raise SystemExit(main(sys.argv[1:]))

@@ -1,0 +1,11 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893786}
+[0.000278, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000615, "o", "printf 'W2_%s\\n' BEGIN; opencode run 'Without using any tools, explain in three sentences what Linux seccomp is.' -m anthropic/claude-haiku-5-5 --auto; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000689, "o", "W2_BEGIN\r\n"]
+[1.107387, "o", "\u001b[0m\r\n"]
+[1.107447, "o", "> build · claude-haiku-5-5\r\n\u001b[0m\r\n"]
+[2.699357, "o", "Seccomp (secure computing mode) is a Linux kernel feature that restricts which system calls a process is allowed to make. Filters, typically written as BPF programs, decide for each syscall whether to allow it, deny it with an error, kill the process, or trap it for inspection. This reduces the kernel attack surface available to untrusted or sandboxed code, which is why it is used by containers, browsers, and tools like Docker and systemd.\r\n\u001b[0m\r\n"]
+[2.734796, "o", "W2_ITEM_EXIT=0\r\n"]
+[2.734845, "o", "w2$ "]
+[2.735007, "o", "exit\r\n"]
+[2.735016, "o", "exit\r\n"]

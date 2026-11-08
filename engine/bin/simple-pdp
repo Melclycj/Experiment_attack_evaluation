@@ -1,0 +1,9 @@
+#!/usr/bin/python3 -IB
+"""The simple PDP (run on the host as the PDP's dedicated uid, never inside a cell): python3 -I -B bin/simple-pdp SOCKET"""
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from pdp.simple import main  # noqa: E402
+
+raise SystemExit(main(sys.argv[1:]))

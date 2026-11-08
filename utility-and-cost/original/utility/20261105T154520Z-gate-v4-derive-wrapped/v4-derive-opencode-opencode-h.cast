@@ -1,0 +1,13 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893841}
+[0.000301, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000782, "o", "\r< how many top-level topics it lists, as a number only.' -m anthropic/claude-haiku-5-5 --auto; s=$?; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.000858, "o", "W2_BEGIN\r\n"]
+[0.913545, "o", "\u001b[0m\r\n> build · claude-haiku-5-5"]
+[0.913595, "o", "\r\n\u001b[0m"]
+[0.913614, "o", "\r\n"]
+[4.508004, "o", "\u001b[0m⚙ \u001b[0mdeepwiki_read_wiki_structure {\"repoName\":\"facebook/react\"}\r\n"]
+[5.678949, "o", "\u001b[0m\r\n8\r\n\u001b[0m\r\n"]
+[5.734985, "o", "W2_ITEM_EXIT=0\r\n"]
+[5.735039, "o", "w2$ "]
+[5.735165, "o", "exit\r\n"]
+[5.735184, "o", "exit\r\n"]

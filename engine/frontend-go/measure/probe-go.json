@@ -1,0 +1,1145 @@
+{
+ "absolute_host_mismatch": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/x",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/x",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ]
+    ]
+   ]
+  ]
+ },
+ "header_order": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/o",
+    "query": "",
+    "headers": [
+     "x-a: 2",
+     "x-b: 1",
+     "x-b: 3"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/o",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "x-a",
+      "2"
+     ],
+     [
+      "x-b",
+      "1"
+     ],
+     [
+      "x-b",
+      "3"
+     ]
+    ]
+   ]
+  ]
+ },
+ "expect_unknown": {
+  "status_and_headers": [
+   "HTTP/1.1 417 Expectation Failed",
+   "Connection: close",
+   "Date: Fri, 30 Oct 2026 14:50:27 GMT",
+   "Content-Length: 0"
+  ],
+  "body": "",
+  "judged": [],
+  "upstream": []
+ },
+ "te_and_cl": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "POST",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/t",
+    "query": "",
+    "headers": [],
+    "body_len": 2
+   }
+  ],
+  "upstream": [
+   [
+    "POST",
+    "/t",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "Content-Length",
+      "2"
+     ]
+    ]
+   ]
+  ]
+ },
+ "obs_fold": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/f",
+    "query": "",
+    "headers": [
+     "x-fold: a b"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/f",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "x-fold",
+      "a b"
+     ]
+    ]
+   ]
+  ]
+ },
+ "http10": {
+  "status_and_headers": [
+   "HTTP/1.0 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y"
+  ],
+  "body": "ok",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/h10",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/h10",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ]
+    ]
+   ]
+  ]
+ },
+ "websocket_upgrade": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/ws",
+    "query": "",
+    "headers": [
+     "sec-websocket-key: dGhlIHNhbXBsZSBub25jZQ==",
+     "sec-websocket-version: 13"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/ws",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "sec-websocket-key",
+      "dGhlIHNhbXBsZSBub25jZQ=="
+     ],
+     [
+      "sec-websocket-version",
+      "13"
+     ]
+    ]
+   ]
+  ]
+ },
+ "double_slash": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/a/b",
+    "query": "q=1",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/a/b?q=1",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ]
+    ]
+   ]
+  ]
+ },
+ "origin_form_at_proxy": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/direct",
+    "query": "z=9",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/direct?z=9",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ]
+    ]
+   ]
+  ]
+ },
+ "lowercase_method": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "get",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/lc",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "get",
+    "/lc",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ]
+    ]
+   ]
+  ]
+ },
+ "orig_header_injection": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/inj",
+    "query": "",
+    "headers": [
+     "x-engine-other: z"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/inj",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "x-engine-other",
+      "z"
+     ]
+    ]
+   ]
+  ]
+ },
+ "too_many_headers": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/many",
+    "query": "",
+    "headers": [
+     "x-h0: v",
+     "x-h1: v",
+     "x-h10: v",
+     "x-h100: v",
+     "x-h101: v",
+     "x-h102: v",
+     "x-h103: v",
+     "x-h104: v",
+     "x-h105: v",
+     "x-h106: v",
+     "x-h107: v",
+     "x-h108: v",
+     "x-h109: v",
+     "x-h11: v",
+     "x-h12: v",
+     "x-h13: v",
+     "x-h14: v",
+     "x-h15: v",
+     "x-h16: v",
+     "x-h17: v",
+     "x-h18: v",
+     "x-h19: v",
+     "x-h2: v",
+     "x-h20: v",
+     "x-h21: v",
+     "x-h22: v",
+     "x-h23: v",
+     "x-h24: v",
+     "x-h25: v",
+     "x-h26: v",
+     "x-h27: v",
+     "x-h28: v",
+     "x-h29: v",
+     "x-h3: v",
+     "x-h30: v",
+     "x-h31: v",
+     "x-h32: v",
+     "x-h33: v",
+     "x-h34: v",
+     "x-h35: v",
+     "x-h36: v",
+     "x-h37: v",
+     "x-h38: v",
+     "x-h39: v",
+     "x-h4: v",
+     "x-h40: v",
+     "x-h41: v",
+     "x-h42: v",
+     "x-h43: v",
+     "x-h44: v",
+     "x-h45: v",
+     "x-h46: v",
+     "x-h47: v",
+     "x-h48: v",
+     "x-h49: v",
+     "x-h5: v",
+     "x-h50: v",
+     "x-h51: v",
+     "x-h52: v",
+     "x-h53: v",
+     "x-h54: v",
+     "x-h55: v",
+     "x-h56: v",
+     "x-h57: v",
+     "x-h58: v",
+     "x-h59: v",
+     "x-h6: v",
+     "x-h60: v",
+     "x-h61: v",
+     "x-h62: v",
+     "x-h63: v",
+     "x-h64: v",
+     "x-h65: v",
+     "x-h66: v",
+     "x-h67: v",
+     "x-h68: v",
+     "x-h69: v",
+     "x-h7: v",
+     "x-h70: v",
+     "x-h71: v",
+     "x-h72: v",
+     "x-h73: v",
+     "x-h74: v",
+     "x-h75: v",
+     "x-h76: v",
+     "x-h77: v",
+     "x-h78: v",
+     "x-h79: v",
+     "x-h8: v",
+     "x-h80: v",
+     "x-h81: v",
+     "x-h82: v",
+     "x-h83: v",
+     "x-h84: v",
+     "x-h85: v",
+     "x-h86: v",
+     "x-h87: v",
+     "x-h88: v",
+     "x-h89: v",
+     "x-h9: v",
+     "x-h90: v",
+     "x-h91: v",
+     "x-h92: v",
+     "x-h93: v",
+     "x-h94: v",
+     "x-h95: v",
+     "x-h96: v",
+     "x-h97: v",
+     "x-h98: v",
+     "x-h99: v"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/many",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "x-h0",
+      "v"
+     ],
+     [
+      "x-h1",
+      "v"
+     ],
+     [
+      "x-h10",
+      "v"
+     ],
+     [
+      "x-h100",
+      "v"
+     ],
+     [
+      "x-h101",
+      "v"
+     ],
+     [
+      "x-h102",
+      "v"
+     ],
+     [
+      "x-h103",
+      "v"
+     ],
+     [
+      "x-h104",
+      "v"
+     ],
+     [
+      "x-h105",
+      "v"
+     ],
+     [
+      "x-h106",
+      "v"
+     ],
+     [
+      "x-h107",
+      "v"
+     ],
+     [
+      "x-h108",
+      "v"
+     ],
+     [
+      "x-h109",
+      "v"
+     ],
+     [
+      "x-h11",
+      "v"
+     ],
+     [
+      "x-h12",
+      "v"
+     ],
+     [
+      "x-h13",
+      "v"
+     ],
+     [
+      "x-h14",
+      "v"
+     ],
+     [
+      "x-h15",
+      "v"
+     ],
+     [
+      "x-h16",
+      "v"
+     ],
+     [
+      "x-h17",
+      "v"
+     ],
+     [
+      "x-h18",
+      "v"
+     ],
+     [
+      "x-h19",
+      "v"
+     ],
+     [
+      "x-h2",
+      "v"
+     ],
+     [
+      "x-h20",
+      "v"
+     ],
+     [
+      "x-h21",
+      "v"
+     ],
+     [
+      "x-h22",
+      "v"
+     ],
+     [
+      "x-h23",
+      "v"
+     ],
+     [
+      "x-h24",
+      "v"
+     ],
+     [
+      "x-h25",
+      "v"
+     ],
+     [
+      "x-h26",
+      "v"
+     ],
+     [
+      "x-h27",
+      "v"
+     ],
+     [
+      "x-h28",
+      "v"
+     ],
+     [
+      "x-h29",
+      "v"
+     ],
+     [
+      "x-h3",
+      "v"
+     ],
+     [
+      "x-h30",
+      "v"
+     ],
+     [
+      "x-h31",
+      "v"
+     ],
+     [
+      "x-h32",
+      "v"
+     ],
+     [
+      "x-h33",
+      "v"
+     ],
+     [
+      "x-h34",
+      "v"
+     ],
+     [
+      "x-h35",
+      "v"
+     ],
+     [
+      "x-h36",
+      "v"
+     ],
+     [
+      "x-h37",
+      "v"
+     ],
+     [
+      "x-h38",
+      "v"
+     ],
+     [
+      "x-h39",
+      "v"
+     ],
+     [
+      "x-h4",
+      "v"
+     ],
+     [
+      "x-h40",
+      "v"
+     ],
+     [
+      "x-h41",
+      "v"
+     ],
+     [
+      "x-h42",
+      "v"
+     ],
+     [
+      "x-h43",
+      "v"
+     ],
+     [
+      "x-h44",
+      "v"
+     ],
+     [
+      "x-h45",
+      "v"
+     ],
+     [
+      "x-h46",
+      "v"
+     ],
+     [
+      "x-h47",
+      "v"
+     ],
+     [
+      "x-h48",
+      "v"
+     ],
+     [
+      "x-h49",
+      "v"
+     ],
+     [
+      "x-h5",
+      "v"
+     ],
+     [
+      "x-h50",
+      "v"
+     ],
+     [
+      "x-h51",
+      "v"
+     ],
+     [
+      "x-h52",
+      "v"
+     ],
+     [
+      "x-h53",
+      "v"
+     ],
+     [
+      "x-h54",
+      "v"
+     ],
+     [
+      "x-h55",
+      "v"
+     ],
+     [
+      "x-h56",
+      "v"
+     ],
+     [
+      "x-h57",
+      "v"
+     ],
+     [
+      "x-h58",
+      "v"
+     ],
+     [
+      "x-h59",
+      "v"
+     ],
+     [
+      "x-h6",
+      "v"
+     ],
+     [
+      "x-h60",
+      "v"
+     ],
+     [
+      "x-h61",
+      "v"
+     ],
+     [
+      "x-h62",
+      "v"
+     ],
+     [
+      "x-h63",
+      "v"
+     ],
+     [
+      "x-h64",
+      "v"
+     ],
+     [
+      "x-h65",
+      "v"
+     ],
+     [
+      "x-h66",
+      "v"
+     ],
+     [
+      "x-h67",
+      "v"
+     ],
+     [
+      "x-h68",
+      "v"
+     ],
+     [
+      "x-h69",
+      "v"
+     ],
+     [
+      "x-h7",
+      "v"
+     ],
+     [
+      "x-h70",
+      "v"
+     ],
+     [
+      "x-h71",
+      "v"
+     ],
+     [
+      "x-h72",
+      "v"
+     ],
+     [
+      "x-h73",
+      "v"
+     ],
+     [
+      "x-h74",
+      "v"
+     ],
+     [
+      "x-h75",
+      "v"
+     ],
+     [
+      "x-h76",
+      "v"
+     ],
+     [
+      "x-h77",
+      "v"
+     ],
+     [
+      "x-h78",
+      "v"
+     ],
+     [
+      "x-h79",
+      "v"
+     ],
+     [
+      "x-h8",
+      "v"
+     ],
+     [
+      "x-h80",
+      "v"
+     ],
+     [
+      "x-h81",
+      "v"
+     ],
+     [
+      "x-h82",
+      "v"
+     ],
+     [
+      "x-h83",
+      "v"
+     ],
+     [
+      "x-h84",
+      "v"
+     ],
+     [
+      "x-h85",
+      "v"
+     ],
+     [
+      "x-h86",
+      "v"
+     ],
+     [
+      "x-h87",
+      "v"
+     ],
+     [
+      "x-h88",
+      "v"
+     ],
+     [
+      "x-h89",
+      "v"
+     ],
+     [
+      "x-h9",
+      "v"
+     ],
+     [
+      "x-h90",
+      "v"
+     ],
+     [
+      "x-h91",
+      "v"
+     ],
+     [
+      "x-h92",
+      "v"
+     ],
+     [
+      "x-h93",
+      "v"
+     ],
+     [
+      "x-h94",
+      "v"
+     ],
+     [
+      "x-h95",
+      "v"
+     ],
+     [
+      "x-h96",
+      "v"
+     ],
+     [
+      "x-h97",
+      "v"
+     ],
+     [
+      "x-h98",
+      "v"
+     ],
+     [
+      "x-h99",
+      "v"
+     ]
+    ]
+   ]
+  ]
+ },
+ "chunked_with_trailer": {
+  "status_and_headers": [
+   "HTTP/1.1 299 status code 299",
+   "content-type: text/x",
+   "date: upstream-date",
+   "x-up: y",
+   "Connection: close",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "POST",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 33393,
+    "path": "/tr",
+    "query": "",
+    "headers": [],
+    "body_len": 2
+   }
+  ],
+  "upstream": [
+   [
+    "POST",
+    "/tr",
+    [
+     [
+      "Host",
+      "api.test:33393"
+     ],
+     [
+      "Content-Length",
+      "2"
+     ]
+    ]
+   ]
+  ]
+ },
+ "absolute_query_no_slash": {
+  "status_and_headers": [
+   "HTTP/1.1 400 Bad Request",
+   "Connection: close",
+   "Content-Type: text/plain; charset=utf-8",
+   "Date: Fri, 30 Oct 2026 14:50:31 GMT",
+   "Content-Length: 19"
+  ],
+  "body": "bad request target\n",
+  "judged": [],
+  "upstream": []
+ },
+ "non_ascii_host_header": {
+  "status_and_headers": [
+   "HTTP/1.1 400 Bad Request: malformed Host header",
+   "Content-Type: text/plain; charset=utf-8",
+   "Connection: close"
+  ],
+  "body": "400 Bad Request: malformed Host header",
+  "judged": [],
+  "upstream": []
+ },
+ "truncated_response": {
+  "raw_answer": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\na\r\nxxxxxxxxxx\r\n",
+  "ends_with_last_chunk": false
+ },
+ "tls_no_alpn": {
+  "connect": "HTTP/1.1 200 Connection established\r\n\r\n",
+  "alpn": null,
+  "version": "TLSv1.3",
+  "leaf_subject": [
+   [
+    [
+     "commonName",
+     "api.test"
+    ]
+   ]
+  ],
+  "leaf_san": [
+   [
+    "DNS",
+    "api.test"
+   ]
+  ],
+  "answer": [
+   "HTTP/1.1 200 OK"
+  ]
+ },
+ "tls_alpn_h2_only": {
+  "connect": "HTTP/1.1 200 Connection established\r\n\r\n",
+  "alpn": null,
+  "version": "TLSv1.3",
+  "leaf_subject": [
+   [
+    [
+     "commonName",
+     "api.test"
+    ]
+   ]
+  ],
+  "leaf_san": [
+   [
+    "DNS",
+    "api.test"
+   ]
+  ],
+  "answer": [
+   "HTTP/1.1 200 OK"
+  ]
+ },
+ "tls_alpn_h2_http11": {
+  "connect": "HTTP/1.1 200 Connection established\r\n\r\n",
+  "alpn": "http/1.1",
+  "version": "TLSv1.3",
+  "leaf_subject": [
+   [
+    [
+     "commonName",
+     "api.test"
+    ]
+   ]
+  ],
+  "leaf_san": [
+   [
+    "DNS",
+    "api.test"
+   ]
+  ],
+  "answer": [
+   "HTTP/1.1 200 OK"
+  ]
+ },
+ "tls_no_alpn_garbage": {
+  "answer": "",
+  "judged": 3
+ },
+ "connect_http10": {
+  "answer": "HTTP/1.0 200 Connection established\r\n\r\n"
+ },
+ "connect_no_port": {
+  "answer": [
+   "HTTP/1.1 400 Bad Request"
+  ]
+ },
+ "connect_then_ssh": {
+  "answer": ""
+ },
+ "proxy_path_unreachable": {
+  "status_and_headers": [
+   "HTTP/1.1 502 Bad Gateway",
+   "Connection: close",
+   "Content-Type: text/plain; charset=utf-8",
+   "Date: Fri, 30 Oct 2026 14:50:33 GMT",
+   "Content-Length: 23"
+  ],
+  "body": "proxy path unreachable\n"
+ }
+}

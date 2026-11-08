@@ -1,0 +1,533 @@
+{
+ "absolute_host_mismatch": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "other.test",
+    "port": 45091,
+    "path": "/x",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/x",
+    [
+     [
+      "Host",
+      "other.test:45091"
+     ]
+    ]
+   ]
+  ]
+ },
+ "header_order": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/o",
+    "query": "",
+    "headers": [
+     "x-b: 1",
+     "x-a: 2",
+     "x-b: 3"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/o",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ],
+     [
+      "x-b",
+      "1"
+     ],
+     [
+      "x-a",
+      "2"
+     ],
+     [
+      "x-b",
+      "3"
+     ]
+    ]
+   ]
+  ]
+ },
+ "expect_unknown": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "POST",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/e",
+    "query": "",
+    "headers": [],
+    "body_len": 2
+   }
+  ],
+  "upstream": [
+   [
+    "POST",
+    "/e",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ],
+     [
+      "Content-Length",
+      "2"
+     ]
+    ]
+   ]
+  ]
+ },
+ "te_and_cl": {
+  "status_and_headers": [
+   "HTTP/1.1 400 Bad Request",
+   "Server: mitmproxy 12.3.1",
+   "Connection: close",
+   "Content-Type: text/html",
+   "content-length: 324"
+  ],
+  "body": "<html>\n<head>\n    <title>400 Bad Request</title>\n</head>\n<body>\n    <h1>400 Bad Request</h1>\n    <p>Received message with both transfer-encoding and content-length headers from client, refusing to pre",
+  "judged": [],
+  "upstream": []
+ },
+ "obs_fold": {
+  "status_and_headers": [
+   "HTTP/1.1 502 no response from the connector",
+   "Server: BaseHTTP/0.6 Python/3.12.3",
+   "Date: Fri, 30 Oct 2026 14:50:11 GMT",
+   "Connection: close",
+   "Content-Type: text/html;charset=utf-8",
+   "Content-Length: 365"
+  ],
+  "body": "<!DOCTYPE HTML>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error response</title>\n    </head>\n    <body>\n        <h1>Error response</h1>\n        <p>Error code: 502</p>\n ",
+  "judged": [],
+  "upstream": []
+ },
+ "http10": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/h10",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/h10",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ]
+    ]
+   ]
+  ]
+ },
+ "websocket_upgrade": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/ws",
+    "query": "",
+    "headers": [
+     "sec-websocket-key: dGhlIHNhbXBsZSBub25jZQ==",
+     "sec-websocket-version: 13"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/ws",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ],
+     [
+      "sec-websocket-key",
+      "dGhlIHNhbXBsZSBub25jZQ=="
+     ],
+     [
+      "sec-websocket-version",
+      "13"
+     ]
+    ]
+   ]
+  ]
+ },
+ "double_slash": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/a/b",
+    "query": "q=1",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/a/b?q=1",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ]
+    ]
+   ]
+  ]
+ },
+ "origin_form_at_proxy": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/direct",
+    "query": "z=9",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/direct?z=9",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ]
+    ]
+   ]
+  ]
+ },
+ "lowercase_method": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "get",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/lc",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "get",
+    "/lc",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ]
+    ]
+   ]
+  ]
+ },
+ "orig_header_injection": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "api.test",
+    "port": 45091,
+    "path": "/inj",
+    "query": "",
+    "headers": [
+     "x-engine-other: z"
+    ],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/inj",
+    [
+     [
+      "Host",
+      "api.test:45091"
+     ],
+     [
+      "x-engine-other",
+      "z"
+     ]
+    ]
+   ]
+  ]
+ },
+ "too_many_headers": {
+  "status_and_headers": [
+   "HTTP/1.1 431 Too many headers",
+   "Server: BaseHTTP/0.6 Python/3.12.3",
+   "Date: Fri, 30 Oct 2026 14:50:15 GMT",
+   "Connection: close",
+   "Content-Type: text/html;charset=utf-8",
+   "Content-Length: 333"
+  ],
+  "body": "<!DOCTYPE HTML>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error response</title>\n    </head>\n    <body>\n        <h1>Error response</h1>\n        <p>Error code: 431</p>\n ",
+  "judged": [],
+  "upstream": []
+ },
+ "chunked_with_trailer": {
+  "status_and_headers": [
+   ""
+  ],
+  "body": "",
+  "judged": [],
+  "upstream": []
+ },
+ "absolute_query_no_slash": {
+  "status_and_headers": [
+   "HTTP/1.1 400 Bad Request",
+   "Server: mitmproxy 12.3.1",
+   "Connection: close",
+   "Content-Type: text/html",
+   "content-length: 194"
+  ],
+  "body": "<html>\n<head>\n    <title>400 Bad Request</title>\n</head>\n<body>\n    <h1>400 Bad Request</h1>\n    <p>Bad HTTP request line: b&#x27;GET http://api.test:45091?x=1 HTTP/1.1&#x27;</p>\n</body>\n</html>",
+  "judged": [],
+  "upstream": []
+ },
+ "non_ascii_host_header": {
+  "status_and_headers": [
+   "HTTP/1.1 299 ",
+   "date: upstream-date",
+   "x-up: y",
+   "content-type: text/x",
+   "Transfer-Encoding: chunked"
+  ],
+  "body": "2\r\nok\r\n0\r\n\r\n",
+  "judged": [
+   {
+    "method": "GET",
+    "scheme": "http",
+    "host": "xn--b14cher-xwa2143e.test",
+    "port": 45091,
+    "path": "/nh",
+    "query": "",
+    "headers": [],
+    "body_len": 0
+   }
+  ],
+  "upstream": [
+   [
+    "GET",
+    "/nh",
+    [
+     [
+      "Host",
+      "xn--b14cher-xwa2143e.test:45091"
+     ]
+    ]
+   ]
+  ]
+ },
+ "truncated_response": {
+  "raw_answer": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\na\r\nxxxxxxxxxx\r\n",
+  "ends_with_last_chunk": false
+ },
+ "tls_no_alpn": {
+  "connect": "HTTP/1.1 200 Connection established\r\n\r\n",
+  "alpn": null,
+  "version": "TLSv1.3",
+  "leaf_subject": [
+   [
+    [
+     "commonName",
+     "api.test"
+    ]
+   ]
+  ],
+  "leaf_san": [
+   [
+    "DNS",
+    "api.test"
+   ]
+  ],
+  "answer": [
+   "HTTP/1.1 200 OK"
+  ]
+ },
+ "tls_alpn_h2_only": {
+  "connect": "HTTP/1.1 200 Connection established\r\n\r\n",
+  "alpn": null,
+  "version": "TLSv1.3",
+  "leaf_subject": [
+   [
+    [
+     "commonName",
+     "api.test"
+    ]
+   ]
+  ],
+  "leaf_san": [
+   [
+    "DNS",
+    "api.test"
+   ]
+  ],
+  "answer": [
+   "HTTP/1.1 200 OK"
+  ]
+ },
+ "tls_alpn_h2_http11": {
+  "connect": "HTTP/1.1 200 Connection established\r\n\r\n",
+  "alpn": "http/1.1",
+  "version": "TLSv1.3",
+  "leaf_subject": [
+   [
+    [
+     "commonName",
+     "api.test"
+    ]
+   ]
+  ],
+  "leaf_san": [
+   [
+    "DNS",
+    "api.test"
+   ]
+  ],
+  "answer": [
+   "HTTP/1.1 200 OK"
+  ]
+ },
+ "tls_no_alpn_garbage": {
+  "answer": "",
+  "judged": 3
+ },
+ "connect_http10": {
+  "answer": "HTTP/1.0 200 Connection established\r\n\r\n"
+ },
+ "connect_no_port": {
+  "answer": [
+   "HTTP/1.1 400 Bad Request"
+  ]
+ },
+ "connect_then_ssh": {
+  "answer": ""
+ },
+ "proxy_path_unreachable": {
+  "status_and_headers": [
+   "HTTP/1.1 502 proxy path unreachable",
+   "Server: BaseHTTP/0.6 Python/3.12.3",
+   "Date: Fri, 30 Oct 2026 14:50:22 GMT",
+   "Connection: close",
+   "Content-Type: text/html;charset=utf-8",
+   "Content-Length: 357"
+  ],
+  "body": "<!DOCTYPE HTML>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error response</title>\n    </head>\n    <body>\n        <h1>Error response</h1>\n        <p>Error code: 502</p>\n        <p>Message: proxy path unreachable.</p>\n        <p>Error code explanation: 502 - Invalid resp"
+ }
+}

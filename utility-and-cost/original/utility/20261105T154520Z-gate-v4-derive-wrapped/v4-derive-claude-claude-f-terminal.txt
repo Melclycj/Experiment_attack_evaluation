@@ -1,0 +1,20 @@
+attached to 6b32d748d73d0e00c476ff134c071875:6; Ctrl-] detaches
+                                                                                                                                                                                                       w2$ <_%s\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\n' NPM_OK; (exit $s); echo W2_ITEM_EXIT=$?
+W2_BEGIN
+All three installs succeeded, and each package imported once.
+
+| Install | Command | Import output |
+|---|---|---|
+| pip `--target` | `python3 -m pip install --target /tmp/pip-t six` | `pip target six: 1.17.0 /tmp/pip-t/six.py` |
+| uv venv | `uv venv /tmp/uvv` + `uv pip install --python /tmp/uvv/bin/python six` | `uv venv six: 1.17.0 /tmp/uvv/lib/python3.12/site-packages/six.py` |
+| npm prefix | `npm install --prefix /tmp/npm-t is-number` | `npm is-number: true false` |
+
+The pip package isn't on the default path, so I added `/tmp/pip-t` to `sys.path` for that import. The npm check called `isNumber(5)` (true) and `isNumber('x')` (false).
+[?25hW2_PIP_OK
+W2_UV_OK
+W2_NPM_OK
+W2_ITEM_EXIT=0
+w2$ exit
+exit
+
+the relay closed the connection (the row ended, or another client is attached)

@@ -1,49 +1,60 @@
-# Evaluation records for a sandboxed mediation engine for AI agents
+# Source and evaluation records: a reference monitor for AI agents on a shared kernel
 
-This repository holds the records behind Chapters 4 and 5 of the thesis: the attacks, how each was judged, the raw run archives and the structured argument for agent identification.
+This repository holds what the thesis points to: the source of the monitor it builds (the engine), the attacks and their run records, the records behind the utility and cost measurements, and two structured security arguments.
 
-## Where to look
+## Where the thesis points
 
 | The thesis says | Here |
 |---|---|
-| "the full list, with the cases we set aside and why" (Section 4.2) | [ATTACKS.md](ATTACKS.md) and [CASES-SET-ASIDE.md](CASES-SET-ASIDE.md) |
-| "the full method and the table of all 38 cases" (Section 5.2) | [uid-binding/](uid-binding/README.md) |
-| The numbers of Table 4.1 | Recompute with `python3 -X utf8 attack-evaluation/tally-table-4.1.py`. The script covers every row but NB-30, whose row is read from `attack-evaluation/nb30/run/`. It reports each legitimate operation's newest run; the batch-by-batch count is in [ATTACKS.md](ATTACKS.md) |
+| Abstract: "The attacks, their run records and the full argument are available at …" | [attacks/](attacks/README.md) for the attacks and their runs; [arguments/](arguments/README.md) for the arguments |
+| Section 3.8: "The source code and the list of attacks are in our public repository" | [engine/](engine/) for the source, with Table 3.6 recounted [below](#the-engine); [attacks/ATTACKS.md](attacks/ATTACKS.md) for the list |
+| Section 4.2: "the full list, with the cases we set aside and why, is in our public repository" | [attacks/ATTACKS.md](attacks/ATTACKS.md) and [attacks/cases/set-aside.md](attacks/cases/set-aside.md) |
+| Sections 4.3 and 4.4: three agents through the engine; memory per agent and time per request | [utility-and-cost/](utility-and-cost/README.md) |
+| Section 6.1: "74 system calls … 306 cases (see our public repository)" | [arguments/no-bypass.md](arguments/no-bypass.md) |
+| Section 6.1: "Of the 38 ways a label could go wrong (see our public repository)" | [arguments/uid-binding.md](arguments/uid-binding.md) |
 
 ## Layout
 
-| Path | What it is |
+| Folder | For |
 |---|---|
-| [ATTACKS.md](ATTACKS.md) | Every attack: source, what it does, the mechanism expected to stop it, its result and its batch. Also the legitimate operations, the two demonstrations and the self-checks on weakened copies of the engine |
-| [CASES-SET-ASIDE.md](CASES-SET-ASIDE.md) | What we did not run and why |
-| `attack-evaluation/<unit>/runs/` | The run archives. Each batch has `README.md`, `results.md`, `results.jsonl`, `run.json` and its raw evidence |
-| `attack-evaluation/<unit>/attacks.md`, `tests.md` | Per-unit attack lists and test specifications, in Chinese: judging criteria, controls and validity conditions for every sub-goal |
-| `attack-evaluation/METHOD.md`, `TESTING.md` | The shared method and run rules, in Chinese |
-| `attack-evaluation/harness/`, `decision-faithfulness/harness/` | The harnesses. The first serves no-bypass and credential binding, the second decision faithfulness |
-| `attack-evaluation/<unit>/scripts/` | The attack scripts |
-| `attack-evaluation/nb30/` | NB-30, which needs an export step and so ran on the deployment of the end-to-end checks |
-| `attack-evaluation/nb29/` | The NB-29 probe, which is not a formal result and is not in Table 4.1 (see [CASES-SET-ASIDE.md](CASES-SET-ASIDE.md)) |
-| `attack-evaluation/baseline/` | What the engine version changed, and the host readings the formal runs were checked against |
-| [attack-evaluation/DISCARDED-RUNS.md](attack-evaluation/DISCARDED-RUNS.md) | Attempts that produced no results |
-| [uid-binding/](uid-binding/README.md) | The argument for the identification link |
-| [case-collections/](case-collections/) | The three collections of public cases we compiled, in Chinese, with the entry numbers that the attack list cites |
+| [engine/](engine/) | The engine's source, exactly as evaluated |
+| [attacks/](attacks/README.md) | The attacks of Section 4.2 and their run records |
+| [utility-and-cost/](utility-and-cost/README.md) | Sections 4.3 and 4.4 |
+| [arguments/](arguments/README.md) | The two structured arguments of Section 6.1 |
 
-## How a result is judged
+In each folder, the files at the top are in English and written to be read; start with its `README.md`. Each `original/` subfolder, and `engine/` as a whole, holds files exactly as they ran or were written. Many of those are in Chinese, including the engine's own documentation and some code comments. They are kept unchanged because the run records hold their digests, so a changed byte would no longer match what ran.
 
-An attack runs as arbitrary code under the agent's uid. It is judged by external facts, not by what the engine replied: a decoy on the host changed, a marker file appeared, a test server received a request, or a test credential's real value appeared at a scanned outlet. A stop under the engine counts only if the same sub-goal reached its goal unprotected in the same batch, unless it has no counterpart there. Each batch of the harnesses also runs legitimate operations, which the engine must allow; the NB-30 run, on the other deployment, carried none.
+## The engine
 
-All targets are decoys that each run builds for itself, on an isolated test network. Every credential is a random test string with no production rights.
+[engine/](engine/) is baseline v4 of the engine: the directory `ExperimentLab/engine-v3` at commit `a9eff999` of the author's working repository, 188 files, without its `runs/` directory. Chapters 3 and 4 describe and evaluate this version. Its documentation (`README.md`, `SPEC-canonical-form.md`, `deployment.md`, `validation.md`) is in Chinese.
 
-## What was tested
+Table 3.6 counts lines with `wc -l` over the top-level source files of each directory, blank lines and comments included. Each row below is `cat <files> | wc -l` run in `engine/`.
 
-The engine is registered baseline v4. A run is marked `formal=true` only when the source it compiled matches the registered export file by file, the baseline check passes and the host readings in `attack-evaluation/baseline/host-readings-v4.json` agree. All batches ran on one host under WSL 2, kernel `6.6.87.2-microsoft-standard-WSL2`, once per sub-goal per configuration. A `formal=true` flag alone does not make a result: see [attack-evaluation/DISCARDED-RUNS.md](attack-evaluation/DISCARDED-RUNS.md).
+| Component | Files in engine/ | Files | Lines |
+|---|---|---|---|
+| Spawner, child and supporting code | `native/sandbox/*.c native/sandbox/*.h` | 17 | 3,273 |
+| Core | `engine/*.py` | 21 | 6,175 |
+| Connector | `connector/*.py` | 8 | 2,302 |
+| File worker | `fileworker/*.py` | 4 | 550 |
+| Management client, transfer part | `client/workspace.py client/link.py client/__init__.py` | 3 | 712 |
+| Management client, approval and attach parts | `client/admin.py client/attach.py client/main.py client/render.py` | 4 | 835 |
+| Simple PDP | `pdp/*.py` | 2 | 64 |
+| In-compartment front end | `frontend-go/*.go` | 6 | 935 |
+| MCP server, without tests | `mcp-go/*.go` except `*_test.go` | 4 | 796 |
+| Relay | `relay/*.c` | 1 | 111 |
 
-## Checking the archives
+The first five rows are the engine trusted computing base: 53 files and 13,012 lines.
 
-`attack-evaluation/<unit>/runs/history.md` is generated by the harness's `summarize.py`, which verifies each no-bypass and credential-binding archive against the digests in its `COMPLETE.json`. Run archives and harness files are byte-identical copies, so paths inside them name the original machine and some of their links lead outside this repository. In the working documents, such links have been turned into plain text. `.gitattributes` turns off line-ending conversion, because the digests cover these bytes.
+## Checking the records
 
-## What is not here
+```
+python3 verify.py
+```
 
-**The engine's source is not in this repository.** The archives record each source file's digest, but the batches cannot be rerun from this repository alone. **No reproduction is claimed:** the harnesses need root under WSL 2, and they were written for this repository's original layout.
+It checks, with the standard library only, every file kept as an original against the digests the run records hold: [engine/](engine/) against every attack batch and every memory and latency run, each batch's harness, scripts and test specification against its `run.json`, and every run archive against its `COMPLETE.json`. `.gitattributes` turns off line-ending conversion, because the digests cover these bytes. The longest path in the repository is 155 characters, so on Windows a clone into a deep folder needs `git -c core.longpaths=true clone …`.
 
-Decoy names such as `nb-decoy-…` and the sentinel values in the archives are test material, not secrets. These records are test evidence for one engine, and the scripts target only the decoys each run builds for itself.
+## What is not claimed
+
+The batches cannot be rerun from this repository alone. The harnesses need root under WSL 2 and were written for the author's original layout, and the memory runs used a rented server. Nothing here claims reproduction; the records show what ran and what it produced.
+
+Decoys, placeholder credentials such as `sk-ant-api03-…-placeholder-…`, and the sentinel values in the archives are test material. Every credential in the records is a random test string or a placeholder, with no production rights.

@@ -1,0 +1,11 @@
+## resident step: window minus 20-60 s (MiB per agent); last >5 MiB off before the window (s after the wait began)
+docker-sandboxes   reps 10  wait 150-161 s  step  -17.8 ..    4.5  off-plateau 10/10, last at 112-153 s
+engine-v4-shared   reps 15  wait 150-152 s  step  -18.1 ..  -15.8  off-plateau 15/15, last at 116-121 s
+bare-api-only      reps 15  wait 150-161 s  step  -16.1 ..  -15.4  off-plateau 15/15, last at 120-122 s
+engine-v4-copy     reps 15  wait 150-151 s  step  -17.6 ..  -15.9  off-plateau 15/15, last at 116-121 s
+
+## shared group's PSS just before each build, against the rows started so far in that core run (one per pass)
+engine-v4-copy pass 1: slope 0.69 MiB per row started, intercept 28.6; 1:26 3:28 5:30 9:37 13:41 21:44 29:49 45:65 61:70 93:90
+engine-v4-copy pass 2: slope 1.06 MiB per row started, intercept 26.3; 1:26 3:28 7:35 15:46 31:57
+engine-v4-shared pass 1: slope 0.70 MiB per row started, intercept 28.3; 1:26 3:28 5:30 9:37 13:40 21:44 29:50 45:64 61:69 93:91
+engine-v4-shared pass 2: slope 1.06 MiB per row started, intercept 26.5; 1:26 3:28 7:35 15:47 31:57

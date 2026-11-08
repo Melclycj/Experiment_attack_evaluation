@@ -1,0 +1,16 @@
+{"t": 1793888203.0981476, "event": "object_start", "pass_no": 1, "object": "docker-sandboxes", "reps": 2}
+{"t": 1793890664.4945624, "event": "object_end", "object": "docker-sandboxes", "pass_no": 1, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793890664.5030098, "event": "object_start", "pass_no": 1, "object": "engine-v4-shared", "reps": 2}
+{"t": 1793892972.0958114, "event": "object_end", "object": "engine-v4-shared", "pass_no": 1, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793892972.095877, "event": "object_start", "pass_no": 1, "object": "bare-api-only", "reps": 2}
+{"t": 1793894955.6382673, "event": "object_end", "object": "bare-api-only", "pass_no": 1, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793894955.638362, "event": "object_start", "pass_no": 1, "object": "engine-v4-copy", "reps": 2}
+{"t": 1793897303.071503, "event": "object_end", "object": "engine-v4-copy", "pass_no": 1, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793897303.0716004, "event": "object_start", "pass_no": 2, "object": "engine-v4-copy", "reps": 1}
+{"t": 1793898453.4357471, "event": "object_end", "object": "engine-v4-copy", "pass_no": 2, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793898453.4358017, "event": "object_start", "pass_no": 2, "object": "bare-api-only", "reps": 1}
+{"t": 1793899487.725552, "event": "object_end", "object": "bare-api-only", "pass_no": 2, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793899487.7256417, "event": "object_start", "pass_no": 2, "object": "engine-v4-shared", "reps": 1}
+{"t": 1793900639.7604704, "event": "object_end", "object": "engine-v4-shared", "pass_no": 2, "stop_reason": "", "error": "", "tiers_measured": [1, 2, 4, 8, 16]}
+{"t": 1793900639.7605531, "event": "object_start", "pass_no": 2, "object": "docker-sandboxes", "reps": 1}
+{"t": 1793900675.999958, "event": "object_end", "object": "docker-sandboxes", "pass_no": 2, "stop_reason": "", "error": "RuntimeError: sbx ls failed (1): WARN: token refresh rejected by auth server, deleting credential: refresh token revoked: oauth2: \"invalid_grant\" \"Unknown or invalid refresh token.\"\nerror: Not authenticated to Docker\n  try: sbx login\n", "tiers_measured": []}

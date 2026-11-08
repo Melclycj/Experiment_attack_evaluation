@@ -1,0 +1,13 @@
+{"version": 2, "width": 200, "height": 50, "timestamp": 1793893977}
+[0.000249, "o", "\r                                                                                                                                                                                                       \rw2$ "]
+[0.000946, "o", "\r<_%s\\n' UV_OK; test -d /tmp/npm-t/node_modules/is-number >/dev/null 2>&1 && printf 'W2_%s\\n' NPM_OK; (exit $s); echo W2_ITEM_EXIT=$?\r\n"]
+[0.001028, "o", "W2_BEGIN\r\n"]
+[7.886116, "o", "All three installs succeeded, and each package imported once.\r\n\r\n| Install | Command | Import output |\r\n|---|---|---|\r\n| pip `--target` | `python3 -m pip install --target /tmp/pip-t six` | `pip target six: 1.17.0 /tmp/pip-t/six.py` |\r\n| uv venv | `uv venv /tmp/uvv` + `uv pip install --python /tmp/uvv/bin/python six` | `uv venv six: 1.17.0 /tmp/uvv/lib/python3.12/site-packages/six.py` |\r\n| npm prefix | `npm install --prefix /tmp/npm-t is-number` | `npm is-number: true false` |\r\n\r\nThe pip package isn't on the default path, so I added `/tmp/pip-t` to `sys.path` for that import. The npm check called `isNumber(5)` (true) and `isNumber('x')` (false).\r\n"]
+[7.891024, "o", "\u001b[?25h"]
+[7.896248, "o", "W2_PIP_OK\r\n"]
+[7.897016, "o", "W2_UV_OK\r\n"]
+[7.897048, "o", "W2_NPM_OK\r\n"]
+[7.897281, "o", "W2_ITEM_EXIT=0\r\n"]
+[7.897316, "o", "w2$ "]
+[7.89746, "o", "exit\r\n"]
+[7.897484, "o", "exit\r\n"]
